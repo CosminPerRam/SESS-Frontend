@@ -1,0 +1,75 @@
+
+$primary: #393532;
+$primaryDark: #221F1C;
+$primaryLight: #5A534A;
+
+$secondary: #A39884;
+$secondaryDark: #696153;
+
+$borderLight: #8E8572;
+$borderDark: #403C33;
+
+$input: #272422;
+
+$text: #BEB6A3;
+$textLight: #C9BDA3;
+$textDark: #847A68;
+
+$buttonText: #DEDEDE;
+$buttonTextLight: #FFFFFF;
+
+$textSelected: #000000;
+
+* {
+  box-sizing: border-box;
+  font-family: Tahoma, sans-serif;
+  font-smooth: never;
+  -webkit-font-smoothing : none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $primary;
+  width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.TitleBar {
+  width: 100%;
+  min-height: 39px;
+  color: $text;
+  font-size: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  display: flex;
+  align-items: center;
+}
+
+.NavBar {
+  width: 100%;
+  min-height: 41px;
+}
+
+.ServerList {
+  background-color: $primaryDark;
+  min-height: 50px;
+  flex-grow: 1;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.Settings {
+  width: 100%;
+  min-height: 180px;
+  
+}
+
+.TipBar {
+  width: 100%;
+  min-height: 34px;
+}

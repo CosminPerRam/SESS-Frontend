@@ -1,11 +1,14 @@
-
+import { TitleBar } from "./TitleBar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
+    <body>
+      <TitleBar />
+      <div class='NavBar' ></div>
+      <div class='ServerList' ></div>
+      <div class='Settings' ></div>
+      <div class='TipBar' ></div>
+    </body>
   );
 }
 

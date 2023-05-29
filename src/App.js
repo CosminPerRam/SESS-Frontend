@@ -1,12 +1,12 @@
 import { TitleBar } from "./TitleBar";
-
+import { NavBar } from "./NavBar";
+import { Content } from "./Content";
 function App() {
   return (
     <body>
       <TitleBar />
-      <div class='NavBar' ></div>
-      <div class='ServerList' ></div>
-      <div class='Settings' ></div>
+      <NavBar />
+      <Content />
       <div class='TipBar' ></div>
     </body>
   );

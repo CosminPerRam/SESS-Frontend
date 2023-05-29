@@ -7,6 +7,7 @@ $secondary: #A39884;
 $secondaryDark: #696153;
 
 $borderLight: #8E8572;
+$border: #49453D;
 $borderDark: #403C33;
 
 $input: #272422;
@@ -31,16 +32,15 @@ $textSelected: #000000;
 
 body {
   background-color: $primary;
-  width: 100vw;
   min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
+  
+  height: 100vh;
 }
-
+.Content {
+  height: 100%;
+}
 .TitleBar {
-  width: 100%;
-  min-height: 39px;
+  min-height: 38px;
   color: $text;
   font-size: 12px;
   padding-left: 16px;
@@ -48,19 +48,62 @@ body {
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
-
 .NavBar {
-  width: 100%;
-  min-height: 41px;
+  min-height: 35px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.NavButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 1px;
+  position: relative;
+  top: 1px;
+  
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
+.Divider {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  border: solid 1px $border;
+  padding-top: 7px;
+  
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.TabButton {
+  padding-right: 20px;
+  padding-left: 5px;
+  padding-top: 3px;
+  padding-bottom: 4px;
+
+  background-color: $secondary;
+  color: $buttonText;
+  border: 1px solid $borderLight;
+}
+
+.TabButton:active {
+  color: $buttonTextLight;
+  background-color: $primary;
+  border: 1px solid $border;
+  border-bottom: none;
+  height: 27px;
+}
 .ServerList {
   background-color: $primaryDark;
   min-height: 50px;
   flex-grow: 1;
-  margin-left: 8px;
-  margin-right: 8px;
+  border-top: 1px solid $borderDark;
+  border-bottom: 1px solid $borderDark;
 }
 
 .Settings {
@@ -73,3 +116,4 @@ body {
   width: 100%;
   min-height: 34px;
 }
+

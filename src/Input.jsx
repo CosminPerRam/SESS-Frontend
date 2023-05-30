@@ -1,0 +1,1 @@
+export const Input = ({ cssClass }) => <input type='search' class={cssClass} />

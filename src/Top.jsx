@@ -1,7 +1,7 @@
 import { DropDown } from "./DropDown"
 import { VerticalDivider } from "./VerticalDivider";
 import { TopInput } from "./TopInput";
-import { SettingsButton } from "./SettingsButton";
+import { Button } from "./Button";
 
 export const Top = () => {
     const workshop = ['<All>', 'Workshop maps', 'Subscribed'];
@@ -13,7 +13,7 @@ export const Top = () => {
                 <VerticalDivider />
                 <DropDown label={'Tags'} options={tags} />
                 <TopInput />
-                <SettingsButton title={'Add common tags...'} />
+                <Button title={'Add common tags...'} />
             </div>
             <hr class='HorizontalDivider' />
         </div>

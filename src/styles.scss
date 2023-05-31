@@ -192,13 +192,14 @@ option {
   margin-left: 4px;
 }
 
-.SettingsButton {
+.Button {
   background-color: $secondary;
   color: $primary;
   border: 1px solid $borderLight;
   padding-left: 10px;
   padding-right: 17px;
   height: 22px;
+  text-align: left;
 }
 
 .HorizontalDivider {
@@ -227,4 +228,22 @@ option {
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.Bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Label {
+  flex-grow: 1;
+  font-size: 12px;
+  color: $textLight;
+}
+
+.Buttons {
+  display: flex;
+  gap: 1px;
+  margin-right: 1px;
 }

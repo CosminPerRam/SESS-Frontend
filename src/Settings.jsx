@@ -1,10 +1,10 @@
 import { Top } from "./Top"
-
+import { Middle } from "./Middle"
 export const Settings = () => {
     return (
         <div class='Settings' >
             <Top />
-            <div class='Middle'></div>
+            <Middle />
             <div class='Bottom'></div>
         </div>
     )

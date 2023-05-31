@@ -123,6 +123,15 @@ body {
 
 .Middle {
   min-height: 97px;
+  max-height: 97px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  padding-left: 15px;
+  gap: 6px;
 }
 
 .Bottom {
@@ -136,7 +145,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  
+
 }
 
 select {
@@ -147,7 +156,7 @@ select {
   -moz-appearance:none; /* Firefox */
   -webkit-appearance:none; /* Safari and Chrome */
   appearance:none;
-  width: 8em;
+  width: 110px;
   height: 24px;
   padding-left: 2px;
 }
@@ -160,6 +169,8 @@ option {
   content: "";
   top: 10px;
   right: 13px;
+  margin-top: -10px;
+  margin-right: -13px;
   width: 0;
   height: 0;
   border: 4px solid transparent;
@@ -169,6 +180,7 @@ option {
 .VerticalDivider {
   height: 24px;
   border-right: 2px solid $border;
+  padding-right: 6px;
 }
 
 .TopInput {
@@ -177,6 +189,7 @@ option {
   height: 24px;
   flex-grow: 1;
   margin-right: 7px;
+  margin-left: 4px;
 }
 
 .SettingsButton {
@@ -194,4 +207,24 @@ option {
   color: $border;
   margin-left: 7px;
   margin-right: 4px;
+}
+
+.Input {
+  background-color: $input;
+  border: 1px solid $borderDark;
+  height: 22px;
+  margin-left: 5px;
+}
+
+.Checkbox {
+  margin-right: 7px;
+  width: 10px;
+  height: 10px;
+  background-color: $input;
+}
+
+.Checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }

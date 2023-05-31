@@ -1,6 +1,6 @@
 import { DropDown } from "./DropDown"
 import { VerticalDivider } from "./VerticalDivider";
-import { Input } from "./Input";
+import { TopInput } from "./TopInput";
 import { SettingsButton } from "./SettingsButton";
 
 export const Top = () => {
@@ -12,7 +12,7 @@ export const Top = () => {
                 <DropDown label={'Workshop'} options={workshop} />
                 <VerticalDivider />
                 <DropDown label={'Tags'} options={tags} />
-                <Input cssClass={'TopInput'} />
+                <TopInput />
                 <SettingsButton title={'Add common tags...'} />
             </div>
             <hr class='HorizontalDivider' />

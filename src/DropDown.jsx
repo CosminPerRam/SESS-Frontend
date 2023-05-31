@@ -1,8 +1,8 @@
-export const DropDown = ({label, options}) => {
+export const DropDown = ({label, options, style}) => {
     return (
         <label class='DropDown'>
             {label}
-            <select>
+            <select style={style}>
                 {options.map(option => <option value={`'${option}'`}>{option}</option>)}
                 
             </select>

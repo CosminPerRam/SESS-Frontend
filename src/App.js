@@ -1,14 +1,18 @@
 import { TitleBar } from "./TitleBar";
 import { NavBar } from "./NavBar";
 import { Content } from "./Content";
+import {ApolloConfiguration} from "./ApolloConfiguration";
+
 function App() {
   return (
-    <body>
-      <TitleBar />
-      <NavBar />
-      <Content />
-      <div class='TipBar' ></div>
-    </body>
+    <ApolloConfiguration>
+      <body>
+        <TitleBar/>
+        <NavBar/>
+        <Content/>
+        <div className='TipBar'></div>
+      </body>
+    </ApolloConfiguration>
   );
 }
 

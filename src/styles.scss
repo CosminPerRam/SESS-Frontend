@@ -104,6 +104,10 @@ body {
   flex-grow: 1;
   border-top: 1px solid $borderDark;
   border-bottom: 1px solid $borderDark;
+
+
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .Settings {
@@ -247,10 +251,46 @@ option {
   overflow:hidden;
   white-space:nowrap;
 }
-
+table {
+  table-layout: fixed;
+}
 .Buttons {
   display: flex;
   gap: 1px;
   margin-right: 1px;
   min-width: 272px;
+}
+
+
+.Heading {
+  background-color: $secondary;
+  font-weight: 100;
+  color: $primary;
+  font-size: 11px;
+  border: 1px solid $borderLight;
+  text-align: left;
+  padding-left: 4px;
+  resize: inline;
+  overflow:auto;
+  text-overflow: ellipsis;
+  min-width: 50px;
+}
+.IconHeading {
+  background-color: $secondary;
+  font-weight: 100;
+  color: $primary;
+  font-size: 12px;
+  border: 1px solid $borderLight;
+  width: 15px;
+}
+th {
+  text-overflow: ellipsis;
+}
+tr {
+  display: flex;
+  width: 100%;
+}
+
+.Heading::-webkit-resizer {
+  background-color: transparent;
 }

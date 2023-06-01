@@ -25,6 +25,7 @@ $textSelected: #000000;
   box-sizing: border-box;
   font-family: Tahoma, sans-serif;
   font-smooth: never;
+  text-rendering: optimizeSpeed;
   -webkit-font-smoothing : none;
   margin: 0;
   padding: 0;
@@ -51,7 +52,7 @@ body {
 }
 .NavBar {
   min-height: 35px;
-
+  min-width: 585px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -74,7 +75,7 @@ body {
   flex-direction: column;
   border: solid 1px $border;
   padding-top: 7px;
-  max-height: 100%;
+  min-width: 650px;
   margin-left: 8px;
   margin-right: 8px;
 }
@@ -113,6 +114,7 @@ body {
 }
 .Top {
   min-height: 40px;
+  min-width: 585px;
 }
 .TopSettings {
   min-height: 36px;
@@ -200,6 +202,7 @@ option {
   padding-right: 17px;
   height: 22px;
   text-align: left;
+  
 }
 
 .HorizontalDivider {
@@ -213,7 +216,7 @@ option {
 .Input {
   background-color: $input;
   border: 1px solid $borderDark;
-  height: 22px;
+  height: 24px;
   margin-left: 5px;
 }
 
@@ -240,10 +243,14 @@ option {
   flex-grow: 1;
   font-size: 12px;
   color: $textLight;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
 }
 
 .Buttons {
   display: flex;
   gap: 1px;
   margin-right: 1px;
+  min-width: 272px;
 }

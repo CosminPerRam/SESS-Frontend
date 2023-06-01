@@ -5,8 +5,8 @@ import { Buttons } from "./Buttons"
 export const Bottom = () => {
     return (
         <div class='Bottom'>
-            <Checkbox title={'Simplified List'} />
-            <Button title={'Filters'} style={{width: '106px', marginLeft: '32px', color:'$buttonText'}}/>
+            <Checkbox title={'Simplified List'} style={{minWidth: '89px'}} />
+            <Button title={'Filters'} style={{width: '106px', marginLeft: '32px', color:'$buttonText', minWidth: '106px'}}/>
             <Label text={'Team Fortress 2;Team Fortress 2;Team Fortress 2;Team Fortress 2;'}/>
             <Buttons />
         </div>

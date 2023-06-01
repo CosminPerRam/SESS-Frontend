@@ -13,7 +13,7 @@ export const Top = () => {
                 <VerticalDivider />
                 <DropDown label={'Tags'} options={tags} />
                 <TopInput />
-                <Button title={'Add common tags...'} />
+                <Button title={'Add common tags...'} style={{minWidth: '144px'}}/>
             </div>
             <hr class='HorizontalDivider' />
         </div>

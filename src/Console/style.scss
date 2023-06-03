@@ -1,14 +1,33 @@
 
+@import '../colors';
+
 .ConsoleContainer {
   position: absolute;
   z-index: 9;
-  background-color: blue;
+  border-radius: 4px;
+  background-color: $primary;
+
   width: 300px;
   height: 200px;
+
+  resize: both;
+  overflow: hidden;
 }
 
 .ConsoleHeader {
   height: 50px;
+  color: $secondary;
   width: 100%;
-  background-color: red;
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.ConsoleHeaderTitle {
+  font-size: 16px;
+}
+
+.ConsoleHeaderX {
+  font-size: 16px;
+  float: right;
 }

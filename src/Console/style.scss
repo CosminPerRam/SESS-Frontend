@@ -52,6 +52,11 @@
   padding-left: 2px;
   border: 1px solid $borderDark;
   margin-bottom: 6px;
+
+  .ConsoleLine {
+    font-size: 9px;
+    color: $text;
+  }
 }
 
 .ConsoleControls {

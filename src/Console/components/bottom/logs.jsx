@@ -5,7 +5,7 @@ export const Logs = () => {
 
   return (
     <div className={'ConsoleLogs'}>
-      { lines.map(line => <p key={line}>{line}</p>) }
+      { lines.map(line => <p key={line} className={'ConsoleLine'}>{line}</p>) }
     </div>
   )
 }

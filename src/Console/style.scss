@@ -1,0 +1,79 @@
+
+@import '../colors';
+
+.ConsoleContainer {
+  position: absolute;
+  z-index: 9;
+  border-radius: 4px;
+  background-color: $primary;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $borderDark;
+  min-width: 110px;
+  min-height: 100px; // todo! fix this later on
+
+  width: 400px;
+  height: 300px;
+
+  resize: both;
+  overflow: hidden;
+}
+
+.ConsoleHeader {
+  color: $secondary;
+  width: 100%;
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 12px;
+
+  .ConsoleHeaderTitle {
+    font-size: 16px;
+  }
+
+  .ConsoleHeaderX {
+    font-size: 16px;
+    float: right;
+  }
+}
+
+.ConsoleBottom {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 14px;
+}
+
+.ConsoleLogs {
+  background-color: $primaryDark;
+  width: 100%;
+  height: 100%;
+  padding-left: 2px;
+  border: 1px solid $borderDark;
+  margin-bottom: 6px;
+
+  .ConsoleLine {
+    font-size: 9px;
+    color: $text;
+  }
+}
+
+.ConsoleControls {
+  width: 100%;
+  display: flex;
+  margin-bottom: 8px;
+
+  .CommandInput {
+    background-color: $input;
+    border: 1px solid $borderDark;
+    height: 24px;
+    min-width: 4px;
+    flex-grow: 1;
+  }
+
+  .CommandSubmit {
+    min-width: 60px;
+    margin-left: 10px;
+  }
+}

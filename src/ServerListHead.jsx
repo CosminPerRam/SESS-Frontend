@@ -44,13 +44,13 @@ export const ServerListHead = () => {
     <thead className='Headings'>
       <tr>
         <td className='IconHeading'>
-          <img src={iconPasswordColumn}/>
+          <img src={iconPasswordColumn} alt={'Is password protected?'}/>
         </td>
         <td className='IconHeading'>
-          <img src={iconRobotronColumn}/>
+          <img src={iconRobotronColumn} alt={'Is secured?'}/>
         </td>
         <td className='IconHeading'>
-          <img src={iconReplayColumn}/>
+          <img src={iconReplayColumn} alt={'Has replay?'}/>
         </td>
         <td className='Heading servers' id={'server'}>
           Servers

@@ -1,8 +1,8 @@
 import { TabButton } from "./TabButton"
 export const NavBar = () => {
     return (
-        <div class='NavBar' >
-            <div class='NavButtons'>
+        <div className='NavBar' >
+            <div className='NavButtons'>
             <TabButton title={'Internet'} />
             <TabButton title={'Favorites'} />
             <TabButton title={'History'} />

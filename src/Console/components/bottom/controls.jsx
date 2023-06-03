@@ -9,14 +9,14 @@ export const Controls = () => {
   const onClick = useCallback(() => {
     addLine({ text: `Input: ${command}`, color: '#00ff00' })
     setCommand('');
-  }, [command]);
+  }, [addLine, setCommand, command]);
 
   const updateCommand = useCallback((e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
       onClick();
     }
-  }, [command]);
+  }, [onClick]);
 
   return (
     <div className={'ConsoleControls'}>

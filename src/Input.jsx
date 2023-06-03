@@ -1,8 +1,8 @@
 export const Input = ({title, style}) => {
     return (
-        <div class='DropDown'>
+        <div className='DropDown'>
             {title}
-            <input type='search' class='Input' style={style}/>
+            <input type='search' className='Input' style={style}/>
         </div>
     )
 }

@@ -4,7 +4,7 @@ import { Title } from "./Title"
 
 export const TitleBar = () => {
     return (
-        <div class='TitleBar'>
+        <div className='TitleBar'>
             <Title title={'Servers'} />
             <FontAwesomeIcon icon={faXmark} style={{ fontSize: '12px' }} />
         </div>

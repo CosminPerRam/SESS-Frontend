@@ -3,7 +3,7 @@ import { Middle } from "./Middle"
 import { Bottom } from "./Bottom"
 export const Settings = () => {
     return (
-        <div class='Settings' >
+        <div className='Settings' >
             <Top />
             <Middle />
             <Bottom />

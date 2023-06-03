@@ -7,13 +7,13 @@ export const ServerListData = ({ servers }) => {
     <tbody>
       <tr>
         <td className='IconEntry'>
-          <img src={iconPasswordColumn}/>
+          <img src={iconPasswordColumn} alt={'Is password protected?'}/>
         </td>
         <td className='IconEntry'>
-          <img src={iconRobotronColumn}/>
+          <img src={iconRobotronColumn} alt={'Is secured?'}/>
         </td>
         <td className='IconEntry'>
-          <img src={iconReplayColumn}/>
+          <img src={iconReplayColumn} alt={'Has replay?'}/>
         </td>
         <td className='Entry servers'>Servers</td>
         <td className='Entry games'>Game</td>

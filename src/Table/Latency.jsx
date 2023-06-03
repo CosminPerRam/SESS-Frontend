@@ -1,12 +1,11 @@
 import { Tags } from "./Tags"
 
-export const Latency = () => {
+export const Latency = ({data}) => {
     return (
         <div class='Layer' style={{ minWidth: '150px' }}>
             <div class='texts'>
                 <div class='heading'>Latency</div>
-                <div class='text'>Servers</div>
-                <div class='text'>Servers</div>
+                {data.map(element => <div class='text'>{element.latency}</div>)}
             </div>
             <Tags />
         </div>

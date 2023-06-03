@@ -282,7 +282,6 @@ option {
   flex-direction: row-reverse;
   direction: rtl;
   z-index: 2;
-  padding-left: 100px;
   
 }
 .Layer::-webkit-resizer {
@@ -299,9 +298,18 @@ option {
   font-size: 11px;
   transform: rotateX(180deg);
   color: $textLight;
+  text-overflow: ellipsis;
 }
 
 .heading {
   border-right: 2px solid $borderLight;
   color: $primary;
+  text-overflow: ellipsis;
+}
+
+.text {
+  text-overflow: ellipsis;
+  height: 15px;
+  overflow: hidden;
+  width:fit-content;
 }

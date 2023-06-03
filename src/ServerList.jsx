@@ -63,6 +63,26 @@ const DATA = [
         is_mod: true,
         //mod_data: Option<ModData>,
         latency: '52'
+    },
+    {
+        protocol: 'i32',
+        name: 'Sex4',
+        map: 'Dust5',
+        folder: 'folder2',
+        game: 'Counter-Strike 4 Counter-Strike 4 Counter-Strike 4 Counter-Strike 4',
+        appid: 'i32',
+        players_online: '10',
+        players_maximum: '35',
+        players_bots: '8',
+        //server_type: Server,
+        //environment_type: Environment,
+        has_password: true,
+        vac_secured: true,
+        version: 'Strin',
+        //extra_data: Option<ExtraData>,
+        is_mod: true,
+        //mod_data: Option<ModData>,
+        latency: '53'
     }
 ]
 
@@ -70,7 +90,7 @@ export const ServerList = () => {
     return (
         <div class='ServerList' >
             <div class='head'></div>
-            <Table />
+            <Table data={DATA} />
         </div>
     )
 }

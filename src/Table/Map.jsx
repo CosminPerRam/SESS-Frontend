@@ -1,14 +1,13 @@
 import { Latency } from "./Latency"
 
-export const Map = () => {
+export const Map = ({data}) => {
     return (
         <div class='Layer' style={{ minWidth: '200px' }}>
             <div class='texts'>
                 <div class='heading'>Map</div>
-                <div class='text'>Servers</div>
-                <div class='text'>Servers</div>
+                {data.map(element => <div class='text'>{element.map}</div>)}
             </div>
-            <Latency />
+            <Latency data={data}/>
         </div>
     )
 }

@@ -1,9 +1,9 @@
 import { Servers } from "./Servers"
 
-export const Table = () => {
+export const Table = ({data}) => {
     return (
         <div class='Table'>
-            <Servers />
+            <Servers data={data}/>
         </div>
     )
 }

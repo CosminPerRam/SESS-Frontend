@@ -1,14 +1,13 @@
 import { Game } from "./Game"
 
-export const Servers = () => {
+export const Servers = ({data}) => {
     return (
         <div class='Layer first' style={{ minWidth: '400px' }}>
             <div class='texts'>
                 <div class='heading'>Servers</div>
-                <div class='text'>Servers</div>
-                <div class='text'>Servers</div>
+                {data.map(element => <div class='text'>{element.name}</div>)}
             </div>
-            <Game />
+            <Game data={data}/>
         </div>
     )
 }

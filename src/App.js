@@ -6,15 +6,15 @@ import {Console} from "./Console";
 
 function App() {
   return (
-    <ApolloConfiguration>
-      <body>
+    <div className={'App'}>
+      <ApolloConfiguration>
         <Console />
         <TitleBar/>
         <NavBar/>
         <Content/>
         <div className='TipBar'></div>
-      </body>
-    </ApolloConfiguration>
+      </ApolloConfiguration>
+    </div>
   );
 }
 

@@ -262,26 +262,46 @@ option {
   color: $primary;
   border: 1px solid $borderLight;
 }
-.Heading {
-  @extend .BaseHeading;
+
+.AnElement {
   font-size: 11px;
   text-align: left;
   padding-left: 4px;
   text-overflow: ellipsis;
-  min-width: 50px;
+  min-width: 60px;
+  display: inline;
 }
-.ResizableHeading {
-  @extend .Heading;
-  resize: inline;
-  overflow: hidden;
-}
-.ResizableHeading::-webkit-resizer {
-  background-color: transparent;
-}
-.IconHeading {
+
+.Heading {
   @extend .BaseHeading;
+  @extend .AnElement;
+}
+
+.EntryHeading {
+  background-color: $primaryDark;
+  font-weight: 100;
+  color: $secondary;
+  border: 1px solid $primaryDark;
+}
+
+.Entry {
+  @extend .EntryHeading;
+  @extend .AnElement;
+}
+
+.AnIcon {
   font-size: 12px;
   width: 15px;
+}
+
+.IconHeading {
+  @extend .BaseHeading;
+  @extend .AnIcon;
+}
+
+.IconEntry {
+  @extend .EntryHeading;
+  @extend .AnIcon;
 }
 
 table {
@@ -294,4 +314,12 @@ tr {
 }
 td:last-child {
   flex-grow: 1;
+}
+
+.Dragger{
+  cursor: col-resize;
+  height: 100%;
+  float: right;
+  width: 8px;
+  z-index: 1;
 }

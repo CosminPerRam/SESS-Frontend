@@ -1,35 +1,45 @@
-import iconRobotronColumn from './iconRobotronColumn.png'
-import iconPasswordColumn from './iconPasswordColumn.png'
-import iconReplayColumn from './iconReplayColumn.png'
+import {ServerListHead} from "./ServerListHead";
+import {ServerListData} from "./ServerListData";
+
+const DATA = [
+    {
+        protocol: 21,
+        name: 'This is a server!',
+        map: 'ctf_2fort',
+        folder: 'tf2',
+        game: 'Team Fortress',
+        appid: 440,
+        players_online: 2,
+        players_maximum: 32,
+        players_bots: 3,
+        has_password: false,
+        vac_secured: true,
+        version: "2023.06.03",
+        is_mod: false,
+    },
+    {
+        protocol: 21,
+        name: 'My private server',
+        map: 'cp_orange_x7',
+        folder: 'tf2',
+        game: 'Team Fortress',
+        appid: 440,
+        players_online: 1,
+        players_maximum: 2,
+        players_bots: 0,
+        has_password: true,
+        vac_secured: true,
+        version: "2023.06.03",
+        is_mod: false,
+    }
+]
 
 export const ServerList = () => {
     return (
-        <div class='ServerList' >
-            <table class='ServersTable' >
-                <thead class='Headings'>
-                    <tr>
-                        <td class='IconHeading'>
-                            <img src={iconPasswordColumn} />
-                        </td>
-                        <td class='IconHeading'>
-                            <img src={iconRobotronColumn} />
-                        </td>
-                        <td class='IconHeading'>
-                            <img src={iconReplayColumn} />
-                        </td>
-                        <td class='ResizableHeading'>Servers</td>
-                        <td class='ResizableHeading'>Game</td>
-                        <td class='Heading'>Players</td>
-                        <td class='Heading'>Bots</td>
-                        <td class='ResizableHeading'>Map</td>
-                        <td class='Heading'>Latency</td>
-                        <td class='Heading'>Tags</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    </tr>
-                </tbody>
+        <div className='ServerList' >
+            <table className='ServersTable' >
+                <ServerListHead />
+                <ServerListData servers={DATA} />
             </table>
         </div>
     )

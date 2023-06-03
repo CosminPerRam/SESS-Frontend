@@ -1,11 +1,11 @@
 import './style.scss'
 import Draggable from "react-draggable";
-import {faXmark} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {Button} from "../Button";
 import {useEffect, useState} from "react";
+import {ContextProvider} from "./context";
+import {Header} from "./components/header";
+import {Bottom} from "./components/bottom";
 
-export const Console = () => {
+export const Console = ({children}) => {
   const [hidden, setHidden] = useState(true);
 
   useEffect(() => {
@@ -16,29 +16,19 @@ export const Console = () => {
   }, [setHidden, hidden]);
 
   return (
-    <div hidden={hidden}>
-      <Draggable
-        handle=".ConsoleHeader"
-        defaultPosition={{x: 320, y: 110}}
-      >
-        <div className={'ConsoleContainer'}>
-          <div className={'ConsoleHeader'}>
-            <span className={'ConsoleHeaderTitle'}>
-              Console
-            </span>
-            <FontAwesomeIcon icon={faXmark} className={'ConsoleHeaderX'} onClick={() => setHidden(true)}/>
+    <ContextProvider>
+      <div hidden={hidden}>
+        <Draggable
+          handle=".ConsoleHeader"
+          defaultPosition={{x: 320, y: 110}}
+        >
+          <div className={'ConsoleContainer'}>
+            <Header onCloseClick={() => setHidden(true)}/>
+            <Bottom />
           </div>
-          <div className={'ConsoleBottom'}>
-            <div className={'ConsoleLogs'}>
-
-            </div>
-            <div className={'ConsoleControls'}>
-              <input type='search' className='CommandInput'/>
-              <Button title={'Submit'} className={'CommandSubmit'}/>
-            </div>
-          </div>
-        </div>
-      </Draggable>
-    </div>
+        </Draggable>
+      </div>
+      {children}
+    </ContextProvider>
   )
 }

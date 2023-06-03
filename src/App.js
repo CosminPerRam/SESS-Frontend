@@ -8,11 +8,12 @@ function App() {
   return (
     <div className={'App'}>
       <ApolloConfiguration>
-        <Console />
-        <TitleBar/>
-        <NavBar/>
-        <Content/>
-        <div className='TipBar'></div>
+        <Console>
+          <TitleBar/>
+          <NavBar/>
+          <Content/>
+          <div className='TipBar'></div>
+        </Console>
       </ApolloConfiguration>
     </div>
   );

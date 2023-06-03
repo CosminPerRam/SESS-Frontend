@@ -7,7 +7,7 @@ export const Controls = () => {
   const [command, setCommand] = useState('');
 
   const onClick = useCallback(() => {
-    addLine(command)
+    addLine({ text: `Input: ${command}`, color: '#00ff00' })
     setCommand('');
   }, [command]);
 

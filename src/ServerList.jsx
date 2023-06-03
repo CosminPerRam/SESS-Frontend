@@ -1,65 +1,76 @@
 import iconRobotronColumn from './iconRobotronColumn.png'
 import iconPasswordColumn from './iconPasswordColumn.png'
 import iconReplayColumn from './iconReplayColumn.png'
+import { Table } from './Table'
+
+const DATA = [
+    {
+        protocol: 'i32',
+        name: 'Sex',
+        map: 'Dust2',
+        folder: 'folder2',
+        game: 'Counter-Strike',
+        appid: 'i32',
+        players_online: '7',
+        players_maximum: '32',
+        players_bots: '5',
+        //server_type: Server,
+        //environment_type: Environment,
+        has_password: true,
+        vac_secured: true,
+        version: 'Strin',
+        //extra_data: Option<ExtraData>,
+        is_mod: true,
+        //mod_data: Option<ModData>,
+        latency: '50'
+    },
+    {
+        protocol: 'i32',
+        name: 'Sex2',
+        map: 'Dust3',
+        folder: 'folder2',
+        game: 'Counter-Strike 2',
+        appid: 'i32',
+        players_online: '8',
+        players_maximum: '33',
+        players_bots: '6',
+        //server_type: Server,
+        //environment_type: Environment,
+        has_password: true,
+        vac_secured: true,
+        version: 'Strin',
+        //extra_data: Option<ExtraData>,
+        is_mod: true,
+        //mod_data: Option<ModData>,
+        latency: '51'
+    },
+    {
+        protocol: 'i32',
+        name: 'Sex3',
+        map: 'Dust4',
+        folder: 'folder2',
+        game: 'Counter-Strike 3',
+        appid: 'i32',
+        players_online: '9',
+        players_maximum: '34',
+        players_bots: '7',
+        //server_type: Server,
+        //environment_type: Environment,
+        has_password: true,
+        vac_secured: true,
+        version: 'Strin',
+        //extra_data: Option<ExtraData>,
+        is_mod: true,
+        //mod_data: Option<ModData>,
+        latency: '52'
+    }
+]
 
 export const ServerList = () => {
     return (
         <div class='ServerList' >
             <div class='head'></div>
-            <div class='Table'>
-
-                <div class='Layer first' style={{minWidth: '400px'}}>
-                    <div class='texts'>
-                        <div class='heading'>Servers</div>
-                        <div class='text'>Servers</div>
-                        <div class='text'>Servers</div>
-                    </div>
-                    <div class='Layer' style={{minWidth: '350px'}}>
-                        <div class='texts'>
-                            <div class='heading'>Game</div>
-                            <div class='text'>Servers</div>
-                            <div class='text'>Servers</div>
-                        </div>
-                        <div class='Layer' style={{minWidth: '300px'}}>
-                            <div class='texts'>
-                                <div class='heading'>Players</div>
-                                <div class='text'>Servers</div>
-                                <div class='text'>Servers</div>
-                            </div>
-                            <div class='Layer' style={{minWidth: '250px'}}>
-                                <div class='texts'>
-                                    <div class='heading'>Bots</div>
-                                    <div class='text'>Servers</div>
-                                    <div class='text'>Servers</div>
-                                </div>
-                                <div class='Layer' style={{minWidth: '200px'}}>
-                                    <div class='texts'>
-                                        <div class='heading'>Map</div>
-                                        <div class='text'>Servers</div>
-                                        <div class='text'>Servers</div>
-                                    </div>
-                                    <div class='Layer' style={{minWidth: '150px'}}>
-                                        <div class='texts'>
-                                            <div class='heading'>Latency</div>
-                                            <div class='text'>Servers</div>
-                                            <div class='text'>Servers</div>
-                                        </div>
-                                        <div class='Layer' style={{minWidth: '50px'}}>
-                                            <div class='texts'>
-                                                <div class='heading'>Tags</div>
-                                                <div class='text'>Servers</div>
-                                                <div class='text'>Servers</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <Table />
         </div>
     )
 }

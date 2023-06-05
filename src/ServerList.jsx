@@ -1,5 +1,5 @@
 import {ServerListHead} from "./ServerListHead";
-import {ServerListData} from "./ServerListData";
+import {DataEntry} from "./DataEntry";
 
 const DATA = [
     {
@@ -14,6 +14,7 @@ const DATA = [
         players_bots: 3,
         has_password: false,
         vac_secured: true,
+        supports_replays: false,
         version: "2023.06.03",
         is_mod: false,
     },
@@ -29,6 +30,7 @@ const DATA = [
         players_bots: 0,
         has_password: true,
         vac_secured: true,
+        supports_replays: false,
         version: "2023.06.03",
         is_mod: false,
     }
@@ -39,7 +41,7 @@ export const ServerList = () => {
         <div className='ServerList' >
             <table className='ServersTable' >
                 <ServerListHead />
-                <ServerListData servers={DATA} />
+                {DATA.map(entry => <DataEntry entry={entry} />)}
             </table>
         </div>
     )

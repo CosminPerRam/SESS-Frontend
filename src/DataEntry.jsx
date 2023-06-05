@@ -6,11 +6,11 @@ export const DataEntry = ({ entry }) => {
   return (
     <tbody>
       <tr>
-        {entry.has_password ? <td className='IconEntry'>
+        {entry.has_password ? <td className='IconEntry' alt={'Is password protected?'}>
           <img src={iconPasswordColumn} /></td> : <td className='IconEntry'></td>}
-        {entry.vac_secured ? <td className='IconEntry'>
+        {entry.vac_secured ? <td className='IconEntry' alt={'Is secured?'}>
           <img src={iconRobotronColumn} /></td> : <td className='IconEntry'></td>}
-        {entry.supports_replays ? <td className='IconEntry'>
+        {entry.supports_replays ? <td className='IconEntry' alt={'Has replay?'}>
           <img src={iconReplayColumn} /></td> : <td className='IconEntry'></td>}
         <td className='Entry servers'>{entry.name}</td>
         <td className='Entry games'>{entry.game}</td>

@@ -1,1 +1,1 @@
-export const TopInput = () => <input type='search' class='TopInput' />
+export const TopInput = () => <input type='search' className='TopInput' />

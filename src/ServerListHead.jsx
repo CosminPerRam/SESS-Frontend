@@ -3,7 +3,7 @@ import iconPasswordColumn from "./iconPasswordColumn.png";
 import iconRobotronColumn from "./iconRobotronColumn.png";
 import iconReplayColumn from "./iconReplayColumn.png";
 
-export const ServerListHead = () => {
+const Dragger = ({controlId, changersName}) => {
   const [drag, setDrag] = useState(false);
 
   const handleStart = (e, id) => {
@@ -30,40 +30,42 @@ export const ServerListHead = () => {
   }
 
   return (
+    <div
+      className='Dragger'
+      draggable={true}
+      onDragStart={(e) => handleStart(e, controlId)}
+      onDrag={(e) => handleMove(e, changersName)}
+    />
+  )
+}
+
+export const ServerListHead = () => {
+  return (
     <thead className='Headings'>
       <tr>
         <td className='IconHeading'>
-          <img src={iconPasswordColumn}/>
+          <img src={iconPasswordColumn} alt={'Is password protected?'}/>
         </td>
         <td className='IconHeading'>
-          <img src={iconRobotronColumn}/>
+          <img src={iconRobotronColumn} alt={'Is secured?'}/>
         </td>
         <td className='IconHeading'>
-          <img src={iconReplayColumn}/>
+          <img src={iconReplayColumn} alt={'Has replay?'}/>
         </td>
         <td className='Heading servers' id={'server'}>
-          <span>Servers</span>
-          <div
-            className='Dragger'
-            draggable={true}
-            onDragStart={(e) => handleStart(e, "server")}
-            onDrag={(e) => handleMove(e, "servers")}
-          />
+          Servers
+          <Dragger controlId={'server'} changersName={'servers'} />
         </td>
-        <td className='Heading games' id={'game'}>Game <div
-          className='Dragger'
-          draggable={true}
-          onDragStart={(e) => handleStart(e, "game")}
-          onDrag={(e) => handleMove(e, "games")}
-        /></td>
+        <td className='Heading games' id={'game'}>
+          Game
+          <Dragger controlId={'game'} changersName={'games'} />
+        </td>
         <td className='Heading'>Players</td>
         <td className='Heading'>Bots</td>
-        <td className='Heading maps' id={'map'}>Map <div
-          className='Dragger'
-          draggable={true}
-          onDragStart={(e) => handleStart(e, "map")}
-          onDrag={(e) => handleMove(e, "maps")}
-        /></td>
+        <td className='Heading maps' id={'map'}>
+          Map
+          <Dragger controlId={'map'} changersName={'maps'} />
+        </td>
         <td className='Heading'>Latency</td>
         <td className='Heading'>Tags</td>
       </tr>

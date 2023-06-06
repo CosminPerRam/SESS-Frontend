@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Source Engine Server Searcher
+SESS is an Open Source project that aims to fully recreate the Source
+Engine Server Searcher (also named Community Server Browser) from
+Valve's Multiplayer Source Games like
+[TF2](https://store.steampowered.com/app/440/Team_Fortress_2/),
+[Half-Life 2: Deathmatch](https://store.steampowered.com/app/320/HalfLife_2_Deathmatch/),
+[CS:GO](https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/) and
+many others.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project is available over at [sess.online](https://sess.online).
 
-## Available Scripts
+# Frontend
+<...> to be filled by @Teooko
 
-In the project directory, you can run:
+Checkout the Backend code [here](https://github.com/CosminPerRam/SESS-Backend/).
 
-### `yarn start`
+# Capabilities
+**Note:** Some listed items might not be already implemented, but they are 
+surely on their way to be.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Join**: Double-click a server to directly join it!  
+**Filters**: Every filter option is here, find your perfect server today.  
+**Themes**: The site supports custom themes, meaning game-based themes such as 
+CSGO and HL2:D are here!  
+**Console**: As a fun addon, by pressing `~` you can bring up the console which 
+features debugging info as well as some additional commands.  
+**Favorites and history**: You can add a server to your favorites and joined servers 
+will be added to your history list, saving them based on your browser cookies.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Contributing 
+You have found something that is broken or not perfect enough? Open an issue today 
+with all the information that you can provide, and we will look into it as fast as 
+possible.  
+Contributions via pull requests are very welcomed.

@@ -1,7 +1,7 @@
 import {useState} from "react";
-import iconPasswordColumn from "./iconPasswordColumn.png";
-import iconRobotronColumn from "./iconRobotronColumn.png";
-import iconReplayColumn from "./iconReplayColumn.png";
+import {ReplayIcon} from "./icons/replay";
+import {RobotronIcon} from "./icons/robotron";
+import {PasswordIcon} from "./icons/password";
 
 const Dragger = ({controlId, changersName}) => {
   const [drag, setDrag] = useState(false);
@@ -44,13 +44,13 @@ export const ServerListHead = () => {
     <thead className='Headings'>
       <tr>
         <td className='IconHeading'>
-          <img src={iconPasswordColumn} alt={'Is password protected?'}/>
+          <PasswordIcon />
         </td>
         <td className='IconHeading'>
-          <img src={iconRobotronColumn} alt={'Is secured?'}/>
+          <RobotronIcon />
         </td>
         <td className='IconHeading'>
-          <img src={iconReplayColumn} alt={'Has replay?'}/>
+          <ReplayIcon />
         </td>
         <td className='Heading servers' id={'server'}>
           Servers

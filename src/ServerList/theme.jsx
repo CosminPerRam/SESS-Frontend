@@ -18,6 +18,10 @@ export const theme = {
       background-color: #49453D;
       color: #000000;
     }
+    
+    &:hover {
+      cursor: default;
+    }
   `,
   BaseCell: `
     height: 18px;

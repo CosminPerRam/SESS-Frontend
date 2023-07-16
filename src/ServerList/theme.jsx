@@ -1,7 +1,7 @@
 
 export const theme = {
   Table: `
-    --data-table-library_grid-template-columns: repeat(3, 16px) minmax(24px, 1fr) minmax(100px, 1fr) 80px 80px minmax(100px, 1fr) 80px minmax(80px, 1fr)
+    --data-table-library_grid-template-columns: repeat(3, 16px) minmax(24px, 1fr) minmax(100px, 1fr) 56px 40px minmax(100px, 1fr) 56px minmax(80px, 1fr)
   `,
   Header: ``,
   Body: ``,

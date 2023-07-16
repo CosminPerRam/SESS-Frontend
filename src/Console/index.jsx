@@ -9,10 +9,13 @@ export const Console = ({children}) => {
   const [hidden, setHidden] = useState(true);
 
   useEffect(() => {
-    window.addEventListener('keydown', e => {
+    const handleKeyDownEvent = e => {
       if (e.key === '`' && e.target.tagName !== 'INPUT')
         setHidden(!hidden);
-    });
+    };
+
+    window.addEventListener('keydown', handleKeyDownEvent);
+    return () => { window.removeEventListener('keydown', handleKeyDownEvent); }
   }, [setHidden, hidden]);
 
   const nodeRef = useRef(null);

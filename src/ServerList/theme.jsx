@@ -1,6 +1,8 @@
 
 export const theme = {
-  Table: ``,
+  Table: `
+    --data-table-library_grid-template-columns: repeat(3, 24px) minmax(24px, 1fr) minmax(60px, 1fr) 80px 80px minmax(120px, 1fr) 80px minmax(80px, 1fr)
+  `,
   Header: ``,
   Body: ``,
   BaseRow: ``,

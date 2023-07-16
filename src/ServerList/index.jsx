@@ -4,6 +4,7 @@ import {ServerListBody} from "./body";
 import {theme} from "./theme";
 import './styles.scss'
 import {useTheme} from "@emotion/react";
+import {SelectClickTypes, useRowSelect} from "@table-library/react-table-library/select";
 
 const DATA = [
     {
@@ -43,8 +44,16 @@ const DATA = [
 ];
 
 export const ServerList = () => {
+    const data = { nodes: DATA };
+
+    const select = useRowSelect(data, {
+        onChange: (action, state) => {
+            console.log(action, state);
+        }
+    });
+
     return (<div className={'ServerList'}>
-        <Table data={{nodes: DATA}} theme={theme}>
+        <Table data={data} theme={theme} select={select}>
             {(tableList) => (
               <>
                   <ServerListHeader amount={1457} blacklistedAmount={0}/>

@@ -11,6 +11,11 @@ export const theme = {
   Row: `
     color: #a39884;
     background-color: #221F1C;
+    
+    &.row-select-selected, &.row-select-single-selected {
+      background-color: #49453D;
+      color: #000000;
+    }
   `,
   BaseCell: `
     height: 18px;

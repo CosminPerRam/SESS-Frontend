@@ -1,8 +1,10 @@
-import {ServerListHead} from "./ServerListHead";
-import {DataEntry} from "./DataEntry";
+import {Table} from '@table-library/react-table-library/table';
+import {ServerListHeader} from "./header";
+import {ServerListBody} from "./body";
 
 const DATA = [
     {
+        id: '0',
         protocol: 21,
         name: 'This is a server!',
         map: 'ctf_2fort',
@@ -19,6 +21,7 @@ const DATA = [
         is_mod: false,
     },
     {
+        id: '1',
         protocol: 21,
         name: 'My private server',
         map: 'cp_orange_x7',
@@ -34,15 +37,15 @@ const DATA = [
         version: "2023.06.03",
         is_mod: false,
     }
-]
+];
 
 export const ServerList = () => {
-    return (
-        <div className='ServerList' >
-            <table className='ServersTable' >
-                <ServerListHead />
-                {DATA.map(entry => <DataEntry entry={entry} />)}
-            </table>
-        </div>
-    )
-}
+    return (<Table data={{nodes: DATA}}>
+        {(tableList) => (
+            <>
+                <ServerListHeader/>
+                <ServerListBody tableList={tableList}/>
+            </>
+        )}
+    </Table>);
+};

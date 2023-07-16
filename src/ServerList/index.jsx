@@ -52,7 +52,7 @@ export const ServerList = () => {
     });
 
     return (<div className={'ServerList'}>
-        <Table data={data} theme={theme} select={select} layout={{custom: true}}>
+        <Table data={data} theme={theme} select={select} layout={{custom: true, fixedHeader: true}}>
             {(tableList) => (
               <>
                   <ServerListHeader amount={1457} blacklistedAmount={0}/>

@@ -3,8 +3,7 @@ import {ServerListHeader} from "./header";
 import {ServerListBody} from "./body";
 import {theme} from "./theme";
 import './styles.scss'
-import {useTheme} from "@emotion/react";
-import {SelectClickTypes, useRowSelect} from "@table-library/react-table-library/select";
+import {useRowSelect} from "@table-library/react-table-library/select";
 
 const DATA = [
     {

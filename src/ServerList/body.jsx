@@ -3,6 +3,6 @@ import {ServerRow} from "./server";
 
 export const ServerListBody = ({tableList}) => {
   return (<Body>
-    {tableList.map(item => <ServerRow item={item} />)}
+    {tableList.map(item => <ServerRow item={item} key={item.id} />)}
   </Body>)
 }

@@ -10,11 +10,11 @@ export const ServerListHeader = ({amount, blacklistedAmount}) => {
         <HeaderCell><PasswordIcon /></HeaderCell>
         <HeaderCell><RobotronIcon /></HeaderCell>
         <HeaderCell><ReplayIcon /></HeaderCell>
-        <HeaderCell resize={{ minWidth: 200 }}>{`Servers (${amount}) (${blacklistedAmount} blacklisted)`}</HeaderCell>
-        <HeaderCell resize={{ minWidth: 200 }}>Game</HeaderCell>
+        <HeaderCell resize={{ minWidth: 24 }}>{`Servers (${amount}) (${blacklistedAmount} blacklisted)`}</HeaderCell>
+        <HeaderCell resize={{ minWidth: 100 }}>Game</HeaderCell>
         <HeaderCell>Players</HeaderCell>
         <HeaderCell>Bots</HeaderCell>
-        <HeaderCell resize={{ minWidth: 200 }}>Map</HeaderCell>
+        <HeaderCell resize={{ minWidth: 100 }}>Map</HeaderCell>
         <HeaderCell>Latency</HeaderCell>
         <HeaderCell>Tags</HeaderCell>
       </HeaderRow>

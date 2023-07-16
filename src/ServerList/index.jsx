@@ -1,9 +1,9 @@
 import {Table} from '@table-library/react-table-library/table';
 import {ServerListHeader} from "./header";
 import {ServerListBody} from "./body";
-import { useTheme } from '@table-library/react-table-library/theme';
-import { getTheme } from '@table-library/react-table-library/baseline';
+import {theme} from "./theme";
 import './styles.scss'
+import {useTheme} from "@emotion/react";
 
 const DATA = [
     {
@@ -43,19 +43,14 @@ const DATA = [
 ];
 
 export const ServerList = () => {
-    const theme = useTheme({
-        ...getTheme(),
-        Table: `
-        --data-table-library_grid-template-columns: 50px 50px 50px 90px;
-      `,
-    });
-
-    return (<Table data={{nodes: DATA}} theme={theme} layout={{ custom: true }}>
-        {(tableList) => (
-            <>
-                <ServerListHeader/>
-                <ServerListBody tableList={tableList}/>
-            </>
-        )}
-    </Table>);
+    return (<div className={'ServerList'}>
+        <Table data={{nodes: DATA}} theme={theme}>
+            {(tableList) => (
+              <>
+                  <ServerListHeader amount={1457} blacklistedAmount={0}/>
+                  <ServerListBody tableList={tableList}/>
+              </>
+            )}
+        </Table>
+    </div>);
 };

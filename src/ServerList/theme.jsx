@@ -1,7 +1,7 @@
 
 export const theme = {
   Table: `
-    --data-table-library_grid-template-columns: repeat(3, 24px) minmax(24px, 1fr) minmax(100px, 1fr) 80px 80px minmax(100px, 1fr) 80px minmax(80px, 1fr)
+    --data-table-library_grid-template-columns: repeat(3, 16px) minmax(24px, 1fr) minmax(100px, 1fr) 80px 80px minmax(100px, 1fr) 80px minmax(80px, 1fr)
   `,
   Header: ``,
   Body: ``,
@@ -25,15 +25,24 @@ export const theme = {
   `,
   BaseCell: `
     height: 18px;
-    padding-left: 6px;
-    padding-bottom: 1px;
     font-size: 10px;
-    text-align: left;
     font-weight: 100;
+    
+    &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3) {
+      padding: 2px;
+    }
+    &:nth-of-type(n+4) {
+      padding-left: 6px;
+    }
   `,
   HeaderCell: `
     border: 1px solid #8e8572;
-    padding-left: 4px;
+    &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3) {
+      padding: 0px;
+    }
+    &:nth-of-type(n+4) {
+      padding-left: 4px;
+    }
   `,
   Cell: ``,
 };

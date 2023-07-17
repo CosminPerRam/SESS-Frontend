@@ -56,7 +56,7 @@ export const ServerList = () => {
             {(tableList) => (
               <>
                   <ServerListHeader amount={1457} blacklistedAmount={0}/>
-                  <ServerListBody tableList={tableList}/>
+                  <ServerListBody tableList={tableList} select={select}/>
               </>
             )}
         </Table>

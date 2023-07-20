@@ -2,7 +2,7 @@
 import {Filters} from "./Filters";
 
 export const Content = () => {
-    return <div className='Divider'>
+    return <div className='Content'>
         <ServerList />
         <Filters />
     </div>

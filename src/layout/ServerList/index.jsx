@@ -1,5 +1,4 @@
 import {Table} from '@table-library/react-table-library/table';
-import './styles.scss'
 import { useRowSelect } from "@table-library/react-table-library/select";
 import { theme } from "./theme";
 import { Header } from './Header';

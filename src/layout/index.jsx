@@ -4,7 +4,7 @@ import {TipBar} from "./TipBar";
 import {Content} from "./Content";
 
 export const Layout = () => {
-    return <div>
+    return <div className={'Layout'}>
         <TitleBar/>
         <NavBar/>
         <Content />

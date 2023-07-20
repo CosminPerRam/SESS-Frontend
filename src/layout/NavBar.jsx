@@ -1,4 +1,5 @@
-import { TabButton } from "./TabButton"
+import {TabButton} from "../common/TabButton";
+
 export const NavBar = () => {
     return (
         <div className='NavBar' >
@@ -11,7 +12,6 @@ export const NavBar = () => {
             <TabButton title={'Friends'} />
             <TabButton title={'Blacklisted Servers'} />
             </div>
-            
         </div>
     )
 }

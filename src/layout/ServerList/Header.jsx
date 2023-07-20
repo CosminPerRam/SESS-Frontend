@@ -1,11 +1,11 @@
-import {Header, HeaderCell, HeaderRow} from "@table-library/react-table-library/table";
-import {PasswordIcon} from "../icons/password";
-import {RobotronIcon} from "../icons/robotron";
-import {ReplayIcon} from "../icons/replay";
+import {Header as TableHeader, HeaderCell, HeaderRow} from "@table-library/react-table-library/table";
+import {PasswordIcon} from "../../assets/icons/password";
+import {RobotronIcon} from "../../assets/icons/robotron";
+import {ReplayIcon} from "../../assets/icons/replay";
 
-export const ServerListHeader = ({amount, blacklistedAmount}) => {
+export const Header = ({amount, blacklistedAmount}) => {
   return (
-    <Header>
+    <TableHeader>
       <HeaderRow>
         <HeaderCell><PasswordIcon /></HeaderCell>
         <HeaderCell><RobotronIcon /></HeaderCell>
@@ -18,6 +18,6 @@ export const ServerListHeader = ({amount, blacklistedAmount}) => {
         <HeaderCell>Latency</HeaderCell>
         <HeaderCell>Tags</HeaderCell>
       </HeaderRow>
-    </Header>
+    </TableHeader>
   )
 }

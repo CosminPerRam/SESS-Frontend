@@ -1,9 +1,9 @@
 import {Table} from '@table-library/react-table-library/table';
-import {ServerListHeader} from "./header";
-import {ServerListBody} from "./body";
-import {theme} from "./theme";
 import './styles.scss'
-import {useRowSelect} from "@table-library/react-table-library/select";
+import { useRowSelect } from "@table-library/react-table-library/select";
+import { theme } from "./theme";
+import { Header } from './Header';
+import { Body } from './Body';
 
 const DATA = [
     {
@@ -55,8 +55,8 @@ export const ServerList = () => {
         <Table data={data} theme={theme} select={select} layout={{custom: true, fixedHeader: true}}>
             {(tableList) => (
               <>
-                  <ServerListHeader amount={1457} blacklistedAmount={0}/>
-                  <ServerListBody tableList={tableList}/>
+                  <Header amount={1457} blacklistedAmount={0}/>
+                  <Body tableList={tableList}/>
               </>
             )}
         </Table>

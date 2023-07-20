@@ -1,5 +1,5 @@
 import {useContext} from "react";
-import {ConsoleContext} from "./context";
+import {ConsoleContext} from "../context";
 
 export const useConsoleLines = () => {
   const { lines } = useContext(ConsoleContext);

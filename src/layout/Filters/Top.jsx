@@ -1,8 +1,7 @@
-import { DropDown } from "./DropDown"
-import { VerticalDivider } from "./VerticalDivider";
-import { TopInput } from "./TopInput";
-import { Button } from "./Button";
-
+import {DropDown} from "../../common/DropDown";
+import {VerticalDivider} from "../../common/VerticalDivider";
+import {TopInput} from "../../common/TopInput";
+import {Button} from "../../common/Button";
 export const Top = () => {
     const workshop = ['<All>', 'Workshop maps', 'Subscribed'];
     const tags = ['include', 'do not include'];

@@ -1,5 +1,4 @@
-import {useConsoleLines} from "../../use-console-lines";
-
+import {useConsoleLines} from "../../hooks/use-console-lines";
 export const Logs = () => {
   const { lines } = useConsoleLines();
 

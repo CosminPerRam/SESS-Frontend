@@ -1,6 +1,6 @@
-import {Button} from "../../../Button";
-import {useAddConsoleLine} from "../../use-add-console-line";
+import { Button } from "../../../common/Button";
 import {useCallback, useState} from "react";
+import {useAddConsoleLine} from "../../hooks/use-add-console-line";
 
 export const Controls = () => {
   const addLine = useAddConsoleLine();

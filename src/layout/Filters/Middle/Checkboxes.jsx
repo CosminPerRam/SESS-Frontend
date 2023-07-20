@@ -1,4 +1,4 @@
-import { Checkbox } from "./Checkbox"
+import {Checkbox} from "../../../common/Checkbox";
 
 export const Checkboxes = () => {
     return (

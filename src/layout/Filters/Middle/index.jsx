@@ -1,6 +1,8 @@
-import { DropDown } from "./DropDown"
-import { Input } from "./Input"
-import { Checkboxes } from "./Checkboxes";
+
+import {Checkboxes} from "./Checkboxes";
+import {DropDown} from "../../../common/DropDown";
+import {Input} from "../../../common/Input";
+
 export const Middle = () => {
     const game = ['Team Fortress 2'];
     const latency = ['<All>', '< 50', '< 100', '< 150', '< 250', '< 350', '< 600'];

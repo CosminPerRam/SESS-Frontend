@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
-import { Title } from "./Title"
+import {Title} from "../common/Title";
+
 
 export const TitleBar = () => {
     return (

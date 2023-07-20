@@ -1,6 +1,6 @@
-import { Button } from "./Button"
+import {Button} from "../../../common/Button";
 
-export const Buttons = () => {
+export const ActionButtons = () => {
     return (
         <div className='Buttons'>
             <Button title={'Quick refresh'} />

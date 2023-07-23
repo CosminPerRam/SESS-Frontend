@@ -19,9 +19,9 @@ export const Controls = () => {
   }, [onClick]);
 
   return (
-    <div className={'ConsoleControls'}>
-      <input type='search' className='CommandInput' value={command} onKeyDown={updateCommand} onChange={(e) => setCommand(e.target.value)} />
-      <Button title={'Submit'} className={'CommandSubmit'} onClick={() => onClick()} />
+    <div className='console-controls'>
+      <input type='search' className='command-input' value={command} onKeyDown={updateCommand} onChange={(e) => setCommand(e.target.value)} />
+      <Button title={'Submit'} className='command-submit' onClick={() => onClick()} />
     </div>
   )
 }

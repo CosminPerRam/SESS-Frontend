@@ -24,11 +24,11 @@ export const Console = ({children}) => {
     <ContextProvider>
       <div hidden={hidden}>
         <Draggable
-          handle=".ConsoleHeader"
+          handle=".console-header"
           defaultPosition={{x: 320, y: 110}}
           nodeRef={nodeRef}
         >
-          <div className={'ConsoleContainer'} ref={nodeRef}>
+          <div className='console-container' ref={nodeRef}>
             <Header onCloseClick={() => setHidden(true)}/>
             <Bottom />
           </div>

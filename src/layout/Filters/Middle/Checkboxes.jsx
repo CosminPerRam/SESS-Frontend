@@ -2,7 +2,7 @@ import {Checkbox} from "../../../common/Checkbox";
 
 export const Checkboxes = () => {
     return (
-        <div className='Checkboxes'>
+        <div className='checkboxes'>
             <Checkbox title={'Server not full'} />
             <Checkbox title={'Has users playing'} />
             <Checkbox title={'Is not password protected'} />

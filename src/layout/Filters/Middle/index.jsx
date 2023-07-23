@@ -9,7 +9,7 @@ export const Middle = () => {
     const location = ['<All>', 'US - East', 'US - West', 'South America', 'Europe', 'Asia', 'Australia', 'Middle East', 'Africa'];
     const antiCheat = ['<All>', 'Secure', 'Not Secure'];
     return (
-        <div className='Middle'>
+        <div className='middle'>
             <DropDown label={'Game'} options={game} style={{width: '162px'}}/>
             <Input title={'Map'} style={{width: '162px'}}/>
             <Input title={'Map player count'} style={{width: '62px'}}/>

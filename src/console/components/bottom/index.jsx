@@ -3,7 +3,7 @@ import {Logs} from "./logs";
 
 export const Bottom = () => {
   return (
-    <div className={'ConsoleBottom'}>
+    <div className='console-bottom'>
       <Logs />
       <Controls />
     </div>

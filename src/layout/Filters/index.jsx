@@ -5,7 +5,7 @@ import {Bottom} from "./Bottom";
 
 export const Filters = () => {
     return (
-        <div className='Settings' >
+        <div className='settings' >
             <Top />
             <Middle />
             <Bottom />

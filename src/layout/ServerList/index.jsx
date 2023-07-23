@@ -50,7 +50,7 @@ export const ServerList = () => {
         }
     });
 
-    return (<div className={'ServerList'}>
+    return (<div className={'server-list'}>
         <Table data={data} theme={theme} select={select} layout={{custom: true, fixedHeader: true}}>
             {(tableList) => (
               <>

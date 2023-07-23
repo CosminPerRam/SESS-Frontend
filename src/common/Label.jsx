@@ -1,6 +1,6 @@
 export const Label = ({text}) => {
     return (
-        <div className='Label'>
+        <div className='label'>
             {text}
         </div>
     )

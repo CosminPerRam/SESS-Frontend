@@ -4,7 +4,7 @@ export const TabButton = ({ title }) => {
     const [clicked, setClicked] = useState(false)
 
     return (
-        <button className='TabButton' onClick={() => setClicked(!clicked)} style={clicked ? {
+        <button className='tab-button' onClick={() => setClicked(!clicked)} style={clicked ? {
             color: '$buttonTextLight',
             border: '1px solid $border',
             borderBottom: 'none',

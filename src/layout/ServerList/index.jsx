@@ -3,7 +3,6 @@ import { useRowSelect } from "@table-library/react-table-library/select";
 import { theme } from "./theme";
 import { Header } from './Header';
 import { Body } from './Body';
-import './server-list.scss'
 
 const DATA = [
     {

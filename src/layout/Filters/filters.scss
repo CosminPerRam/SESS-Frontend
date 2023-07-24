@@ -20,12 +20,13 @@
 }
 .bottom {
   min-height: 43px;
-
+  
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 .checkboxes {
+  margin-top: 7px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -37,4 +38,10 @@
 
   display: flex;
   gap: 1px;
+}
+#filters {
+  color: $buttonTextLight;
+}
+#filters:hover {
+ background-color: $secondary;
 }

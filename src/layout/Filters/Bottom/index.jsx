@@ -7,8 +7,8 @@ import {ActionButtons} from "./ActionButtons";
 export const Bottom = () => {
     return (
         <div className='bottom'>
-            <Checkbox title={'Simplified List'} style={{minWidth: '89px'}} />
-            <Button title={'Filters'} style={{width: '106px', marginLeft: '32px', color:'$buttonText', minWidth: '106px'}}/>
+            <Checkbox title={'Simplified List'} />
+            <Button title={'Filters'} id={'filters'} style={{width: '106px', marginLeft: '32px', color:'$buttonText', minWidth: '106px'}}/>
             <Label text={'Team Fortress 2;Team Fortress 2;Team Fortress 2;Team Fortress 2;'}/>
             <ActionButtons />
         </div>

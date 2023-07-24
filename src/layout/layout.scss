@@ -1,0 +1,62 @@
+﻿@import '../colors';
+
+.title-bar {
+  min-height: 38px;
+  
+  color: $text;
+  font-size: 12px;
+  
+  padding-left: 16px;
+  padding-right: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-bar {
+  min-height: 35px;
+  min-width: 585px;
+  
+  display: flex;
+}
+.content {
+  min-width: 650px;
+
+  border: solid 1px $border;
+  
+  padding-top: 7px;
+  margin-left: 8px;
+  margin-right: 8px;
+  
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+.layout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.server-list {
+  background-color: $primaryDark;
+  
+  min-height: 50px;
+  
+  border-top: 1px solid $borderDark;
+  border-bottom: 1px solid $borderDark;
+  
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0;
+}
+.tip-bar {
+  min-height: 34px;
+}
+.top-settings {
+  min-height: 36px;
+
+  padding-right: 4px;
+  
+  display: flex;
+  align-items: center;
+}

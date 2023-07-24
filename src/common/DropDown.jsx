@@ -1,6 +1,6 @@
 export const DropDown = ({label, options, style}) => {
     return (
-        <label className='drop-down'>
+        <label className='form-element'>
             {label}
             <select style={style}>
                 {options.map(option => <option value={option} key={option}>{option}</option>)}

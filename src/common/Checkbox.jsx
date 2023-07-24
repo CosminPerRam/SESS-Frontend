@@ -1,6 +1,6 @@
 export const Checkbox = ({ title, style }) => {
     return (
-        <div className='drop-down' style={style}>
+        <div className='form-element' style={style}>
             <input type='checkbox' className='checkbox' />
             {title}
         </div>

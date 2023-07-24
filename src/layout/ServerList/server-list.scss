@@ -1,0 +1,68 @@
+﻿@import '../../colors.scss';
+
+.base-heading {
+  background-color: $secondary;
+  font-weight: 100;
+  color: $primary;
+  border: 1px solid $borderLight;
+}
+.an-element {
+  font-size: 11px;
+  text-align: left;
+  padding-left: 4px;
+  text-overflow: ellipsis;
+  min-width: 60px;
+  display: inline;
+}
+
+.heading {
+  @extend .base-heading;
+  @extend .an-element;
+}
+
+.entry-heading {
+  background-color: $primaryDark;
+  font-weight: 100;
+  color: $secondary;
+  border: 1px solid $primaryDark;
+}
+
+.entry {
+  @extend .entry-heading;
+  @extend .an-element;
+}
+
+.an-icon {
+  font-size: 12px;
+  width: 15px;
+}
+
+.icon-heading {
+  @extend .base-heading;
+  @extend .an-icon;
+}
+
+.icon-entry {
+  @extend .entry-heading;
+  @extend .an-icon;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: 0;
+}
+tr {
+  display: flex;
+}
+td:last-child {
+  flex-grow: 1;
+}
+
+.dragger{
+  cursor: col-resize;
+  height: 100%;
+  float: right;
+  width: 8px;
+  z-index: 1;
+}

@@ -1,0 +1,40 @@
+﻿@import "../../colors";
+
+.top {
+  min-height: 40px;
+  min-width: 585px;
+}
+.middle {
+  min-height: 97px;
+  max-height: 97px;
+
+  padding-top: 12px;
+  padding-left: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.bottom {
+  min-height: 43px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.buttons {
+  min-width: 272px;
+
+  margin-right: 1px;
+
+  display: flex;
+  gap: 1px;
+}

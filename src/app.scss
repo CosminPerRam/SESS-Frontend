@@ -1,0 +1,20 @@
+@import 'colors';
+
+* {
+  box-sizing: border-box;
+  font-family: Tahoma, sans-serif;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing : none;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  overflow: hidden
+}
+.app {
+  background-color: $primary;
+  height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+}

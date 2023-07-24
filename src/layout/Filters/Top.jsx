@@ -2,6 +2,8 @@ import {DropDown} from "../../common/DropDown";
 import {VerticalDivider} from "../../common/VerticalDivider";
 import {TopInput} from "../../common/TopInput";
 import {Button} from "../../common/Button";
+import {HorizontalDivider} from "../../common/HorizontalDivider";
+
 export const Top = () => {
     const workshop = ['<All>', 'Workshop maps', 'Subscribed'];
     const tags = ['include', 'do not include'];
@@ -14,7 +16,7 @@ export const Top = () => {
                 <TopInput />
                 <Button title={'Add common tags...'} style={{minWidth: '144px'}}/>
             </div>
-            <hr className='horizontal-divider' />
+            <HorizontalDivider />
         </div>
     )
 }

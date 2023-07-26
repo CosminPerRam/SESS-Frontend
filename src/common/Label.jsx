@@ -1,7 +1,7 @@
-export const Label = ({text}) => {
+export const Label = ({name}) => {
     return (
-        <div className='label'>
-            {text}
-        </div>
+        <label className='label' id={name} for={name}>
+            {name}
+        </label>
     )
 }

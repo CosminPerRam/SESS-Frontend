@@ -3,6 +3,8 @@ import { useRowSelect } from "@table-library/react-table-library/select";
 import { theme } from "./theme";
 import { Header } from './Header';
 import { Body } from './Body';
+import {ContextMenu} from "../../ContextMenu";
+import {useEffect, useState} from "react";
 
 const DATA = [
     {
@@ -50,14 +52,32 @@ export const ServerList = () => {
         }
     });
 
-    return (<div className={'server-list'}>
+    const [clicked, setClicked] = useState(false);
+    const [points, setPoints] = useState({
+        x: 0,
+        y: 0,
+    });
+    useEffect(() => {
+        const handleClick = () => setClicked(false);
+        window.addEventListener("click", handleClick);
+        return () => {
+            window.removeEventListener("click", handleClick);
+        };
+    }, []);
+
+    
+
+    return <div className={'server-list'}>
         <Table data={data} theme={theme} select={select} layout={{custom: true, fixedHeader: true}}>
             {(tableList) => (
               <>
                   <Header amount={1457} blacklistedAmount={0}/>
-                  <Body tableList={tableList}/>
+                  <Body tableList={tableList} setClicked={setClicked} setPoints={setPoints}/>
               </>
             )}
         </Table>
-    </div>);
+        {clicked && (
+            <ContextMenu top={points.y} left={points.x} />
+        )}
+    </div>
 };

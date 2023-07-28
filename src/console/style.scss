@@ -27,13 +27,20 @@
   padding-right: 8px;
   margin-bottom: 12px;
 
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  
   .console-header-title {
     font-size: 16px;
+    white-space: nowrap;
+    text-overflow:ellipsis;
   }
 
   .console-header-x {
     font-size: 16px;
     float: right;
+    white-space: nowrap;
+    text-overflow:ellipsis;
   }
 }
 

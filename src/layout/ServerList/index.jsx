@@ -5,6 +5,7 @@ import { Header } from './Header';
 import { Body } from './Body';
 import {ContextMenu} from "../../ContextMenu";
 import {useEffect, useState} from "react";
+import {ServerInfo} from "../../ContextMenu/ServerInfo";
 
 const DATA = [
     {
@@ -15,14 +16,15 @@ const DATA = [
         folder: 'tf2',
         game: 'Team Fortress',
         appid: 440,
-        players_online: 2,
-        players_maximum: 32,
-        players_bots: 3,
-        has_password: false,
-        vac_secured: true,
-        supports_replays: false,
+        playersOnline: 0,
+        playersMaximum: 32,
+        playersBots: 0,
+        players: [],
+        hasPassword: false,
+        vacSecured: true,
+        supportsReplays: false,
         version: "2023.06.03",
-        is_mod: false,
+        isMod: false,
     },
     {
         id: '1',
@@ -32,14 +34,21 @@ const DATA = [
         folder: 'tf2',
         game: 'Team Fortress',
         appid: 440,
-        players_online: 1,
-        players_maximum: 2,
-        players_bots: 0,
-        has_password: true,
-        vac_secured: true,
-        supports_replays: false,
+        playersOnline: 1,
+        playersMaximum: 2,
+        playersBots: 0,
+        players: [
+            {
+                name: "Caca",
+                score: 23,
+                duration: 1200
+            }
+        ],
+        hasPassword: true,
+        vacSecured: true,
+        supportsReplays: false,
         version: "2023.06.03",
-        is_mod: false,
+        isMod: false,
     }
 ];
 
@@ -64,20 +73,24 @@ export const ServerList = () => {
             window.removeEventListener("click", handleClick);
         };
     }, []);
-
     
-
+    const [infoHidden, setInfoHidden] = useState(true);
+    const [item, setItem] = useState(null);
+    
     return <div className={'server-list'}>
         <Table data={data} theme={theme} select={select} layout={{custom: true, fixedHeader: true}}>
             {(tableList) => (
               <>
-                  <Header amount={1457} blacklistedAmount={0}/>
-                  <Body tableList={tableList} setClicked={setClicked} setPoints={setPoints}/>
+                  <Header amount={1457} blacklistedAmount={0} />
+                  <Body tableList={tableList} setClicked={setClicked} setPoints={setPoints} setItem={setItem}/>
               </>
             )}
         </Table>
         {clicked && (
-            <ContextMenu top={points.y} left={points.x} />
+            <ContextMenu top={points.y} left={points.x} setMenuHidden={setClicked} setInfoHidden={setInfoHidden} />
+        )}
+        {item && !infoHidden && (
+            <ServerInfo setHidden={setInfoHidden} item={item}/>
         )}
     </div>
 };

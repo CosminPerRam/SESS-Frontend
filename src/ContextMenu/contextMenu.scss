@@ -10,6 +10,8 @@
   color: $textLight;
   font-size: 11px;
   
+  
+  
 }
 
 .context-menu-element {
@@ -23,4 +25,81 @@
 .context-menu-element:hover {
   background-color: $hover;
   color: $textSelected;
+}
+
+.server-details-container {
+  position: absolute;
+  z-index: 9;
+  border-radius: 4px;
+  background-color: $primary;
+  display: flex;
+  flex-direction: column;
+  
+  min-height: 100px; // todo! fix this later on
+
+  width: 416px;
+  height: 300px;
+
+  resize: both;
+  overflow: hidden;
+  
+  min-width: 416px;
+}
+.server-details {
+  font-family: Tahoma, sans-serif;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing : none;
+  font-size: 14px;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: row;
+  
+  padding-left: 23px;
+}
+
+.server-detail-names {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 4px;
+  color: $textDark;
+}
+
+.server-detail-values {
+  
+  color: $textLight;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+}
+.server-detail-value {
+  max-height: 24px;
+  min-height: 24px;
+  
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+
+.server-detail-name {
+  max-height: 24px;
+  min-height: 24px;
+
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+.server-detail-value:nth-child(2) {
+  position: relative;
+  top: -2px;
+  width: 260px;
+  padding-top: 1px;
+  background-color: $input;
+
+  margin-right: 7px;
+
+  border: 1px solid $borderDark;
+
+  flex-grow: 1;
+  
+  color: $textDark;
 }

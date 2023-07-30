@@ -1,7 +1,7 @@
 
-export const theme = {
+export const theme = sizing => ({
   Table: `
-    --data-table-library_grid-template-columns: repeat(3, 16px) minmax(24px, 1fr) minmax(100px, 1fr) 56px 40px minmax(100px, 1fr) 56px minmax(80px, 1fr);
+    --data-table-library_grid-template-columns: ${sizing};
     height: auto;
     max-height: 100%;
   `,
@@ -47,4 +47,4 @@ export const theme = {
     }
   `,
   Cell: ``,
-};
+});

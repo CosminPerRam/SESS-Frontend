@@ -78,7 +78,7 @@ export const ServerList = () => {
     const [item, setItem] = useState(null);
     
     return <div className={'server-list'}>
-        <Table data={data} theme={theme} select={select} layout={{custom: true, fixedHeader: true}}>
+        <Table data={data} theme={theme("repeat(3, 16px) minmax(24px, 1fr) minmax(100px, 1fr) 56px 40px minmax(100px, 1fr) 56px minmax(80px, 1fr)")} select={select} layout={{custom: true, fixedHeader: true}}>
             {(tableList) => (
               <>
                   <Header amount={1457} blacklistedAmount={0} />

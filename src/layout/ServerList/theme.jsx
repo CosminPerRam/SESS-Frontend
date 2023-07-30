@@ -1,5 +1,5 @@
 
-export const theme = sizing => ({
+export const theme = (sizing, headerFirstThreePaddingLeft, baseFirstThreePaddingLeft) => ({
   Table: `
     --data-table-library_grid-template-columns: ${sizing};
     height: auto;
@@ -31,7 +31,7 @@ export const theme = sizing => ({
     font-weight: 100;
     
     &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3) {
-      padding: 2px;
+      padding: ${baseFirstThreePaddingLeft};
     }
     &:nth-of-type(n+4) {
       padding-left: 6px;
@@ -40,7 +40,7 @@ export const theme = sizing => ({
   HeaderCell: `
     border: 1px solid #8e8572;
     &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3) {
-      padding: 0px;
+      padding: ${headerFirstThreePaddingLeft};
     }
     &:nth-of-type(n+4) {
       padding-left: 4px;

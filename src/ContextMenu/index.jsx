@@ -1,4 +1,4 @@
-﻿import './contextMenu.scss'
+import './contextMenu.scss'
 
 export const ContextMenu = ({top, left, setMenuHidden, setInfoHidden}) => {
     return <div className="context-menu" style={{top: top + 'px', left: left + 'px'}}>

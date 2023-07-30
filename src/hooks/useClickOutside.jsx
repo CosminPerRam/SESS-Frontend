@@ -1,4 +1,4 @@
-﻿import {useEffect} from "react";
+import {useEffect} from "react";
 
 export const useClickOutside = (ref, setHidden) => {
     useEffect(() => {
@@ -11,5 +11,5 @@ export const useClickOutside = (ref, setHidden) => {
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [ref]);
+    }, [ref, setHidden]);
 }

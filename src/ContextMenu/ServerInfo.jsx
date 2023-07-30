@@ -1,4 +1,4 @@
-﻿import Draggable from "react-draggable";
+import Draggable from "react-draggable";
 import {Header} from "../console/components/header";
 import {ContextProvider} from "../console/context";
 import {useRef} from "react";

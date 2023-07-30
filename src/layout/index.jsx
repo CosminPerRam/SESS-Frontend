@@ -1,4 +1,4 @@
-﻿import {TitleBar} from "./TitleBar";
+import {TitleBar} from "./TitleBar";
 import {NavBar} from "./NavBar";
 import {TipBar} from "./TipBar";
 import {Content} from "./Content";

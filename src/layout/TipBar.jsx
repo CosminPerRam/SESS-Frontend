@@ -1,1 +1,1 @@
-﻿export const TipBar = () => <div className='tip-bar'></div>
+export const TipBar = () => <div className='tip-bar'></div>

@@ -1,4 +1,4 @@
-﻿import {ServerList} from "./ServerList";
+import {ServerList} from "./ServerList";
 import {Filters} from "./Filters";
 
 export const Content = () => {

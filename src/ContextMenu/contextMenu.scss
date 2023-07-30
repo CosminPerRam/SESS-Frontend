@@ -59,6 +59,12 @@
   padding-left: 23px;
 }
 
+.details-no-users {
+  color: $buttonText;
+  font-size: 14px;
+  margin-left: 6px;
+}
+
 .server-detail-names {
   display: flex;
   flex-direction: column;
@@ -68,13 +74,12 @@
 }
 
 .server-detail-values {
-  
   color: $textLight;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  
 }
+
 .server-detail-value {
   max-height: 24px;
   min-height: 24px;

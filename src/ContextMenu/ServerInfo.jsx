@@ -55,7 +55,7 @@ export const ServerInfo = ({children, setHidden, item}) => {
         <div>
             <Draggable
                 handle=".console-header"
-                defaultPosition={{x: 320, y: 110}}
+                defaultPosition={{x: 320, y: 0}}
                 nodeRef={nodeRef}
             >
                 <div className='server-details-container' ref={nodeRef}>
@@ -69,6 +69,7 @@ export const ServerInfo = ({children, setHidden, item}) => {
                     
                     <div className={"server-details-table"}>
                         <ServerInfoTable item={item}/>
+                        { item.players.length === 0 && <div className={"details-no-users"}>No users currently playing on this server.</div>}
                     </div>
                 </div>
             </Draggable>

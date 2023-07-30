@@ -8,7 +8,7 @@ const onDoubleClick = (item, event) => {
 }
 
 export const Row = ({item, setPoints, setClicked, setItem}) => {
-  const {id, name, map, game, players_online, players_maximum, players_bots, vac_secured, has_password, supports_replays} = item;
+  const {id, name, map, game, playersOnline, playersMaximum, playersBots, vacSecured, hasPassword, supportsReplays} = item;
   
   return <TableRow key={id} item={item} onDoubleClick={onDoubleClick} onContextMenu={(e) => {
     e.preventDefault();
@@ -19,13 +19,13 @@ export const Row = ({item, setPoints, setClicked, setItem}) => {
     });
     setItem(item);
   }}>
-    <Cell>{has_password ? <PasswordIcon /> : null}</Cell>
-    <Cell>{supports_replays ? <RobotronIcon /> : null}</Cell>
-    <Cell>{vac_secured ? <ReplayIcon /> : null}</Cell>
+    <Cell>{hasPassword ? <PasswordIcon /> : null}</Cell>
+    <Cell>{supportsReplays ? <RobotronIcon /> : null}</Cell>
+    <Cell>{vacSecured ? <ReplayIcon /> : null}</Cell>
     <Cell>{name}</Cell>
     <Cell>{game}</Cell>
-    <Cell>{`${players_online}/${players_maximum}`}</Cell>
-    <Cell>{players_bots}</Cell>
+    <Cell>{`${playersOnline}/${playersMaximum}`}</Cell>
+    <Cell>{playersBots}</Cell>
     <Cell>{map}</Cell>
     <Cell>{'Latency'}</Cell>
     <Cell>{'Tags'}</Cell>

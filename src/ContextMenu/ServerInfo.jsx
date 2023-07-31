@@ -8,6 +8,7 @@ import {ServerDetailValues} from "./ServerDetailValues";
 import {theme} from "../layout/ServerList/theme";
 import {Header as TableHeader, HeaderCell, HeaderRow, Table, Body as TableBody, Row as TableRow, Cell} from "@table-library/react-table-library/table";
 import {useRowSelect} from "@table-library/react-table-library/select";
+import {Button} from "../common/Button";
 
 const Row = ({item}) => {
     return (
@@ -63,13 +64,18 @@ export const ServerInfo = ({children, setHidden, item}) => {
                         setHidden(true)
                     }} title={"Game Info - " + item.name}/>
                     <div className="server-details">
-                        <ServerDetailNames items={["Name", "IP Address", "Game", "Map", "Players", "Valve Anti-Cheat", "Latency" ]} />
-                        <ServerDetailValues items={[item.name, "pula si caciula", item.game, item.map, `${item.playersOnline} / ${item.playersMaximum}`, item.vacSecured ? "Secure" : "Not Secure", "Pula si cacliula :o" ]} />
+                        <ServerDetailNames />
+                        <ServerDetailValues name={item.name}  ip={"pula si caciula"} game={item.game} map={item.map} players={`${item.playersOnline} / ${item.playersMaximum}`} vac={item.vacSecured ? "Secure" : "Not Secure"} latency={"Pula si cacliula :o"} />
                     </div>
                     
                     <div className={"server-details-table"}>
                         <ServerInfoTable item={item}/>
                         { item.players.length === 0 && <div className={"details-no-users"}>No users currently playing on this server.</div>}
+                    </div>
+                    <div className="context-menu-buttons">
+                        <Button title={"Join game"} style={{width: "80px"}}/>
+                        <Button title={"Refresh"} style={{width: "80px"}}/>
+                        <Button title={"Close"} style={{width: "80px"}}/>
                     </div>
                 </div>
             </Draggable>

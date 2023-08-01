@@ -71,6 +71,14 @@
   font-size: 11px;
 }
 
+.header_menu .form-element {
+  padding: 3px 12px 3px 4px;
+}
+
+.header_menu .form-element .checkmark {
+  margin-right: 2px;
+}
+
 .header_menu .form-element:hover {
   background-color: $hover;
 }

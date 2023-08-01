@@ -6,7 +6,7 @@ const Checkbox = ({title, checked, disabled, setHiddenColumns}) => {
   const changed = (checked) => {
     setHiddenColumns(previousState => ({
       ...previousState,
-      [title]: !checked
+      [title]: checked
     }))
   }
 

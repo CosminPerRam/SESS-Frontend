@@ -20,16 +20,16 @@ const CheckMark = () => {
   }} />
 }
 
-export const Checkbox = ({ title, formStyle, labelStyle }) => {
-    const [checked, setChecked] = useState(false);
+export const Checkbox = ({ title, formStyle, labelStyle, checked = false }) => {
+    const [check, setCheck] = useState(checked);
     
     return (
-        <div className='form-element' style={formStyle} onClick={() => setChecked(!checked)}>
+        <div className='form-element' style={formStyle} onClick={() => setCheck(!check)}>
             <div className="checkmark">
-                { checked ? <CheckMark/> : null }
+                { check ? <CheckMark/> : null }
             </div>
             
-            <Label name={title} onClick={() => setChecked(!checked)} style={labelStyle}/>
+            <Label name={title} onClick={() => setCheck(!check)} style={labelStyle}/>
         </div>
     )
 }

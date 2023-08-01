@@ -16,7 +16,7 @@ const Checkbox = ({title, checked, disabled, setHiddenColumns}) => {
 const makeFieldBuilder = (hiddenColumns) => ({name, disabled = false}) => ({
   name,
   disabled,
-  checked: hiddenColumns[name]
+  checked: !hiddenColumns[name]
 })
 
 export const HeaderMenu = ({top, left, setHidden, setHiddenColumns, hiddenColumns}) => {

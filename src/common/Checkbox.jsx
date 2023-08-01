@@ -1,8 +1,8 @@
 import {Label} from "./Label";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 const CheckMark = () => {
-  return <div style={{
+  return <div className={'checkmark_drawing'} style={{
     content: '',
     display: 'block',
     position: 'relative',
@@ -23,13 +23,10 @@ const CheckMark = () => {
 export const Checkbox = ({ title, formStyle, labelStyle, checked = false, disabled = false, onChanged }) => {
     const [check, setCheck] = useState(checked);
 
-    useEffect(() => {
-      onChanged && onChanged(check);
-    }, [onChanged, check]);
-
     const changed = () => {
       if(!disabled) {
         setCheck(!check);
+        onChanged(check);
       }
     }
     

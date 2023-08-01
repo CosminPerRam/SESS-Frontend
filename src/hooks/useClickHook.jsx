@@ -5,7 +5,7 @@ export const useClickHook = () => {
 
   useEffect(() => {
     const handleClick = (e) => {
-      if(e.target.className === 'form-element' || e.target?.parentNode?.className === 'form-element')
+      if(e.target.className === "checkmark_drawing" || e.target.className === 'form-element' || e.target?.parentNode?.className === 'form-element')
         return; // form-element can take click priority
 
       setPopupPoints(null)

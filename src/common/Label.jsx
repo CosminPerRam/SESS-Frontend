@@ -1,6 +1,6 @@
-export const Label = ({name, onClick}) => {
+export const Label = ({name, style, onClick}) => {
     return (
-        <label className='label' onClick={onClick}>
+        <label className='label' onClick={onClick} style={style}>
             {name}
         </label>
     )

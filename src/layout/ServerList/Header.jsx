@@ -2,10 +2,11 @@ import {Header as TableHeader, HeaderCell, HeaderRow} from "@table-library/react
 import {PasswordIcon} from "../../assets/icons/password";
 import {RobotronIcon} from "../../assets/icons/robotron";
 import {ReplayIcon} from "../../assets/icons/replay";
+import {contextMenuAction} from "../../helpers/contextMenuAction";
 
-export const Header = ({amount, blacklistedAmount}) => {
+export const Header = ({amount, blacklistedAmount, setPoints}) => {
   return (
-    <TableHeader>
+    <TableHeader onContextMenu={contextMenuAction({setPoints})}>
       <HeaderRow>
         <HeaderCell><PasswordIcon /></HeaderCell>
         <HeaderCell><RobotronIcon /></HeaderCell>

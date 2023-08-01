@@ -2,18 +2,10 @@ import {Cell, Row as TableRow} from "@table-library/react-table-library/table";
 import {PasswordIcon} from "../assets/icons/password";
 import {RobotronIcon} from "../assets/icons/robotron";
 import {ReplayIcon} from "../assets/icons/replay";
+import {contextMenuAction} from "../helpers/contextMenuAction";
 
 const onDoubleClick = (item, event) => {
   console.log('double clicked on' + item.name);
-}
-
-const contextMenuAction = ({setPoints, action}) => (e) => {
-  e.preventDefault();
-  setPoints({
-    x: e.pageX,
-    y: e.pageY,
-  });
-  action();
 }
 
 export const Row = ({item, setPoints, setItem}) => {

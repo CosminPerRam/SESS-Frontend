@@ -7,6 +7,8 @@ import {ContextMenu} from "../../ContextMenu";
 import {useState} from "react";
 import {ServerInfo} from "../../ContextMenu/ServerInfo";
 import {useClickHook} from "../../hooks/useClickHook";
+import {Checkbox} from "../../common/Checkbox";
+import {HeaderMenu} from "./HeaderMenu";
 
 const DATA = [
     {
@@ -63,6 +65,7 @@ export const ServerList = () => {
     });
 
     const { popupPoints, setPopupPoints } = useClickHook();
+    const { popupPoints: headerPoints, setPopupPoints: setHeaderPoints } = useClickHook();
     
     const [infoHidden, setInfoHidden] = useState(true);
     const [item, setItem] = useState(null);
@@ -71,7 +74,7 @@ export const ServerList = () => {
         <Table data={data} theme={theme("repeat(3, 16px) minmax(24px, 1fr) minmax(100px, 1fr) 56px 40px minmax(100px, 1fr) 56px minmax(80px, 1fr)", "0px", "2px")} select={select} layout={{custom: true, fixedHeader: true}}>
             {(tableList) => (
               <>
-                  <Header amount={1457} blacklistedAmount={0} />
+                  <Header amount={1457} blacklistedAmount={0} setPoints={setHeaderPoints} />
                   <Body tableList={tableList} setPoints={setPopupPoints} setItem={setItem}/>
               </>
             )}
@@ -82,5 +85,8 @@ export const ServerList = () => {
         {item && !infoHidden && (
             <ServerInfo setHidden={setInfoHidden} item={item}/>
         )}
+        {headerPoints && (
+            <HeaderMenu top={headerPoints.y} left={headerPoints.x} setHidden={setHeaderPoints} />
+          )}
     </div>
 };

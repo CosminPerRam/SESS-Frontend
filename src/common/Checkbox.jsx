@@ -24,8 +24,8 @@ export const Checkbox = ({ title, formStyle, labelStyle }) => {
     const [checked, setChecked] = useState(false);
     
     return (
-        <div className='form-element' style={formStyle} >
-            <div className="checkmark" onClick={() => setChecked(!checked)}>
+        <div className='form-element' style={formStyle} onClick={() => setChecked(!checked)}>
+            <div className="checkmark">
                 { checked ? <CheckMark/> : null }
             </div>
             

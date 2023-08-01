@@ -4,8 +4,9 @@ import { theme } from "./theme";
 import { Header } from './Header';
 import { Body } from './Body';
 import {ContextMenu} from "../../ContextMenu";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {ServerInfo} from "../../ContextMenu/ServerInfo";
+import {useClickHook} from "../../hooks/useClickHook";
 
 const DATA = [
     {
@@ -61,18 +62,7 @@ export const ServerList = () => {
         }
     });
 
-    const [clicked, setClicked] = useState(false);
-    const [points, setPoints] = useState({
-        x: 0,
-        y: 0,
-    });
-    useEffect(() => {
-        const handleClick = () => setClicked(false);
-        window.addEventListener("click", handleClick);
-        return () => {
-            window.removeEventListener("click", handleClick);
-        };
-    }, []);
+    const { popupPoints, setPopupPoints } = useClickHook();
     
     const [infoHidden, setInfoHidden] = useState(true);
     const [item, setItem] = useState(null);
@@ -82,12 +72,12 @@ export const ServerList = () => {
             {(tableList) => (
               <>
                   <Header amount={1457} blacklistedAmount={0} />
-                  <Body tableList={tableList} setClicked={setClicked} setPoints={setPoints} setItem={setItem}/>
+                  <Body tableList={tableList} setPoints={setPopupPoints} setItem={setItem}/>
               </>
             )}
         </Table>
-        {clicked && (
-            <ContextMenu top={points.y} left={points.x} setMenuHidden={setClicked} setInfoHidden={setInfoHidden} />
+        {popupPoints && (
+            <ContextMenu top={popupPoints.y} left={popupPoints.x} setMenuHidden={setPopupPoints} setInfoHidden={setInfoHidden} />
         )}
         {item && !infoHidden && (
             <ServerInfo setHidden={setInfoHidden} item={item}/>

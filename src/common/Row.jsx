@@ -7,18 +7,19 @@ const onDoubleClick = (item, event) => {
   console.log('double clicked on' + item.name);
 }
 
-export const Row = ({item, setPoints, setClicked, setItem}) => {
+const contextMenuAction = ({setPoints, action}) => (e) => {
+  e.preventDefault();
+  setPoints({
+    x: e.pageX,
+    y: e.pageY,
+  });
+  action();
+}
+
+export const Row = ({item, setPoints, setItem}) => {
   const {id, name, map, game, playersOnline, playersMaximum, playersBots, vacSecured, hasPassword, supportsReplays} = item;
   
-  return <TableRow key={id} item={item} onDoubleClick={onDoubleClick} onContextMenu={(e) => {
-    e.preventDefault();
-    setClicked(true);
-    setPoints({
-      x: e.pageX,
-      y: e.pageY,
-    });
-    setItem(item);
-  }}>
+  return <TableRow key={id} item={item} onDoubleClick={onDoubleClick} onContextMenu={contextMenuAction({setPoints, action: () => setItem(item)})}>
     <Cell>{hasPassword ? <PasswordIcon /> : null}</Cell>
     <Cell>{supportsReplays ? <RobotronIcon /> : null}</Cell>
     <Cell>{vacSecured ? <ReplayIcon /> : null}</Cell>

@@ -7,7 +7,6 @@ import {ContextMenu} from "../../ContextMenu";
 import {useState} from "react";
 import {ServerInfo} from "../../ContextMenu/ServerInfo";
 import {useClickHook} from "../../hooks/useClickHook";
-import {Checkbox} from "../../common/Checkbox";
 import {HeaderMenu} from "./HeaderMenu";
 
 const DATA = [
@@ -69,13 +68,27 @@ export const ServerList = () => {
     
     const [infoHidden, setInfoHidden] = useState(true);
     const [item, setItem] = useState(null);
+
+    const [hiddenColumns, setHiddenColumns] = useState({
+        Password: false,
+        Secure: false,
+        Replay: false,
+        Servers: false,
+        ["IP Address"]: true,
+        Game: false,
+        Players: false,
+        Bots: false,
+        Map: false,
+        Latency: false,
+        Tags: false,
+    });
     
     return <div className={'server-list'}>
         <Table data={data} theme={theme("repeat(3, 16px) minmax(24px, 1fr) minmax(100px, 1fr) 56px 40px minmax(100px, 1fr) 56px minmax(80px, 1fr)", "0px", "2px")} select={select} layout={{custom: true, fixedHeader: true}}>
             {(tableList) => (
               <>
-                  <Header amount={1457} blacklistedAmount={0} setPoints={setHeaderPoints} />
-                  <Body tableList={tableList} setPoints={setPopupPoints} setItem={setItem}/>
+                  <Header hiddenColumns={hiddenColumns} amount={1457} blacklistedAmount={0} setPoints={setHeaderPoints} />
+                  <Body hiddenColumns={hiddenColumns} tableList={tableList} setPoints={setPopupPoints} setItem={setItem}/>
               </>
             )}
         </Table>
@@ -86,7 +99,7 @@ export const ServerList = () => {
             <ServerInfo setHidden={setInfoHidden} item={item}/>
         )}
         {headerPoints && (
-            <HeaderMenu top={headerPoints.y} left={headerPoints.x} setHidden={setHeaderPoints} />
+            <HeaderMenu top={headerPoints.y} left={headerPoints.x} setHidden={setHeaderPoints} setHiddenColumns={setHiddenColumns} hiddenColumns={hiddenColumns} />
           )}
     </div>
 };

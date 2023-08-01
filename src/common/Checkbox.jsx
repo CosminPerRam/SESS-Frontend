@@ -25,7 +25,7 @@ export const Checkbox = ({ title, formStyle, labelStyle, checked = false, disabl
 
     useEffect(() => {
       onChanged && onChanged(check);
-    }, [check]);
+    }, [onChanged, check]);
 
     const changed = () => {
       if(!disabled) {

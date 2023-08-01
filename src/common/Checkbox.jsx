@@ -1,5 +1,5 @@
 import {Label} from "./Label";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const CheckMark = () => {
   return <div style={{
@@ -20,16 +20,26 @@ const CheckMark = () => {
   }} />
 }
 
-export const Checkbox = ({ title, formStyle, labelStyle, checked = false }) => {
+export const Checkbox = ({ title, formStyle, labelStyle, checked = false, disabled = false, onChanged }) => {
     const [check, setCheck] = useState(checked);
+
+    useEffect(() => {
+      onChanged && onChanged(check);
+    }, [check]);
+
+    const changed = () => {
+      if(!disabled) {
+        setCheck(!check);
+      }
+    }
     
     return (
-        <div className='form-element' style={formStyle} onClick={() => setCheck(!check)}>
+        <div className='form-element' style={formStyle} onClick={changed}>
             <div className="checkmark">
                 { check ? <CheckMark/> : null }
             </div>
             
-            <Label name={title} onClick={() => setCheck(!check)} style={labelStyle}/>
+            <Label name={title} onClick={changed} style={labelStyle}/>
         </div>
     )
 }

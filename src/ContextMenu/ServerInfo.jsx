@@ -3,8 +3,7 @@ import {Header} from "../console/components/header";
 import {ContextProvider} from "../console/context";
 import {useRef} from "react";
 import {useClickOutside} from "../hooks/useClickOutside";
-import {ServerDetailNames} from "./ServerDetailNames";
-import {ServerDetailValues} from "./ServerDetailValues";
+import {ServerDetails} from "./ServerDetails";
 import {theme} from "../layout/ServerList/theme";
 import {Header as TableHeader, HeaderCell, HeaderRow, Table, Body as TableBody, Row as TableRow, Cell} from "@table-library/react-table-library/table";
 import {useRowSelect} from "@table-library/react-table-library/select";
@@ -63,10 +62,8 @@ export const ServerInfo = ({children, setHidden, item}) => {
                     <Header onCloseClick={() => {
                         setHidden(true)
                     }} title={"Game Info - " + item.name}/>
-                    <div className="server-details">
-                        <ServerDetailNames />
-                        <ServerDetailValues name={item.name}  ip={"pula si caciula"} game={item.game} map={item.map} players={`${item.playersOnline} / ${item.playersMaximum}`} vac={item.vacSecured ? "Secure" : "Not Secure"} latency={"Pula si cacliula :o"} />
-                    </div>
+                    
+                    <ServerDetails name={item.name} ip={"pula si caciula"} game={item.game} map={item.map} players={`${item.playersOnline} / ${item.playersMaximum}`} vac={item.vacSecured ? "Secure" : "Not Secure"} latency={"Pula si cacliula :o"} />
                     
                     <div className={"server-details-table"}>
                         <ServerInfoTable item={item}/>

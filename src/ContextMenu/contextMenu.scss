@@ -10,113 +10,109 @@
   color: $textLight;
   font-size: 11px;
 }
-
 .context-menu-element {
   padding: 3px 8px 3px 5px;
 }
-
 .context-menu-element:hover {
   background-color: $hover;
   color: $textSelected;
 }
-
 .server-details-table {
+  background-color: $primaryDark;
+
+  min-height: 50px;
+  height: 100%;
+  
   margin-left: 24px;
   margin-right: 24px;
   margin-bottom: 32px;
-  background-color: $primaryDark;
-  min-height: 50px;
-  height: 100%;
 }
-
 .server-details-container {
-  position: absolute;
-  z-index: 9;
-  border-radius: 4px;
   background-color: $primary;
-  display: flex;
-  flex-direction: column;
-  
-  min-height: 440px;
-  
-  width: 416px;
-  height: 300px;
 
-  resize: both;
-  overflow: hidden;
-  
-  min-width: 416px;
-}
-.server-details {
+  border-radius: 4px;
+
   font-family: Tahoma, sans-serif;
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing : none;
   font-size: 14px;
   font-weight: lighter;
+  
+  min-height: 440px;
+  min-width: 416px;
+  width: 416px;
+  height: 300px;
+  
+  position: absolute;
+  z-index: 2;
+  
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  
+  resize: both;
+  overflow: hidden;
+}
+.server-details {
+  width: 400px;
+  
+  display: flex;
+  flex-direction: column;
   
   padding-left: 23px;
   margin-bottom: 25px;
 }
-
 .details-no-users {
   color: $buttonText;
   font-size: 14px;
   margin-left: 6px;
 }
-
-.server-detail-names {
+.server-detail-row {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding-right: 4px;
-  color: $textDark;
+  flex-direction: row;
 }
-
-.server-detail-values {
-  color: $textLight;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.server-detail-value {
-  max-height: 24px;
-  min-height: 24px;
-  
-  white-space: nowrap;
-  text-overflow:ellipsis;
-}
-
 .server-detail-name {
+  color: $textDark;
+  
   max-height: 24px;
   min-height: 24px;
+  width: 40%;
+  
+  display: flex;
+  justify-content: flex-end;
 
   white-space: nowrap;
   text-overflow:ellipsis;
 }
-.server-detail-value:nth-child(2) {
-  position: relative;
-  top: -2px;
-  width: 260px;
-  padding-top: 1px;
-  background-color: $input;
-
-  margin-right: 7px;
-
-  border: 1px solid $borderDark;
-
-  flex-grow: 1;
+.server-detail-value {
+  color: $textLight;
   
-  color: $textDark;
+  max-height: 24px;
+  min-height: 24px;
+  width: 100%;
+  
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  
+  margin-left: 7px;
 }
+.server-detail-row:nth-of-type(2) .server-detail-value {
+    background-color: $input;
+    color: $textDark;
 
+    border: 1px solid $borderDark;
+  
+    position: relative;
+    top: -2px;
+    
+    padding-top: 1px;
+    margin-right: 7px;
+}
 .context-menu-buttons {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   gap: 14px;
+  
   margin-right: 24px;
   margin-bottom: 16px;
 }

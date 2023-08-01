@@ -1,8 +1,8 @@
 import {Label} from "./Label";
 import {useState} from "react";
 
-const CheckMark = () => {
-  return <div className={'checkmark_drawing'} style={{
+const CheckMark = ({disabled}) => {
+  return <div style={{
     content: '',
     display: 'block',
     position: 'relative',
@@ -12,12 +12,11 @@ const CheckMark = () => {
     width: '5px',
     height: '6px',
 
-    border: 'solid white',
+    border: disabled ? 'solid #847A68' : 'solid white', //$textDark
     borderWidth: '0 3px 2px 0',
 
-    MsTransform: 'rotate(45deg)',
     transform: 'rotate(45deg)'
-  }} />
+  }} className={'checkmark_drawing'} />
 }
 
 export const Checkbox = ({ title, formStyle, labelStyle, checked = false, disabled = false, onChanged }) => {
@@ -33,10 +32,10 @@ export const Checkbox = ({ title, formStyle, labelStyle, checked = false, disabl
     return (
         <div className='form-element' style={formStyle} onClick={changed}>
             <div className="checkmark">
-                { check ? <CheckMark/> : null }
+                { check ? <CheckMark disabled={disabled}/> : null }
             </div>
             
-            <Label name={title} onClick={changed} style={labelStyle}/>
+            <Label name={title} onClick={changed} style={{...labelStyle, ...(disabled ? {color: '#847A68'} : {})}}/>
         </div>
     )
 }

@@ -21,7 +21,6 @@ const CheckMark = ({disabled}) => {
 
 export const Checkbox = ({ title, formStyle, labelStyle, checked = false, disabled = false, onChanged }) => {
     const [check, setCheck] = useState(checked);
-
     const changed = () => {
       if(!disabled) {
         setCheck(!check);

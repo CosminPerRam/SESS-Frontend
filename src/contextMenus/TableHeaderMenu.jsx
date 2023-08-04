@@ -1,6 +1,5 @@
-import {Checkbox as InternalCheckbox} from "../../common/Checkbox";
+import {Checkbox as InternalCheckbox} from "../common/Checkbox";
 import {useRef} from "react";
-import {useClickOutside} from "../../hooks/useClickOutside";
 
 const Checkbox = ({title, checked, disabled, setHiddenColumns}) => {
   const changed = (checked) => {
@@ -19,10 +18,7 @@ const makeFieldBuilder = (hiddenColumns) => ({name, disabled = false}) => ({
   checked: !hiddenColumns[name]
 })
 
-export const HeaderMenu = ({top, left, setHidden, setHiddenColumns, hiddenColumns}) => {
-  const nodeRef = useRef(null);
-  useClickOutside(nodeRef, setHidden);
-
+export const TableHeaderMenu = ({top, left, nodeRef, setHiddenColumns, hiddenColumns}) => {
   const makeField = makeFieldBuilder(hiddenColumns);
 
   return (

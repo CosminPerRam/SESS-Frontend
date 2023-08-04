@@ -3,11 +3,9 @@ import { useRowSelect } from "@table-library/react-table-library/select";
 import { theme } from "./theme";
 import { Header } from './Header';
 import { Body } from './Body';
-import {ContextMenu} from "../../ContextMenu";
 import {useState} from "react";
-import {ServerInfo} from "../../ContextMenu/ServerInfo";
 import {useClickHook} from "../../hooks/useClickHook";
-import {HeaderMenu} from "./HeaderMenu";
+import {useSelector} from "react-redux";
 
 const DATA = [
     {
@@ -92,14 +90,5 @@ export const ServerList = () => {
               </>
             )}
         </Table>
-        {popupPoints && (
-            <ContextMenu top={popupPoints.y} left={popupPoints.x} setMenuHidden={setPopupPoints} setInfoHidden={setInfoHidden} />
-        )}
-        {item && !infoHidden && (
-            <ServerInfo setHidden={setInfoHidden} item={item}/>
-        )}
-        {headerPoints && (
-            <HeaderMenu top={headerPoints.y} left={headerPoints.x} setHidden={setHeaderPoints} setHiddenColumns={setHiddenColumns} hiddenColumns={hiddenColumns} />
-          )}
     </div>
 };

@@ -4,8 +4,6 @@ import {RobotronIcon} from "../assets/icons/robotron";
 import {ReplayIcon} from "../assets/icons/replay";
 import {useDispatch, useSelector} from "react-redux";
 import {setActiveMenu, setPopupCoords} from "../redux/contextMenu/slice";
-import {useRef} from "react";
-import {useClickOutside} from "../hooks/useClickOutside";
 
 const onDoubleClick = (item, event) => {
   console.log('double clicked on' + item.name);

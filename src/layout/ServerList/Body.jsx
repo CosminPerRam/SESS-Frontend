@@ -2,7 +2,7 @@ import {Body as TableBody} from "@table-library/react-table-library/table";
 import {Row} from "../../common/Row";
 import {useSelector} from "react-redux";
 
-export const Body = ({tableList, hiddenColumns, setPoints, setItem}) => {
+export const Body = ({tableList, hiddenColumns}) => {
 
   return <TableBody>
     {tableList.map(item => 

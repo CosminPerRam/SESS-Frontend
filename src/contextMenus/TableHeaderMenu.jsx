@@ -1,5 +1,4 @@
 import {Checkbox as InternalCheckbox} from "../common/Checkbox";
-import {useRef} from "react";
 
 const Checkbox = ({title, checked, disabled, setHiddenColumns}) => {
   const changed = (checked) => {
@@ -18,11 +17,11 @@ const makeFieldBuilder = (hiddenColumns) => ({name, disabled = false}) => ({
   checked: !hiddenColumns[name]
 })
 
-export const TableHeaderMenu = ({top, left, nodeRef, setHiddenColumns, hiddenColumns}) => {
+export const TableHeaderMenu = ({top, left, setHiddenColumns, hiddenColumns}) => {
   const makeField = makeFieldBuilder(hiddenColumns);
 
   return (
-    <div className={'header_menu'} style={{top: top + 'px', left: left + 'px'}} ref={nodeRef}>
+    <div className={'header_menu'} style={{top: top + 'px', left: left + 'px'}} >
       {
         [makeField({name: "Password"}),
           makeField({name: "Secure"}),

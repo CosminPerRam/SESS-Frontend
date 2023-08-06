@@ -1,9 +1,8 @@
-﻿import {useSelector} from "react-redux";
+﻿import {useDispatch, useSelector} from "react-redux";
 import {ServerMenu} from "../contextMenus/ServerMenu";
 import {useRef, useState} from "react";
 import {useClickOutside} from "../hooks/useClickOutside";
 import {TableHeaderMenu} from "../contextMenus/TableHeaderMenu";
-
 
 export const renderActiveMenu = () => {
     const [hiddenColumns, setHiddenColumns] = useState({
@@ -22,13 +21,13 @@ export const renderActiveMenu = () => {
     
     const activeMenu = useSelector((state) => state.contextMenu.activeMenu);
     const popupCoords = useSelector((state) => state.contextMenu.popupCoords);
-
-    const nodeRef = useRef(null);
-    useClickOutside(nodeRef);
+    
+    useClickOutside();
     
     if(activeMenu === "server")
-        return <ServerMenu left={popupCoords.x} top={popupCoords.y} nodeRef={nodeRef}/>
+        return <ServerMenu left={popupCoords.x} top={popupCoords.y} />
     if(activeMenu === "header")
-        return <TableHeaderMenu  left={popupCoords.x} top={popupCoords.y} nodeRef={nodeRef} hiddenColumns={hiddenColumns} setHiddenColumns={setHiddenColumns}/>
+        return <TableHeaderMenu  left={popupCoords.x} top={popupCoords.y} hiddenColumns={hiddenColumns} setHiddenColumns={setHiddenColumns}/>
+    
     return null;
 }

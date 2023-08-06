@@ -20,21 +20,13 @@ const CheckMark = ({disabled}) => {
 }
 
 export const Checkbox = ({ title, formStyle, labelStyle, checked = false, disabled = false, onChanged }) => {
-    const [check, setCheck] = useState(checked);
-    const changed = () => {
-      if(!disabled) {
-        setCheck(!check);
-        onChanged(check);
-      }
-    }
-    
     return (
-        <div className='form-element' style={formStyle} onClick={changed}>
+        <div className='form-element' style={formStyle} onMouseDown={onChanged}>
             <div className="checkmark">
-                { check ? <CheckMark disabled={disabled}/> : null }
+                { checked ? <CheckMark disabled={disabled}/> : null }
             </div>
             
-            <Label name={title} onClick={changed} style={{...labelStyle, ...(disabled ? {color: '#847A68'} : {})}}/>
+            <Label name={title} onMouseDown={onChanged} style={{...labelStyle, ...(disabled ? {color: '#847A68'} : {})}}/>
         </div>
     )
 }

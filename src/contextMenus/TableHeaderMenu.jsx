@@ -1,41 +1,16 @@
-import {Checkbox as InternalCheckbox} from "../common/Checkbox";
+import {useDispatch, useSelector} from "react-redux";
+import {Checkbox} from "../common/Checkbox";
+import {setHiddenColumns} from "../redux/contextMenu/slice";
 
-const Checkbox = ({title, checked, disabled, setHiddenColumns}) => {
-  const changed = (checked) => {
-    setHiddenColumns(previousState => ({
-      ...previousState,
-      [title]: checked
-    }))
-  }
+export const TableHeaderMenu = ({top, left}) => {
+  const hiddenColumns = useSelector(state => state.contextMenu.hiddenColumns);
+  const dispatch = useDispatch();
+  
+  const labels = ["Password", "Secure", "Replay", "Servers", "IP Address", "Game", "Players", "Bots", "Map", "Latency", "Tags" ]
 
-  return <InternalCheckbox title={title} checked={checked} onChanged={changed} disabled={disabled}/>
-}
-
-const makeFieldBuilder = (hiddenColumns) => ({name, disabled = false}) => ({
-  name,
-  disabled,
-  checked: !hiddenColumns[name]
-})
-
-export const TableHeaderMenu = ({top, left, setHiddenColumns, hiddenColumns}) => {
-  const makeField = makeFieldBuilder(hiddenColumns);
-
-  return (
-    <div className={'header_menu'} style={{top: top + 'px', left: left + 'px'}} >
-      {
-        [makeField({name: "Password"}),
-          makeField({name: "Secure"}),
-          makeField({name: "Replay"}),
-          makeField({name: "Servers", disabled: true}),
-          makeField({name: "IP Address"}),
-          makeField({name: "Game"}),
-          makeField({name: "Players"}),
-          makeField({name: "Bots"}),
-          makeField({name: "Map"}),
-          makeField({name: "Latency"}),
-          makeField({name: "Tags"})].map(({name, checked, disabled}) =>
-          <Checkbox key={name} title={name} checked={checked} disabled={disabled} setHiddenColumns={setHiddenColumns} />)
-      }
+  return <div className={'header_menu'} style={{top: top + 'px', left: left + 'px'}} >
+    {labels.map(label => 
+        <Checkbox title={label} disabled={false} checked={!hiddenColumns[label]} onChanged={() => dispatch(setHiddenColumns(label))}/>
+    )}
     </div>
-  )
 };

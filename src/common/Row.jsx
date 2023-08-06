@@ -9,7 +9,7 @@ const onDoubleClick = (item, event) => {
   console.log('double clicked on' + item.name);
 }
 
-export const Row = ({item, hiddenColumns}) => {
+export const Row = ({item}) => {
   const {id, name, map, game, playersOnline, playersMaximum, playersBots, vacSecured, hasPassword, supportsReplays} = item;
   const dispatch = useDispatch();
   const handleSetActiveMenu = (menu, popupCoords, e) => {
@@ -17,8 +17,7 @@ export const Row = ({item, hiddenColumns}) => {
     dispatch(setActiveMenu(menu));
     dispatch(setPopupCoords(popupCoords));
   };
-  
-
+  const hiddenColumns = useSelector(state => state.contextMenu.hiddenColumns);
   
   return <TableRow key={id} item={item}
                    onDoubleClick={onDoubleClick} 

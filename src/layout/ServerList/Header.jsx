@@ -3,10 +3,10 @@ import {PasswordIcon} from "../../assets/icons/password";
 import {RobotronIcon} from "../../assets/icons/robotron";
 import {ReplayIcon} from "../../assets/icons/replay";
 import {contextMenuAction} from "../../helpers/contextMenuAction";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {setActiveMenu, setPopupCoords} from "../../redux/contextMenu/slice";
 
-export const Header = ({amount, hiddenColumns, blacklistedAmount, setPoints}) => {
+export const Header = ({amount, blacklistedAmount, setPoints}) => {
   const dispatch = useDispatch();
   const handleSetActiveMenu = (menu, popupCoords, e) => {
     e.preventDefault();
@@ -14,7 +14,8 @@ export const Header = ({amount, hiddenColumns, blacklistedAmount, setPoints}) =>
     dispatch(setPopupCoords(popupCoords));
   };
 
-
+  const hiddenColumns = useSelector(state => state.contextMenu.hiddenColumns);
+  
   return (
     <TableHeader onContextMenu={(e) => handleSetActiveMenu("header", {x: e.pageX, y: e.pageY}, e)}>
       <HeaderRow>

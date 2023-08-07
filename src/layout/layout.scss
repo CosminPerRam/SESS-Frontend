@@ -61,28 +61,3 @@
   display: flex;
   align-items: center;
 }
-
-.header_menu {
-  position: absolute;
-  z-index: 9;
-  background-color: $primaryDark;
-  border: 1px solid $border;
-  color: $textLight;
-  font-size: 11px;
-}
-
-.header_menu .form-element {
-  padding: 3px 12px 3px 4px;
-}
-
-.header_menu .form-element .checkmark {
-  margin-right: 2px;
-}
-
-.header_menu .form-element:hover {
-  background-color: $hover;
-}
-
-.header_menu .form-element:hover .label {
-  color: $textSelected;
-}

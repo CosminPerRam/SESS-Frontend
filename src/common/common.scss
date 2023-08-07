@@ -131,8 +131,7 @@ select {
   
   margin-left: 5px;
 }
-
-.checkmark {
+.checkbox {
   background-color: $input;
   
   width: 12px;
@@ -142,16 +141,20 @@ select {
   
   border: 1px solid $border;
 }
+.checkmark {
+  content: '';
+  display: block;
+  position: relative;
 
-.checkbox {
-  white-space: nowrap;
-  
-  background-color: $input;
-  
-  margin-right: 7px;
+  top: 1px;
+  left: 2px;
+  width: 5px;
+  height: 6px;
 
-  position: absolute;
-  opacity: 0;
+  border: solid white;
+  border-width: 0 3px 2px 0;
+
+  transform: rotate(45deg);
 }
 .label:hover {
   color: $textDark;
@@ -160,10 +163,10 @@ select {
   color: $textLight;
   font-size: 12px;
   user-select: none;
-  
+
   flex-grow: 1;
-  
-  text-overflow:ellipsis;
-  overflow:hidden;
-  white-space:nowrap;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }

@@ -3,11 +3,7 @@ import { useRowSelect } from "@table-library/react-table-library/select";
 import { theme } from "./theme";
 import { Header } from './Header';
 import { Body } from './Body';
-import {ContextMenu} from "../../ContextMenu";
 import {useState} from "react";
-import {ServerInfo} from "../../ContextMenu/ServerInfo";
-import {useClickHook} from "../../hooks/useClickHook";
-import {HeaderMenu} from "./HeaderMenu";
 
 const DATA = [
     {
@@ -62,44 +58,17 @@ export const ServerList = () => {
             console.log(action, state);
         }
     });
-
-    const { popupPoints, setPopupPoints } = useClickHook();
-    const { popupPoints: headerPoints, setPopupPoints: setHeaderPoints } = useClickHook();
     
-    const [infoHidden, setInfoHidden] = useState(true);
     const [item, setItem] = useState(null);
-
-    const [hiddenColumns, setHiddenColumns] = useState({
-        Password: false,
-        Secure: false,
-        Replay: false,
-        Servers: false,
-        ["IP Address"]: true,
-        Game: false,
-        Players: false,
-        Bots: false,
-        Map: false,
-        Latency: false,
-        Tags: false,
-    });
     
     return <div className={'server-list'}>
         <Table data={data} theme={theme("repeat(3, 16px) minmax(24px, 1fr) minmax(100px, 1fr) 56px 40px minmax(100px, 1fr) 56px minmax(80px, 1fr)", "0px", "2px")} select={select} layout={{custom: true, fixedHeader: true}}>
             {(tableList) => (
               <>
-                  <Header hiddenColumns={hiddenColumns} amount={1457} blacklistedAmount={0} setPoints={setHeaderPoints} />
-                  <Body hiddenColumns={hiddenColumns} tableList={tableList} setPoints={setPopupPoints} setItem={setItem}/>
+                  <Header amount={1457} blacklistedAmount={0}  />
+                  <Body tableList={tableList} setItem={setItem}/>
               </>
             )}
         </Table>
-        {popupPoints && (
-            <ContextMenu top={popupPoints.y} left={popupPoints.x} setMenuHidden={setPopupPoints} setInfoHidden={setInfoHidden} />
-        )}
-        {item && !infoHidden && (
-            <ServerInfo setHidden={setInfoHidden} item={item}/>
-        )}
-        {headerPoints && (
-            <HeaderMenu top={headerPoints.y} left={headerPoints.x} setHidden={setHeaderPoints} setHiddenColumns={setHiddenColumns} hiddenColumns={hiddenColumns} />
-          )}
     </div>
 };

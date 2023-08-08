@@ -1,5 +1,4 @@
 ﻿import { createSlice } from '@reduxjs/toolkit';
-import {useRef} from "react";
 
 const initialState = {
     activeMenu: null,
@@ -17,7 +16,10 @@ const initialState = {
         Map: false,
         Latency: false,
         Tags: false,
-    }
+    },
+    inputMap: '',
+    inputMapPlayerCount: '',
+    inputServer: ''
 };
 
 const contextMenuSlice = createSlice({
@@ -35,9 +37,18 @@ const contextMenuSlice = createSlice({
         },
         setHiddenColumns: (state, action) => {
             state.hiddenColumns[action.payload] = !state.hiddenColumns[action.payload];
+        },
+        setInputMap: (state, action) => {
+            state.inputMap = action.payload;
+        },
+        setInputMapPlayerCount: (state, action) => {
+            state.inputMapPlayerCount = action.payload;
+        },
+        setInputServer: (state, action) => {
+            state.inputServer = action.payload;
         }
     },
 });
 
-export const { setActiveMenu, setPopupCoords, setAction, setHiddenColumns } = contextMenuSlice.actions;
+export const { setActiveMenu, setPopupCoords, setAction, setHiddenColumns, setInputMap, setInputMapPlayerCount, setInputServer } = contextMenuSlice.actions;
 export default contextMenuSlice.reducer;

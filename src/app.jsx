@@ -1,7 +1,7 @@
 import {ApolloConfiguration} from "./core/ApolloConfiguration";
 import {Console} from "./console";
 import {Layout} from "./layout";
-import {RenderActiveMenu} from "./helpers/renderActiveMenu";
+import {RenderActiveMenu} from "./helpers/RenderActiveMenu";
 
 export const App = () => {
   return (

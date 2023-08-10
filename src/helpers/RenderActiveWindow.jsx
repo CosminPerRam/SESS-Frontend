@@ -1,0 +1,32 @@
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect, useRef} from "react";
+import {setActiveWindow} from "../redux/window/slice";
+import {Console} from "../Window/Console.jsx";
+import {useClickOutside} from "../hooks/useClickOutside";
+
+export const RenderActiveWindow = () => {
+    const dispatch = useDispatch();
+    const activeWindow = useSelector((state) => state.window.activeWindow);
+    const nodeRef = useRef(null);
+    useClickOutside(nodeRef);
+    useEffect(() => {
+        const handleKeyDownEvent = e => {
+            if (e.key === '`' && e.target.tagName !== 'INPUT') {
+                if (activeWindow === "console")
+                    dispatch(setActiveWindow(null));
+                else
+                    dispatch(setActiveWindow("console"));
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDownEvent);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDownEvent);
+        }
+    }, [activeWindow, dispatch]);
+
+    if (activeWindow === "console")
+        return <Console nodeRef={nodeRef}/>;
+    
+    return null;
+}

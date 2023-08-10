@@ -1,12 +1,5 @@
-import {useDispatch} from "react-redux";
-import {setActiveMenu, setPopupCoords} from "../redux/contextMenu/slice";
+import {Input} from "./Input";
 
-export const TopInput = ({value, handleInput}) => {
-    const dispatch = useDispatch();
-    const handleSetActiveMenu = (menu, popupCoords, e) => {
-        e.preventDefault();
-        dispatch(setActiveMenu(menu));
-        dispatch(setPopupCoords(popupCoords));
-    };
-    return <input type='search' className='top-input' onContextMenu={(e) => {handleSetActiveMenu("serverInput", {x: e.pageX, y: e.pageY}, e)}} value={value} onChange={handleInput}/>
+export const TopInput = ({value, handleInput, menu}) => {
+    return <Input type='search' className={'top-input'} value={value} handleInput={handleInput} menu={menu}/>
 }

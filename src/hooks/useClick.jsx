@@ -1,17 +1,17 @@
-﻿import {useEffect} from "react";
+import {useEffect} from "react";
 import {useDispatch} from "react-redux";
-import {setActiveWindow} from "../redux/window/slice";
+import {setActiveMenu, setPopupCoords} from "../redux/contextMenu/slice";
 
-export const useClickOutside = (ref ) => {
+export const useClick = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         const handleClickOutside = () => {
-            if (ref.current && !ref.current.contains(event.target)) 
-                dispatch(setActiveWindow(null));
+            dispatch(setActiveMenu(null));
+            dispatch(setPopupCoords(null));
         };
         document.addEventListener("mouseup", handleClickOutside);
         return () => {
             document.removeEventListener("mouseup", handleClickOutside);
         };
-    }, [ref, dispatch]);
+    }, [dispatch]);
 }

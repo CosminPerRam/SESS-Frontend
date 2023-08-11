@@ -4,7 +4,9 @@
   position: absolute;
   
   background-color: $primaryDark;
-  
+  overflow: hidden;
+  text-wrap: none;
+  white-space: nowrap;
   border: 1px solid $border;
   
   color: $textLight;
@@ -31,15 +33,6 @@
 }
 .context-menu-element:hover .label {
   color: $textSelected;
-}
-.context-menu-buttons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  gap: 14px;
-  
-  margin-right: 24px;
-  margin-bottom: 16px;
 }
 .checkmark-wrapper {
   width: 10px;

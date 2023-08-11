@@ -12,6 +12,7 @@ import {
 import {useClickOutside} from "../hooks/useClickOutside";
 import {useRef} from "react";
 import {useClick} from "../hooks/useClick";
+import {ReadOnlyMenu} from "../contextMenus/ReadOnlyMenu";
 
 export const RenderActiveMenu = () => {
     const nodeRef = useRef(null);
@@ -36,5 +37,7 @@ export const RenderActiveMenu = () => {
         return <InputMenu left={popupCoords.x} top={popupCoords.y} setInput={setInputServer} input={serverInput}  nodeRef={nodeRef}/>
     if(activeMenu === "command")
         return <InputMenu left={popupCoords.x} top={popupCoords.y} setInput={setInputCommand} input={command}  nodeRef={nodeRef}/>
+    if(activeMenu === "readOnly")
+        return <ReadOnlyMenu left={popupCoords.x} top={popupCoords.y} input={command}  nodeRef={nodeRef}/>
     return null;
 }

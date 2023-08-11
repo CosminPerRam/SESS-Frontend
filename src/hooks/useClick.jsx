@@ -10,8 +10,10 @@ export const useClick = () => {
             dispatch(setPopupCoords(null));
         };
         document.addEventListener("mouseup", handleClickOutside);
+        window.addEventListener("resize", handleClickOutside);
         return () => {
             document.removeEventListener("mouseup", handleClickOutside);
+            window.removeEventListener("resize", handleClickOutside);
         };
     }, [dispatch]);
 }

@@ -20,6 +20,7 @@
 
 .window-header {
   min-height: 27px;
+  
   color: $secondary;
 
   white-space: nowrap;
@@ -34,6 +35,8 @@
   padding-right: 12px;
   
   .window-header-title {
+    
+    overflow: hidden;
     font-size: 12px;
     white-space: nowrap;
     text-overflow:ellipsis;
@@ -42,7 +45,6 @@
   .window-header-x {
     font-size: 12px;
     white-space: nowrap;
-    text-overflow:ellipsis;
   }
 }
 
@@ -81,9 +83,20 @@
     outline: none;
   }
 }
+.server-info {
+  min-height: 440px;
+  min-width: 416px;
+  width: 416px;
+  height: 300px;
 
+  position: absolute;
+  z-index: 2;
 
-.server-details-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.server-info-table {
   background-color: $primaryDark;
 
   min-height: 50px;
@@ -102,9 +115,9 @@
   padding-left: 23px;
   margin-bottom: 25px;
 }
-.details-no-users {
-  color: $buttonText;
-  font-size: 14px;
+.table-no-users {
+  color: $textLight;
+  font-size: 11px;
   margin-left: 6px;
 }
 .server-detail-row {
@@ -143,9 +156,18 @@
   border: 1px solid $borderDark;
 
   position: relative;
-  top: -2px;
+  top: -4px;
 
-  padding-top: 1px;
+  padding-top: 3px;
   padding-left: 3px;
   margin-right: 7px;
+}
+.server-info-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 14px;
+
+  margin-right: 24px;
+  margin-bottom: 16px;
 }

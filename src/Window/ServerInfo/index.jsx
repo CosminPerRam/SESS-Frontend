@@ -1,13 +1,13 @@
 import Draggable from "react-draggable";
-import {Header} from "../console/components/header";
-import {ContextProvider} from "../console/context";
 import {useRef} from "react";
-import {useClickOutside} from "../hooks/useClickOutside";
 import {ServerDetails} from "./ServerDetails";
-import {theme} from "../layout/ServerList/theme";
+import {theme} from "../../layout/ServerList/theme";
 import {Header as TableHeader, HeaderCell, HeaderRow, Table, Body as TableBody, Row as TableRow, Cell} from "@table-library/react-table-library/table";
 import {useRowSelect} from "@table-library/react-table-library/select";
-import {Button} from "../common/Button";
+import {Button} from "../../common/Button";
+import {Window} from "../index";
+import {useDispatch, useSelector} from "react-redux";
+import {setActiveWindow} from "../../redux/window/slice";
 
 const Row = ({item}) => {
     return (
@@ -47,22 +47,10 @@ const ServerInfoTable = ({item}) => {
     </Table> )
 }
 
-export const ServerInfo = ({children, setHidden, item}) => {
-    const nodeRef = useRef(null);
-    useClickOutside(nodeRef, setHidden);
-    
-    return <ContextProvider>
-        <div>
-            <Draggable
-                handle=".console-header"
-                defaultPosition={{x: 320, y: 0}}
-                nodeRef={nodeRef}
-            >
-                <div className='server-details-container' ref={nodeRef}>
-                    <Header onCloseClick={() => {
-                        setHidden(true)
-                    }} title={"Game Info - " + item.name}/>
-                    
+export const ServerInfo = ({nodeRef}) => {
+    const item = useSelector((state) => state.window.serverDetails);
+    const dispatch = useDispatch();
+    return <Window nodeRef={nodeRef} title={"Game Info - " + item.name}>
                     <ServerDetails name={item.name} ip={"pula si caciula"} game={item.game} map={item.map} players={`${item.playersOnline} / ${item.playersMaximum}`} vac={item.vacSecured ? "Secure" : "Not Secure"} latency={"Pula si cacliula :o"} />
                     
                     <div className={"server-details-table"}>
@@ -72,11 +60,7 @@ export const ServerInfo = ({children, setHidden, item}) => {
                     <div className="context-menu-buttons">
                         <Button title={"Join game"} style={{width: "80px"}}/>
                         <Button title={"Refresh"} style={{width: "80px"}}/>
-                        <Button title={"Close"} style={{width: "80px"}}/>
+                        <Button title={"Close"} onClick={() => dispatch(setActiveWindow(null))} style={{width: "80px"}}/>
                     </div>
-                </div>
-            </Draggable>
-        </div>
-        {children}
-    </ContextProvider>
+    </Window>
 }

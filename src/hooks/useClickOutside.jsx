@@ -5,13 +5,16 @@ import {setActiveWindow} from "../redux/window/slice";
 export const useClickOutside = (ref ) => {
     const dispatch = useDispatch();
     useEffect(() => {
-        const handleClickOutside = () => {
-            if (ref.current && !ref.current.contains(event.target)) 
+        const handleClickOutside = (e) => {
+            console.log(e);
+            if (ref.current && !ref.current.contains(e.target)) 
                 dispatch(setActiveWindow(null));
         };
-        document.addEventListener("mouseup", handleClickOutside);
+        document.addEventListener("contextmenu", handleClickOutside);
+        document.addEventListener("click", handleClickOutside);
         return () => {
-            document.removeEventListener("mouseup", handleClickOutside);
+            document.removeEventListener("contextmenu", handleClickOutside);
+            document.removeEventListener("click", handleClickOutside);
         };
     }, [ref, dispatch]);
 }

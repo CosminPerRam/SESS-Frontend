@@ -2,7 +2,8 @@
 
 const initialState = {
     activeWindow: null,
-    consoleLines: []
+    consoleLines: [],
+    serverDetails: null
 };
 
 const windowSlice = createSlice({
@@ -14,9 +15,12 @@ const windowSlice = createSlice({
         },
         setConsoleLines: (state, action) => {
             state.consoleLines = [...state.consoleLines, action.payload];
-        }
+        },
+        setServerDetails: (state, action) => {
+            state.serverDetails = action.payload;
+        },
     },
 });
 
-export const { setActiveWindow, setConsoleLines} = windowSlice.actions;
+export const { setActiveWindow, setConsoleLines, setServerDetails} = windowSlice.actions;
 export default windowSlice.reducer;

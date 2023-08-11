@@ -1,9 +1,8 @@
 ﻿import Draggable from "react-draggable";
-import {Header} from "./header";
+import {Header} from "./Header";
 import {setActiveWindow} from "../redux/window/slice";
 import "./windows.scss"
 import {useDispatch} from "react-redux";
-import {useRef} from "react";
 export const Window = ({children, title, nodeRef}) => {
     const dispatch = useDispatch();
     

@@ -4,6 +4,7 @@ import {RobotronIcon} from "../assets/icons/robotron";
 import {ReplayIcon} from "../assets/icons/replay";
 import {useDispatch, useSelector} from "react-redux";
 import {setActiveMenu, setPopupCoords} from "../redux/contextMenu/slice";
+import {setServerDetails} from "../redux/window/slice";
 
 const onDoubleClick = (item, event) => {
   console.log('double clicked on' + item.name);
@@ -16,6 +17,7 @@ export const Row = ({item}) => {
     e.preventDefault();
     dispatch(setActiveMenu(menu));
     dispatch(setPopupCoords(popupCoords));
+    dispatch(setServerDetails(item));
   };
   const hiddenColumns = useSelector(state => state.contextMenu.hiddenColumns);
   

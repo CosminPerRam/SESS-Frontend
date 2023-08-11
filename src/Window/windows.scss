@@ -1,0 +1,173 @@
+@import '../colors';
+
+.window-container {
+  position: absolute;
+  z-index: 2;
+  border-radius: 4px;
+  background-color: $primary;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $borderDark;
+  min-width: 110px;
+  min-height: 100px; // todo! fix this later on
+
+  width: 400px;
+  height: 300px;
+
+  resize: both;
+  overflow: hidden;
+}
+
+.window-header {
+  min-height: 27px;
+  
+  color: $secondary;
+
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+  padding-left: 16px;
+  padding-right: 12px;
+  
+  .window-header-title {
+    
+    overflow: hidden;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+  }
+
+  .window-header-x {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
+
+.console-logs {
+  background-color: $primaryDark;
+  flex-grow: 1;
+  padding-left: 2px;
+  border: 1px solid $borderDark;
+  margin: 8px 16px 6px;
+  overflow-y: scroll;
+  
+  .console-line {
+    font-size: 11px;
+    color: $text;
+    word-break: break-word;
+  }
+}
+
+.command {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 14px;
+  margin-left: 16px;
+  margin-right: 16px;
+  .command-input {
+    background-color: $input;
+    border: 1px solid $borderDark;
+    min-height: 24px;
+    min-width: 4px;
+    flex-grow: 1;
+    color: $textLight;
+    padding-left: 2px;
+  }
+  .command-input:focus {
+    outline: none;
+  }
+}
+.server-info {
+  min-height: 440px;
+  min-width: 416px;
+  width: 416px;
+  height: 300px;
+
+  position: absolute;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.server-info-table {
+  background-color: $primaryDark;
+
+  min-height: 50px;
+  height: 100%;
+
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-bottom: 32px;
+}
+.server-details {
+  width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  padding-left: 23px;
+  margin-bottom: 25px;
+}
+.table-no-users {
+  color: $textLight;
+  font-size: 11px;
+  margin-left: 6px;
+}
+.server-detail-row {
+  display: flex;
+  flex-direction: row;
+}
+.server-detail-name {
+  color: $textDark;
+
+  max-height: 24px;
+  min-height: 24px;
+  width: 40%;
+
+  display: flex;
+  justify-content: flex-end;
+
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+.server-detail-value {
+  color: $textLight;
+
+  max-height: 24px;
+  min-height: 24px;
+  width: 100%;
+
+  white-space: nowrap;
+  text-overflow:ellipsis;
+
+  margin-left: 7px;
+}
+.server-detail-row:nth-of-type(2) .server-detail-value {
+  background-color: $input;
+  color: $textDark;
+
+  border: 1px solid $borderDark;
+
+  position: relative;
+  top: -4px;
+
+  padding-top: 3px;
+  padding-left: 3px;
+  margin-right: 7px;
+}
+.server-info-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 14px;
+
+  margin-right: 24px;
+  margin-bottom: 16px;
+}

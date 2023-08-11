@@ -3,7 +3,6 @@
 const initialState = {
     activeMenu: null,
     popupCoords: null,
-    action: null,
     hiddenColumns: {
         Password: false,
         Secure: false,
@@ -19,7 +18,8 @@ const initialState = {
     },
     inputMap: '',
     inputMapPlayerCount: '',
-    inputServer: ''
+    inputServer: '',
+    inputCommand: '',
 };
 
 const contextMenuSlice = createSlice({
@@ -32,9 +32,6 @@ const contextMenuSlice = createSlice({
         setPopupCoords: (state, action) => {
             state.popupCoords = action.payload;
         },
-        setAction: (state, action) => {
-            state.action = action.payload;
-        },
         setHiddenColumns: (state, action) => {
             state.hiddenColumns[action.payload] = !state.hiddenColumns[action.payload];
         },
@@ -46,9 +43,12 @@ const contextMenuSlice = createSlice({
         },
         setInputServer: (state, action) => {
             state.inputServer = action.payload;
+        },
+        setInputCommand: (state, action) => {
+            state.inputCommand = action.payload;
         }
     },
 });
 
-export const { setActiveMenu, setPopupCoords, setAction, setHiddenColumns, setInputMap, setInputMapPlayerCount, setInputServer } = contextMenuSlice.actions;
+export const { setActiveMenu, setPopupCoords, setHiddenColumns, setInputMap, setInputMapPlayerCount, setInputServer, setInputCommand } = contextMenuSlice.actions;
 export default contextMenuSlice.reducer;

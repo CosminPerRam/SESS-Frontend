@@ -23,7 +23,7 @@ export const Top = () => {
                 <DropDown label={'Workshop'} options={workshop} />
                 <VerticalDivider />
                 <DropDown label={'Tags'} options={tags} />
-                <TopInput value={inputServer} handleInput={handleInputServer} />
+                <TopInput value={inputServer} handleInput={handleInputServer} menu={"serverInput"}/>
                 <Button title={'Add common tags...'} style={{minWidth: '144px'}}/>
             </div>
             <HorizontalDivider />

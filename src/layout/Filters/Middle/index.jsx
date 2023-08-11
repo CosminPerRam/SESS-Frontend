@@ -4,6 +4,7 @@ import {DropDown} from "../../../common/DropDown";
 import {Input} from "../../../common/Input";
 import {useDispatch, useSelector} from "react-redux";
 import {setInputMap, setInputMapPlayerCount} from "../../../redux/contextMenu/slice";
+import {LabelInput} from "../../../common/LabelInput";
 
 export const Middle = () => {
     const game = ['Team Fortress 2'];
@@ -30,8 +31,8 @@ export const Middle = () => {
     return (
         <div className='middle'>
             <DropDown label={'Game'} options={game} style={{width: '162px'}}/>
-            <Input title={'Map'} style={{width: '162px'}} className={"input"} value={inputMap} handleInput={handleInputMap} menu={"map"}/>
-            <Input title={'Map player count'} style={{width: '62px'}} className={"input"} value={inputMapPlayerCount} handleInput={handleInputMapPlayerCount} menu={"mapPlayerCount"}/>
+            <LabelInput title={'Map'} style={{width: '162px'}} value={inputMap} handleInput={handleInputMap} menu={"map"} />
+            <LabelInput title={'Map player count'} style={{width: '62px'}} value={inputMapPlayerCount} handleInput={handleInputMapPlayerCount} menu={"mapPlayerCount"}/>
             <DropDown label={'Latency'} options={latency} />
             <DropDown label={'Location'} options={location} />
             <DropDown label={'Anti-cheat'} options={antiCheat} />

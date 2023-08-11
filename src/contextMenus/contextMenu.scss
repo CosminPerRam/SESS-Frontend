@@ -4,7 +4,9 @@
   position: absolute;
   
   background-color: $primaryDark;
-  
+  overflow: hidden;
+  text-wrap: none;
+  white-space: nowrap;
   border: 1px solid $border;
   
   color: $textLight;
@@ -31,106 +33,6 @@
 }
 .context-menu-element:hover .label {
   color: $textSelected;
-}
-.server-details-table {
-  background-color: $primaryDark;
-
-  min-height: 50px;
-  height: 100%;
-  
-  margin-left: 24px;
-  margin-right: 24px;
-  margin-bottom: 32px;
-}
-.server-details-container {
-  background-color: $primary;
-
-  border-radius: 4px;
-
-  font-family: Tahoma, sans-serif;
-  text-rendering: optimizeSpeed;
-  -webkit-font-smoothing : none;
-  font-size: 14px;
-  font-weight: lighter;
-  
-  min-height: 440px;
-  min-width: 416px;
-  width: 416px;
-  height: 300px;
-  
-  position: absolute;
-  z-index: 2;
-  
-  display: flex;
-  flex-direction: column;
-  
-  resize: both;
-  overflow: hidden;
-}
-.server-details {
-  width: 400px;
-  
-  display: flex;
-  flex-direction: column;
-  
-  padding-left: 23px;
-  margin-bottom: 25px;
-}
-.details-no-users {
-  color: $buttonText;
-  font-size: 14px;
-  margin-left: 6px;
-}
-.server-detail-row {
-  display: flex;
-  flex-direction: row;
-}
-.server-detail-name {
-  color: $textDark;
-  
-  max-height: 24px;
-  min-height: 24px;
-  width: 40%;
-  
-  display: flex;
-  justify-content: flex-end;
-
-  white-space: nowrap;
-  text-overflow:ellipsis;
-}
-.server-detail-value {
-  color: $textLight;
-  
-  max-height: 24px;
-  min-height: 24px;
-  width: 100%;
-  
-  white-space: nowrap;
-  text-overflow:ellipsis;
-  
-  margin-left: 7px;
-}
-.server-detail-row:nth-of-type(2) .server-detail-value {
-    background-color: $input;
-    color: $textDark;
-
-    border: 1px solid $borderDark;
-  
-    position: relative;
-    top: -2px;
-    
-    padding-top: 1px;
-    padding-left: 3px;
-    margin-right: 7px;
-}
-.context-menu-buttons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  gap: 14px;
-  
-  margin-right: 24px;
-  margin-bottom: 16px;
 }
 .checkmark-wrapper {
   width: 10px;

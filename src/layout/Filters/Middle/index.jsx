@@ -1,10 +1,10 @@
 
 import {Checkboxes} from "./Checkboxes";
 import {DropDown} from "../../../common/DropDown";
-import {Input} from "../../../common/Input";
 import {useDispatch, useSelector} from "react-redux";
-import {setInputMap, setInputMapPlayerCount} from "../../../redux/contextMenu/slice";
 import {LabelInput} from "../../../common/LabelInput";
+import {setIsSecured, setLocation, setRunsMap} from "../../../redux/filters/slice";
+import {setLatency, setMaxPlayerCount} from "../../../redux/localFilters/slice";
 
 export const Middle = () => {
     const game = ['Team Fortress 2'];
@@ -14,28 +14,48 @@ export const Middle = () => {
 
     const dispatch = useDispatch();
     
-    const inputMap = useSelector((state) => state.contextMenu.inputMap);
-    const handleInputMap = event =>
+    const runsMap = useSelector((state) => state.filters.runsMap);
+    const handleRunsMap = event =>
     {
-        dispatch(setInputMap(event.target.value));
+        dispatch(setRunsMap(event.target.value));
         console.log(event.target.value);
     }
 
-    const inputMapPlayerCount = useSelector((state) => state.contextMenu.inputMapPlayerCount);
-    const handleInputMapPlayerCount = event =>
+    const maxPlayerCount = useSelector((state) => state.localFilters.maxPlayerCount);
+    const handleMaxPlayerCount = event =>
     {
-        dispatch(setInputMapPlayerCount(event.target.value));
+        dispatch(setMaxPlayerCount(event.target.value));
         console.log(event.target.value);
+    }
+    const handleLocation = (e) => {
+        if(e.target.value === "<All>")
+            dispatch(setLocation(null));
+        else
+            dispatch(setLocation(e.target.value));
+    }
+    const handleIsSecured = (e) => {
+        if(e.target.value === "<All>")
+            dispatch(setIsSecured(null));
+        else if(e.target.value === "Secure")
+            dispatch(setIsSecured(true));
+        else
+            dispatch(setIsSecured(false));
+    }
+    const handleLatency = (e) => {
+        if(e.target.value === "<All>")
+            dispatch(setLatency(null));
+        else
+            dispatch(setLatency(e.target.value));
     }
     
     return (
         <div className='middle'>
             <DropDown label={'Game'} options={game} style={{width: '162px'}}/>
-            <LabelInput title={'Map'} style={{width: '162px'}} value={inputMap} handleInput={handleInputMap} menu={"map"} />
-            <LabelInput title={'Map player count'} style={{width: '62px'}} value={inputMapPlayerCount} handleInput={handleInputMapPlayerCount} menu={"mapPlayerCount"}/>
-            <DropDown label={'Latency'} options={latency} />
-            <DropDown label={'Location'} options={location} />
-            <DropDown label={'Anti-cheat'} options={antiCheat} />
+            <LabelInput title={'Map'} style={{width: '162px'}} value={runsMap} handleInput={handleRunsMap} menu={"map"} />
+            <LabelInput title={'Max player count'} style={{width: '62px'}} value={maxPlayerCount} handleInput={handleMaxPlayerCount} menu={"maxPlayerCount"}/>
+            <DropDown label={'Latency'} options={latency} handleChange={handleLatency}/>
+            <DropDown label={'Location'} options={location} handleChange={handleLocation}/>
+            <DropDown label={'Anti-cheat'} options={antiCheat} handleChange={handleIsSecured}/>
             <Checkboxes />
         </div>
     )

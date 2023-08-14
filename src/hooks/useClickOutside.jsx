@@ -6,7 +6,6 @@ export const useClickOutside = (ref ) => {
     const dispatch = useDispatch();
     useEffect(() => {
         const handleClickOutside = (e) => {
-            console.log(e);
             if (ref.current && !ref.current.contains(e.target)) 
                 dispatch(setActiveWindow(null));
         };

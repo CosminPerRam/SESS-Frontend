@@ -2,7 +2,6 @@ import {Header as TableHeader, HeaderCell, HeaderRow} from "@table-library/react
 import {PasswordIcon} from "../../assets/icons/password";
 import {RobotronIcon} from "../../assets/icons/robotron";
 import {ReplayIcon} from "../../assets/icons/replay";
-import {contextMenuAction} from "../../helpers/contextMenuAction";
 import {useDispatch, useSelector} from "react-redux";
 import {setActiveMenu, setPopupCoords} from "../../redux/contextMenu/slice";
 

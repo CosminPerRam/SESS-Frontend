@@ -6,6 +6,7 @@ import {ActionButtons} from "./ActionButtons";
 import {useSelector} from "react-redux";
 
 export const Bottom = () => {
+    // when selecting stuff from same state, make one single hook
     const canBeFull = useSelector((state) => state.filters.canBeFull);
     const canBeEmpty= useSelector((state) => state.filters.canBeEmpty);
     const canHavePassword = useSelector((state) => state.filters.canHavePassword);
@@ -15,7 +16,7 @@ export const Bottom = () => {
     const isSecured = useSelector((state) => state.filters.isSecured);
     const location = useSelector((state) => state.filters.location);
     const latency = useSelector((state) => state.localFilters.latency);
-    
+
     const label = `Team Fortress 2;
     ${isSecured === null ? "" : isSecured ? " secure;" : " not secure;"}
     ${location ? location + ";" : ''}
@@ -26,6 +27,7 @@ export const Bottom = () => {
     ${canHavePassword ? '' : ' has no password;'}
     ${spectatorProxy ? ' supports replays;' : ''}
     ${runsMap}`;
+    // this could be extracted into a custom hook
     
     return <div className='bottom'>
             <Checkbox title={'Simplified List'} />

@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
-import {Title} from "../common/Title";
+// get rid of all fortawesome dependencies, dont forget to yarn remove todo!
 
+import {Title} from "../common/Title";
 
 export const TitleBar = () => {
     return (

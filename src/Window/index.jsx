@@ -13,4 +13,3 @@ export const Window = ({children, title, nodeRef, className}) => {
         </div>
     </Draggable>
 }
-  

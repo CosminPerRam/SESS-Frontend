@@ -22,6 +22,7 @@ export const Command = () => {
             }
     }
     const updateCommand = (e) => {
+        // fix me todo!
         if (e.key === 'Enter') {
             e.preventDefault();
             addLine();

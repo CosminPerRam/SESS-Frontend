@@ -12,17 +12,18 @@ import {setHasTags, setRunsMap} from "../redux/filters/slice";
 import {setMaxPlayerCount} from "../redux/localFilters/slice";
 
 export const RenderActiveMenu = () => {
+    useClick();
     const nodeRef = useRef(null);
     
     const activeMenu = useSelector((state) => state.contextMenu.activeMenu);
     const popupCoords = useSelector((state) => state.contextMenu.popupCoords);
-    useClick();
     
     const runsMap = useSelector((state) => state.filters.runsMap);
     const maxPlayerCount = useSelector((state) => state.filters.maxPlayerCount);
     const hasTags = useSelector((state) => state.filters.hasTags);
     const command = useSelector((state) => state.contextMenu.inputCommand);
-    
+
+    // refactor this to use map or directly pass the component in activeMenu todo!
     if(activeMenu === "server")
         return <ServerMenu left={popupCoords.x} top={popupCoords.y} nodeRef={nodeRef}/>
     if(activeMenu === "header")

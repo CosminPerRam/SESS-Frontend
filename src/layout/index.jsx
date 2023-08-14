@@ -5,7 +5,6 @@ import {Content} from "./Content";
 import "./layout.scss"
 import "../common/common.scss"
 export const Layout = () => {
-    
     return <div className='layout'>
         <TitleBar/>
         <NavBar/>

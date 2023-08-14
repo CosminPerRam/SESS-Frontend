@@ -8,4 +8,5 @@ export const DropDown = ({label, options, style, handleChange}) => {
             </select>
             <div className='select-selected'></div>
         </label>
+  // look into wtf is select-selected todo!
 }

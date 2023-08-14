@@ -10,7 +10,7 @@ export const App = () => {
       <ApolloConfiguration>
           <Layout />
           <RenderActiveWindow />
-        <RenderActiveMenu />
+          <RenderActiveMenu />
       </ApolloConfiguration>
-    </div>
+  </div>
 }

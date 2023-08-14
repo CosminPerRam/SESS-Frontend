@@ -2,6 +2,7 @@ import {TabButton} from "../common/TabButton";
 import {useState} from "react";
 
 export const NavBar = () => {
+    // also refactor this, like in renderActiveWindow todo!
     const [activeTabs, setActiveTabs] = useState([true, false, false, false, false, false, false]);
     const activateTab = (tabNumber) => {
         const newActiveTabs = new Array(7).fill(false);

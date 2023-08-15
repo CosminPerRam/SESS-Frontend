@@ -1,7 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveMenu, setPopupCoords } from "../redux/contextMenu/slice";
 
-export const Input = ({ style, value, handleInput, menu, className }) => {
+export const Input = ({
+  style,
+  value,
+  handleInput,
+  menu,
+  className,
+  onKeyDown,
+}) => {
   const dispatch = useDispatch();
 
   const handleSetActiveMenu = (menu, popupCoords, e) => {
@@ -12,7 +19,7 @@ export const Input = ({ style, value, handleInput, menu, className }) => {
 
   return (
     <input
-      type="search"
+      type='search'
       className={className}
       style={style}
       value={value}
@@ -20,6 +27,7 @@ export const Input = ({ style, value, handleInput, menu, className }) => {
       onContextMenu={(e) => {
         handleSetActiveMenu(menu, { x: e.pageX, y: e.pageY }, e);
       }}
+      onKeyDown={(e) => onKeyDown(e)}
     />
   );
 };

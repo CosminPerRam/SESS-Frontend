@@ -32,16 +32,18 @@
   gap: 6px;
 }
 .buttons {
-  min-width: 272px;
-
   margin-right: 1px;
 
   display: flex;
   gap: 1px;
+  float: right;
 }
 #filters {
   color: $buttonTextLight;
 }
 #filters:hover {
  background-color: $secondary;
+}
+.bottom label:hover {
+  color: $textLight;
 }

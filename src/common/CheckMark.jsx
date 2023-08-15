@@ -1,3 +1,3 @@
-﻿export const CheckMark = ({disabled}) => {
-    return disabled ? <div className="disabled-checkmark" /> : <div className="checkmark" />
-}
+﻿export const CheckMark = ({ disabled }) => {
+  return <div className={disabled ? "disabled-checkmark" : "checkmark"} />;
+};

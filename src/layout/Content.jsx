@@ -1,9 +1,11 @@
-import {ServerList} from "./ServerList";
-import {Filters} from "./Filters";
+import { ServerList } from "./ServerList";
+import { Filters } from "./Filters";
 
 export const Content = () => {
-    return <div className='content'>
-        <ServerList />
-        <Filters />
+  return (
+    <div className="content">
+      <ServerList />
+      <Filters />
     </div>
-}
+  );
+};

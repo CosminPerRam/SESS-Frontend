@@ -1,5 +1,8 @@
-
-export const theme = (sizing, headerFirstThreePaddingLeft, baseFirstThreePaddingLeft) => ({
+export const theme = (
+  sizing,
+  headerFirstThreePaddingLeft,
+  baseFirstThreePaddingLeft,
+) => ({
   Table: `
     --data-table-library_grid-template-columns: ${sizing};
     height: auto;

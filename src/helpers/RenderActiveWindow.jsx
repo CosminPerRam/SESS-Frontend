@@ -26,7 +26,6 @@ export const RenderActiveWindow = () => {
     };
   }, [activeWindow, dispatch]);
 
-  // also refactor this as mentioned in RenderActiveMenu todo!
   if (activeWindow === "console") return <Console nodeRef={nodeRef} />;
   if (activeWindow === "serverInfo") return <ServerInfo nodeRef={nodeRef} />;
 

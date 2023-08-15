@@ -23,7 +23,7 @@ export const TableHeaderMenu = ({ top, left, nodeRef }) => {
   return (
     <div
       style={{ top: top + "px", left: left + "px" }}
-      className="context-menu"
+      className='context-menu'
       ref={nodeRef}
     >
       {labels.map((label) =>
@@ -36,7 +36,7 @@ export const TableHeaderMenu = ({ top, left, nodeRef }) => {
             checked={!hiddenColumns[label]}
             onChanged={() => dispatch(setHiddenColumns(label))}
           />
-        ),
+        )
       )}
     </div>
   );

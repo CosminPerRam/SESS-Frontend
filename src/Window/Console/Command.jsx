@@ -20,7 +20,6 @@ export const Command = () => {
     }
   };
   const updateCommand = (e) => {
-    // fix me todo!
     if (e.key === "Enter") {
       e.preventDefault();
       addLine();
@@ -28,9 +27,9 @@ export const Command = () => {
   };
 
   return (
-    <div className="command">
+    <div className='command'>
       <Input
-        type="search"
+        type='search'
         value={inputCommand}
         handleInput={handleInputCommand}
         menu={"command"}

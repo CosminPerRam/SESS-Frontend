@@ -2,7 +2,6 @@ import { TabButton } from "../common/TabButton";
 import { useState } from "react";
 
 export const NavBar = () => {
-  // also refactor this, like in renderActiveWindow todo!
   const [activeTabs, setActiveTabs] = useState([
     true,
     false,
@@ -19,8 +18,8 @@ export const NavBar = () => {
   };
 
   return (
-    <div className="nav-bar">
-      <div className="nav-buttons">
+    <div className='nav-bar'>
+      <div className='nav-buttons'>
         <TabButton
           title={"Internet"}
           activeTabs={activeTabs}

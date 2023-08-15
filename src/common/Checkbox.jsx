@@ -8,7 +8,6 @@ export const Checkbox = ({
   onChanged,
   className,
 }) => {
-  // whereas possible, replace ternary operators with and operators todo!
   return (
     <div className='form-element' onMouseDown={onChanged}>
       <div className={`checkbox ${className}`}>

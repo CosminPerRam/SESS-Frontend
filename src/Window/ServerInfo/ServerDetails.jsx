@@ -17,7 +17,7 @@ export const ServerDetails = ({
     dispatch(setPopupCoords(popupCoords));
   };
   return (
-    <div className="server-details">
+    <div className='server-details'>
       <ServerDetailsItem name={"Name"} value={name} />
       <ServerDetailsItem
         name={"IP Address"}

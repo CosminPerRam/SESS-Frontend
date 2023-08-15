@@ -21,7 +21,6 @@ export const RenderActiveMenu = () => {
   const hasTags = useSelector((state) => state.filters.hasTags);
   const command = useSelector((state) => state.contextMenu.inputCommand);
 
-  // refactor this to use map or directly pass the component in activeMenu todo!
   if (activeMenu === "server")
     return (
       <ServerMenu left={popupCoords.x} top={popupCoords.y} nodeRef={nodeRef} />

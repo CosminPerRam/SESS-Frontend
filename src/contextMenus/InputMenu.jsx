@@ -18,17 +18,17 @@ export const InputMenu = ({ top, left, setInput, input, nodeRef }) => {
 
   return (
     <div
-      className="context-menu"
+      className='context-menu'
       style={{ top: top + "px", left: left + "px" }}
       ref={nodeRef}
     >
-      <div className="context-menu-element" onMouseDown={Cut}>
+      <div className='context-menu-element' onMouseDown={Cut}>
         Cut
       </div>
-      <div className="context-menu-element" onMouseDown={Copy}>
+      <div className='context-menu-element' onMouseDown={Copy}>
         Copy
       </div>
-      <div className="context-menu-element" onMouseDown={Paste}>
+      <div className='context-menu-element' onMouseDown={Paste}>
         Paste
       </div>
     </div>

@@ -13,7 +13,6 @@ const onDoubleClick = (item, event) => {
   console.log("double clicked on" + item.name);
 };
 
-//move this in its place, it's not a common component (also look through the other components in this folder) todo!
 export const Row = ({ item }) => {
   const {
     id,

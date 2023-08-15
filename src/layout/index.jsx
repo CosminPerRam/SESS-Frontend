@@ -6,10 +6,11 @@ import "./layout.scss";
 import "../common/common.scss";
 export const Layout = () => {
   return (
-    <div className="layout">
+    <div className='layout'>
       <TitleBar />
       <NavBar />
       <Content />
+
       <TipBar />
     </div>
   );

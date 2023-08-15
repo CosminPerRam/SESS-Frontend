@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 export const Buttons = () => {
   const dispatch = useDispatch();
   return (
-    <div className="server-info-buttons">
+    <div className='server-info-buttons'>
       <Button title={"Join game"} style={{ width: "80px" }} />
       <Button title={"Refresh"} style={{ width: "80px" }} />
       <Button

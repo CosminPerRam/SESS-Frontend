@@ -1,2 +1,1 @@
-export const VerticalDivider = () => <div className="vertical-divider" />;
-// same as with Title.jsx todo!
+export const VerticalDivider = () => <div className='vertical-divider' />;

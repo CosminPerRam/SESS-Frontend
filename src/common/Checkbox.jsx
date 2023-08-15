@@ -10,7 +10,7 @@ export const Checkbox = ({
 }) => {
   // whereas possible, replace ternary operators with and operators todo!
   return (
-    <div className="form-element" onMouseDown={onChanged}>
+    <div className='form-element' onMouseDown={onChanged}>
       <div className={`checkbox ${className}`}>
         {checked ? <CheckMark disabled={disabled} /> : null}
       </div>

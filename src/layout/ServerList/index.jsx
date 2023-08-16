@@ -59,8 +59,6 @@ export const ServerList = () => {
     },
   });
 
-  const [item, setItem] = useState(null);
-
   return (
     <div className={"server-list"}>
       <Table
@@ -68,7 +66,7 @@ export const ServerList = () => {
         theme={theme(
           "repeat(3, 16px) minmax(24px, 1fr) minmax(100px, 1fr) 56px 40px minmax(100px, 1fr) 56px minmax(80px, 1fr)",
           "0px",
-          "2px",
+          "2px"
         )}
         select={select}
         layout={{ custom: true, fixedHeader: true }}
@@ -76,7 +74,7 @@ export const ServerList = () => {
         {(tableList) => (
           <>
             <Header amount={1457} blacklistedAmount={0} />
-            <Body tableList={tableList} setItem={setItem} />
+            <Body tableList={tableList} />
           </>
         )}
       </Table>

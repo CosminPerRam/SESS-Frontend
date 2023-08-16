@@ -28,13 +28,19 @@ export const TableHeaderMenu = ({ top, left, nodeRef }) => {
     >
       {labels.map((label) =>
         label === "Servers" ? (
-          <MenuOption title={label} disabled={true} checked={true} />
+          <MenuOption
+            title={label}
+            disabled={true}
+            checked={true}
+            key={label}
+          />
         ) : (
           <MenuOption
             title={label}
             disabled={false}
             checked={!hiddenColumns[label]}
             onChanged={() => dispatch(setHiddenColumns(label))}
+            key={label}
           />
         )
       )}

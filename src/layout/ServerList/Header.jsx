@@ -6,7 +6,7 @@ import {
 import { PasswordIcon } from "../../assets/icons/password";
 import { RobotronIcon } from "../../assets/icons/robotron";
 import { ReplayIcon } from "../../assets/icons/replay";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { setActiveMenu, setPopupCoords } from "../../redux/contextMenu/slice";
 import { useDispatchHandler } from "../../hooks/useDispatchHandler";
 

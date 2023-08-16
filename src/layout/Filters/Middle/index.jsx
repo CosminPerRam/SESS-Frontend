@@ -41,7 +41,6 @@ export const Middle = () => {
   const runsMap = useSelector((state) => state.filters.runsMap);
   const handleRunsMap = (event) => {
     dispatch(setRunsMap(event.target.value));
-    console.log(event.target.value);
   };
 
   const maxPlayerCount = useSelector(

@@ -2,7 +2,7 @@
 import { ServerMenu } from "../contextMenus/ServerMenu";
 import { TableHeaderMenu } from "../contextMenus/TableHeaderMenu";
 import { InputMenu } from "../contextMenus/InputMenu";
-import { setInputCommand } from "../redux/contextMenu/slice";
+import { setInputCommand } from "../redux/window/slice";
 import { useRef } from "react";
 import { useClick } from "../hooks/useClick";
 import { ReadOnlyMenu } from "../contextMenus/ReadOnlyMenu";
@@ -19,7 +19,7 @@ export const RenderActiveMenu = () => {
   const runsMap = useSelector((state) => state.filters.runsMap);
   const maxPlayerCount = useSelector((state) => state.filters.maxPlayerCount);
   const hasTags = useSelector((state) => state.filters.hasTags);
-  const command = useSelector((state) => state.contextMenu.inputCommand);
+  const command = useSelector((state) => state.window.inputCommand);
 
   if (activeMenu === "server")
     return (

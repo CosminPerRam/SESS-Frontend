@@ -1,13 +1,13 @@
 import { Button } from "../../common/Button";
 import { Input } from "../../common/Input";
 import { useDispatch, useSelector } from "react-redux";
-import { setInputCommand } from "../../redux/contextMenu/slice";
+import { setInputCommand } from "../../redux/window/slice";
 import { setConsoleLines } from "../../redux/window/slice";
 
 export const Command = () => {
   const dispatch = useDispatch();
 
-  const inputCommand = useSelector((state) => state.contextMenu.inputCommand);
+  const inputCommand = useSelector((state) => state.window.inputCommand);
   const handleInputCommand = (event) => {
     dispatch(setInputCommand(event.target.value));
     console.log(event.target.value);

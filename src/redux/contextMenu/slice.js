@@ -16,7 +16,6 @@ const initialState = {
     Latency: false,
     Tags: false,
   },
-  inputCommand: "",
 };
 
 const contextMenuSlice = createSlice({
@@ -33,16 +32,9 @@ const contextMenuSlice = createSlice({
       state.hiddenColumns[action.payload] =
         !state.hiddenColumns[action.payload];
     },
-    setInputCommand: (state, action) => {
-      state.inputCommand = action.payload;
-    },
   },
 });
 
-export const {
-  setActiveMenu,
-  setPopupCoords,
-  setHiddenColumns,
-  setInputCommand,
-} = contextMenuSlice.actions;
+export const { setActiveMenu, setPopupCoords, setHiddenColumns } =
+  contextMenuSlice.actions;
 export default contextMenuSlice.reducer;

@@ -2,8 +2,9 @@
 
 const initialState = {
   activeWindow: null,
-  consoleLines: [],
   serverDetails: null,
+  consoleLines: [],
+  inputCommand: "",
 };
 
 const windowSlice = createSlice({
@@ -19,9 +20,16 @@ const windowSlice = createSlice({
     setServerDetails: (state, action) => {
       state.serverDetails = action.payload;
     },
+    setInputCommand: (state, action) => {
+      state.inputCommand = action.payload;
+    },
   },
 });
 
-export const { setActiveWindow, setConsoleLines, setServerDetails } =
-  windowSlice.actions;
+export const {
+  setActiveWindow,
+  setConsoleLines,
+  setServerDetails,
+  setInputCommand,
+} = windowSlice.actions;
 export default windowSlice.reducer;

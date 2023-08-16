@@ -45,7 +45,7 @@ export const Middle = () => {
   };
 
   const maxPlayerCount = useSelector(
-    (state) => state.localFilters.maxPlayerCount,
+    (state) => state.localFilters.maxPlayerCount
   );
   const handleMaxPlayerCount = (event) => {
     dispatch(setMaxPlayerCount(event.target.value));
@@ -66,7 +66,7 @@ export const Middle = () => {
   };
 
   return (
-    <div className="middle">
+    <div className='middle'>
       <DropDown label={"Game"} options={game} style={{ width: "162px" }} />
       <LabelInput
         title={"Map"}

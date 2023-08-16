@@ -10,7 +10,7 @@ export const MenuOption = ({
   return (
     <div className='context-menu-element' onMouseDown={onChanged}>
       <div className='checkmark-wrapper'>
-        {checked ? <CheckMark disabled={disabled} /> : null}
+        {checked && <CheckMark disabled={disabled} />}
       </div>
 
       <Label name={title} style={disabled ? { color: "#847A68" } : {}} />

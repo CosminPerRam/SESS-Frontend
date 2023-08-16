@@ -13,7 +13,6 @@ export const Checkboxes = () => {
   const canBeEmpty = useSelector((state) => state.filters.canBeEmpty);
   const canHavePassword = useSelector((state) => state.filters.canHavePassword);
   const spectatorProxy = useSelector((state) => state.filters.spectatorProxy);
-  // dispatch setters can also be stored in a custom hook
 
   return (
     <form className="checkboxes">

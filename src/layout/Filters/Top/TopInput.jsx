@@ -1,4 +1,4 @@
-import { Input } from "./Input";
+import { Input } from "../../../common/Input";
 
 export const TopInput = ({ value, handleInput, menu }) => {
   return (

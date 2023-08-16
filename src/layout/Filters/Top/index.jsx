@@ -1,10 +1,10 @@
-import { DropDown } from "../../common/DropDown";
-import { VerticalDivider } from "../../common/VerticalDivider";
-import { TopInput } from "../../common/TopInput";
-import { Button } from "../../common/Button";
-import { HorizontalDivider } from "../../common/HorizontalDivider";
+import { DropDown } from "../../../common/DropDown";
+import { VerticalDivider } from "./VerticalDivider";
+import { TopInput } from "./TopInput";
+import { Button } from "../../../common/Button";
+import { HorizontalDivider } from "./HorizontalDivider";
 import { useDispatch, useSelector } from "react-redux";
-import { setHasTags } from "../../redux/filters/slice";
+import { setHasTags } from "../../../redux/filters/slice";
 
 export const Top = () => {
   const workshop = ["<All>", "Workshop maps", "Subscribed"];

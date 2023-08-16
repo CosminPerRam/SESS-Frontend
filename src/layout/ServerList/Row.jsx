@@ -2,12 +2,12 @@ import {
   Cell,
   Row as TableRow,
 } from "@table-library/react-table-library/table";
-import { PasswordIcon } from "../assets/icons/password";
-import { RobotronIcon } from "../assets/icons/robotron";
-import { ReplayIcon } from "../assets/icons/replay";
+import { PasswordIcon } from "../../assets/icons/password";
+import { RobotronIcon } from "../../assets/icons/robotron";
+import { ReplayIcon } from "../../assets/icons/replay";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveMenu, setPopupCoords } from "../redux/contextMenu/slice";
-import { setServerDetails } from "../redux/window/slice";
+import { setActiveMenu, setPopupCoords } from "../../redux/contextMenu/slice";
+import { setServerDetails } from "../../redux/window/slice";
 
 const onDoubleClick = (item, event) => {
   console.log("double clicked on" + item.name);

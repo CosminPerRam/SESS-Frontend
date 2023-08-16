@@ -4,11 +4,12 @@ import { Label } from "../../../common/Label";
 import { ActionButtons } from "./ActionButtons";
 import { useBottomLabel } from "../../../hooks/useBottomLabel";
 import { useDispatch, useSelector } from "react-redux";
-import { setSimplifiedList } from "../../../redux/layout/slice";
+import { setFilters, setSimplifiedList } from "../../../redux/layout/slice";
 
 export const Bottom = () => {
   const label = useBottomLabel();
   const simplifiedList = useSelector((state) => state.layout.simplifiedList);
+  const filters = useSelector((state) => state.layout.filters);
   const dispatch = useDispatch();
 
   return (
@@ -25,12 +26,25 @@ export const Bottom = () => {
           <Button
             title={"Filters"}
             id={"filters"}
-            style={{
-              width: "106px",
-              marginLeft: "32px",
-              color: "$buttonText",
-              minWidth: "106px",
-            }}
+            style={
+              filters
+                ? {
+                    width: "106px",
+                    marginLeft: "32px",
+                    color: "#DEDEDE",
+                    minWidth: "106px",
+                    paddingLeft: "5px",
+                  }
+                : {
+                    width: "106px",
+                    marginLeft: "32px",
+                    color: "#393532",
+                    minWidth: "106px",
+                    paddingBottom: "2px",
+                    paddingLeft: "3px",
+                  }
+            }
+            onClick={() => dispatch(setFilters(!filters))}
           />
           <Label name={label} />
         </>

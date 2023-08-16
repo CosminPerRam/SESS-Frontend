@@ -64,7 +64,7 @@ export const Middle = () => {
     if (e.target.value === "<All>") dispatch(setLatency(null));
     else dispatch(setLatency(e.target.value));
   };
-
+  //handles
   return (
     <div className='middle'>
       <DropDown label={"Game"} options={game} style={{ width: "162px" }} />

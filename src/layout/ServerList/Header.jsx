@@ -8,21 +8,20 @@ import { RobotronIcon } from "../../assets/icons/robotron";
 import { ReplayIcon } from "../../assets/icons/replay";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveMenu, setPopupCoords } from "../../redux/contextMenu/slice";
+import { useDispatchHandler } from "../../hooks/useDispatchHandler";
 
-export const Header = ({ amount, blacklistedAmount, setPoints }) => {
-  const dispatch = useDispatch();
-  const handleSetActiveMenu = (menu, popupCoords, e) => {
-    e.preventDefault();
-    dispatch(setActiveMenu(menu));
-    dispatch(setPopupCoords(popupCoords));
-  };
-
+export const Header = ({ amount, blacklistedAmount }) => {
+  const handleDispatch = useDispatchHandler();
   const hiddenColumns = useSelector((state) => state.contextMenu.hiddenColumns);
 
   return (
     <TableHeader
       onContextMenu={(e) =>
-        handleSetActiveMenu("header", { x: e.pageX, y: e.pageY }, e)
+        handleDispatch(
+          e,
+          setActiveMenu("header"),
+          setPopupCoords({ x: e.pageX, y: e.pageY })
+        )
       }
     >
       <HeaderRow>

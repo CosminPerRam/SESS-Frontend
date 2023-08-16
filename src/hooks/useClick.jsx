@@ -1,19 +1,24 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { setActiveMenu, setPopupCoords } from "../redux/contextMenu/slice";
+import { useDispatchHandler } from "./useDispatchHandler";
 
 export const useClick = () => {
-  const dispatch = useDispatch();
+  const handleDispatch = useDispatchHandler();
+
   useEffect(() => {
-    const handleClickOutside = () => {
-      dispatch(setActiveMenu(null));
-      dispatch(setPopupCoords(null));
-    };
-    document.addEventListener("mouseup", handleClickOutside);
-    window.addEventListener("resize", handleClickOutside);
+    document.addEventListener("mouseup", () =>
+      handleDispatch(null, setActiveMenu(null), setPopupCoords(null))
+    );
+    window.addEventListener("resize", () =>
+      handleDispatch(null, setActiveMenu(null), setPopupCoords(null))
+    );
     return () => {
-      document.removeEventListener("mouseup", handleClickOutside);
-      window.removeEventListener("resize", handleClickOutside);
+      document.removeEventListener("mouseup", () =>
+        handleDispatch(null, setActiveMenu(null), setPopupCoords(null))
+      );
+      window.removeEventListener("resize", () =>
+        handleDispatch(null, setActiveMenu(null), setPopupCoords(null))
+      );
     };
-  }, [dispatch]);
+  }, [handleDispatch]);
 };

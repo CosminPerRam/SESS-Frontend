@@ -10,7 +10,6 @@ export const Layout = () => {
       <TitleBar />
       <NavBar />
       <Content />
-
       <TipBar />
     </div>
   );

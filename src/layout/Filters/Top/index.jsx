@@ -16,7 +16,7 @@ export const Top = () => {
     dispatch(setHasTags(event.target.value));
     console.log(event.target.value);
   };
-
+  //handles
   return (
     <div className='top'>
       <div className='top-settings'>

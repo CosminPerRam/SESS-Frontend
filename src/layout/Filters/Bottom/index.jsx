@@ -3,20 +3,22 @@ import { Button } from "../../../common/Button";
 import { Label } from "../../../common/Label";
 import { ActionButtons } from "./ActionButtons";
 import { useBottomLabel } from "../../../hooks/useBottomLabel";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setSimplifiedList } from "../../../redux/layout/slice";
 
 export const Bottom = () => {
   const label = useBottomLabel();
-  const [checked, setChecked] = useState(false);
+  const simplifiedList = useSelector((state) => state.layout.simplifiedList);
+  const dispatch = useDispatch();
 
   return (
     <div className='bottom'>
       <Checkbox
         title={"Simplified List"}
-        checked={checked}
-        onChanged={() => setChecked(!checked)}
+        checked={simplifiedList}
+        onChanged={() => dispatch(setSimplifiedList(!simplifiedList))}
       />
-      {checked ? (
+      {simplifiedList ? (
         <div className='label'></div>
       ) : (
         <>

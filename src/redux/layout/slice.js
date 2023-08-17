@@ -3,7 +3,7 @@
 const initialState = {
   simplifiedList: false,
   filters: true,
-  activeTab: [true, false, false, false, false, false, false],
+  activeTab: "Internet",
 };
 
 const layoutSlice = createSlice({
@@ -17,8 +17,7 @@ const layoutSlice = createSlice({
       state.filters = action.payload;
     },
     setActiveTab: (state, action) => {
-      state.activeTab = [false, false, false, false, false, false, false];
-      state.activeTab[action.payload] = true;
+      state.activeTab = action.payload;
     },
   },
 });

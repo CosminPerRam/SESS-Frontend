@@ -1,10 +1,10 @@
-import { DropDown } from "../../../common/DropDown";
 import { VerticalDivider } from "./VerticalDivider";
 import { TopInput } from "./TopInput";
 import { Button } from "../../../common/Button";
 import { HorizontalDivider } from "./HorizontalDivider";
 import { useDispatch, useSelector } from "react-redux";
 import { setHasTags } from "../../../redux/filters/slice";
+import { Select } from "../../../common/Select";
 
 export const Top = () => {
   const workshop = ["<All>", "Workshop maps", "Subscribed"];
@@ -20,9 +20,9 @@ export const Top = () => {
   return (
     <div className='top'>
       <div className='top-settings'>
-        <DropDown label={"Workshop"} options={workshop} />
+        <Select label={"Workshop"} options={workshop} />
         <VerticalDivider />
-        <DropDown label={"Tags"} options={tags} />
+        <Select label={"Tags"} options={tags} />
         <TopInput
           value={hasTags}
           handleInput={handleHasTags}

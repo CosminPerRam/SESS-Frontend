@@ -8,7 +8,7 @@ export const MenuOption = ({
   onChanged,
 }) => {
   return (
-    <div className='context-menu-element' onMouseDown={onChanged}>
+    <div className='context-menu-element' onClick={onChanged}>
       <div className='checkmark-wrapper'>
         {checked && <CheckMark disabled={disabled} />}
       </div>

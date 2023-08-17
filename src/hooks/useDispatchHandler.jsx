@@ -5,7 +5,10 @@ export const useDispatchHandler = () => {
   const dispatch = useDispatch();
   return useCallback(
     (e, ...setArray) => {
-      if (e !== null) e.preventDefault();
+      if (e !== null) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
       setArray.forEach((setItem) => dispatch(setItem));
     },
     [dispatch]

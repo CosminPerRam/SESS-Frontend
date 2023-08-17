@@ -11,6 +11,7 @@ import {
   setLatency,
   setMaxPlayerCount,
 } from "../../../redux/localFilters/slice";
+import { Select } from "../../../common/Select";
 
 export const Middle = () => {
   const game = ["Team Fortress 2"];
@@ -66,7 +67,7 @@ export const Middle = () => {
   //handles
   return (
     <div className='middle'>
-      <DropDown label={"Game"} options={game} style={{ width: "162px" }} />
+      <Select label={"Game"} options={game} style={{ width: "162px" }} />
       <LabelInput
         title={"Map"}
         style={{ width: "162px" }}
@@ -81,17 +82,18 @@ export const Middle = () => {
         handleInput={handleMaxPlayerCount}
         menu={"maxPlayerCount"}
       />
-      <DropDown
+      <Select
         label={"Latency"}
         options={latency}
         handleChange={handleLatency}
+        style={{ width: "110px" }}
       />
-      <DropDown
+      <Select
         label={"Location"}
         options={location}
         handleChange={handleLocation}
       />
-      <DropDown
+      <Select
         label={"Anti-cheat"}
         options={antiCheat}
         handleChange={handleIsSecured}

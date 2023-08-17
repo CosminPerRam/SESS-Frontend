@@ -43,22 +43,46 @@
   align-items: center;
   justify-content: center;
 }
-select {
-  appearance:none;
-  -moz-appearance:none; /* Firefox */
-  -webkit-appearance:none; /* Safari and Chrome */
-  
+.select {
   height: 24px;
   width: 110px;
   
   background-color: $input;
+  display: flex;
+  align-items: center;
   color: $textLight;
+  position: relative;
   
   margin-left: 10px;
   padding-left: 2px;
-  
   border: 1px solid $borderDark;
 }
+.select-options {
+  max-height: 124px;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: scroll;
+  left: -1px;
+  position: absolute;
+  bottom: 25px;
+  width: 100% + 1;
+  z-index: 2;
+  border: 1px solid $borderDark;
+
+  color: $textLight;
+  background-color: $primaryDark;
+}
+.select-option {
+  padding: 3px 8px 3px 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.select-option:hover {
+  background-color: $hover;
+  color: $textSelected;
+}
+
 .arrow-down:after {
   width: 0;
   height: 0;
@@ -120,7 +144,7 @@ select {
   padding-left: 2px;
   
 }
-.top-input:focus, .input:focus, select:focus {
+.top-input:focus, .input:focus {
   outline: none;
 }
 .input {
@@ -173,4 +197,5 @@ input::-ms-clear {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  
 }

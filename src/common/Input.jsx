@@ -13,7 +13,7 @@ export const Input = ({
 
   return (
     <input
-      type='search'
+      type='text'
       className={className}
       style={style}
       value={value}

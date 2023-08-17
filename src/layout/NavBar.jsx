@@ -1,4 +1,4 @@
-import { TabButton } from "../common/TabButton";
+import { TabButton } from "./TabButton";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveTab } from "../redux/layout/slice";
 

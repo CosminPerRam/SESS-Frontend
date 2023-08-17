@@ -118,6 +118,7 @@ select {
 .input, .top-input {
   color: $textLight;
   padding-left: 2px;
+  
 }
 .top-input:focus, .input:focus, select:focus {
   outline: none;
@@ -130,6 +131,9 @@ select {
   border: 1px solid $borderDark;
   
   margin-left: 5px;
+}
+input::-ms-clear {
+  display: none;
 }
 .checkbox {
   background-color: $input;

@@ -10,10 +10,10 @@ export const useClickOutside = (ref) => {
         dispatch(setActiveWindow(null));
     };
     document.addEventListener("contextmenu", handleClickOutside);
-    document.addEventListener("mouseup", handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
     return () => {
       document.removeEventListener("contextmenu", handleClickOutside);
-      document.removeEventListener("mouseup", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, [ref, dispatch]);
 };

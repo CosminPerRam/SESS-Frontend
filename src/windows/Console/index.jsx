@@ -1,4 +1,4 @@
-﻿import { Window } from "../index";
+﻿import { Window } from "../Window";
 import { Logs } from "./Logs";
 import { Command } from "./Command";
 

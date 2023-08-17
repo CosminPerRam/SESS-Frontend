@@ -1,5 +1,5 @@
 import { ServerDetails } from "./ServerDetails";
-import { Window } from "../index";
+import { Window } from "../Window";
 import { useSelector } from "react-redux";
 import { ServerInfoTable } from "./ServerInfoTable";
 import { Buttons } from "./Buttons";

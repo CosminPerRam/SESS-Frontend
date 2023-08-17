@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useRef } from "react";
 import { setActiveWindow } from "../redux/window/slice";
-import { Console } from "../Window/Console";
+import { Console } from "../windows/Console";
 import { useClickOutside } from "../hooks/useClickOutside";
-import { ServerInfo } from "../Window/ServerInfo";
+import { ServerInfo } from "../windows/ServerInfo";
 
 export const RenderActiveWindow = () => {
   const dispatch = useDispatch();

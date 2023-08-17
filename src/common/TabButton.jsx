@@ -1,10 +1,10 @@
-export const TabButton = ({ title, activateTab, activeTabs, tabNumber }) => {
+export const TabButton = ({ title, onClick, activeTab }) => {
   return (
     <button
       className='tab-button'
-      onClick={() => activateTab(tabNumber)}
+      onClick={() => onClick()}
       style={
-        activeTabs[tabNumber]
+        activeTab
           ? {
               color: "$buttonTextLight",
               border: "1px solid $border",

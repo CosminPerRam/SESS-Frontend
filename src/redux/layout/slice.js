@@ -3,6 +3,7 @@
 const initialState = {
   simplifiedList: false,
   filters: true,
+  activeTab: [true, false, false, false, false, false, false],
 };
 
 const layoutSlice = createSlice({
@@ -15,8 +16,13 @@ const layoutSlice = createSlice({
     setFilters: (state, action) => {
       state.filters = action.payload;
     },
+    setActiveTab: (state, action) => {
+      state.activeTab = [false, false, false, false, false, false, false];
+      state.activeTab[action.payload] = true;
+    },
   },
 });
 
-export const { setSimplifiedList, setFilters } = layoutSlice.actions;
+export const { setSimplifiedList, setFilters, setActiveTab } =
+  layoutSlice.actions;
 export default layoutSlice.reducer;

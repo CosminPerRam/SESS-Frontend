@@ -6,18 +6,19 @@ export const useClick = () => {
   const handleDispatch = useDispatchHandler();
 
   useEffect(() => {
-    document.addEventListener("click", () =>
-      handleDispatch(null, setActiveMenu(null), setPopupCoords(null))
+    document.addEventListener("mousedown", () =>
+      handleDispatch(null, setActiveMenu(null), setPopupCoords(null)),
     );
+
     window.addEventListener("resize", () =>
-      handleDispatch(null, setActiveMenu(null), setPopupCoords(null))
+      handleDispatch(null, setActiveMenu(null), setPopupCoords(null)),
     );
     return () => {
-      document.removeEventListener("click", () =>
-        handleDispatch(null, setActiveMenu(null), setPopupCoords(null))
+      document.removeEventListener("mousedown", () =>
+        handleDispatch(null, setActiveMenu(null), setPopupCoords(null)),
       );
       window.removeEventListener("resize", () =>
-        handleDispatch(null, setActiveMenu(null), setPopupCoords(null))
+        handleDispatch(null, setActiveMenu(null), setPopupCoords(null)),
       );
     };
   }, [handleDispatch]);

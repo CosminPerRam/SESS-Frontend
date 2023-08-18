@@ -8,8 +8,14 @@ export const MenuOption = ({
   onChanged,
 }) => {
   return (
-    <div className='context-menu-element' onClick={onChanged}>
-      <div className='checkmark-wrapper'>
+    <div
+      className="context-menu-element"
+      onClick={onChanged}
+      onMouseDown={(e) => {
+        e.stopPropagation();
+      }}
+    >
+      <div className="checkmark-wrapper">
         {checked && <CheckMark disabled={disabled} />}
       </div>
 

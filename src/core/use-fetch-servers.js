@@ -42,7 +42,7 @@ export const useFetchServers = () => {
     (new_server) => {
       setServers([...servers, new_server]);
     },
-    [servers, setServers]
+    [servers, setServers],
   );
 
   const { error } = useSubscription(SERVER_SUBSCRIPTION, {
@@ -68,7 +68,7 @@ export const useFetchServers = () => {
         limit,
       });
     },
-    [setServers, setSkip, setLoading, setVariables]
+    [setServers, setSkip, setLoading, setVariables],
   );
 
   return { loading, error, servers, fetch };

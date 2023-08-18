@@ -22,6 +22,9 @@ export const ServerMenu = ({ top, left, nodeRef }) => {
           dispatch(setActiveMenu(null));
           dispatch(setPopupCoords(null));
         }}
+        onMouseDown={(e) => {
+          e.stopPropagation();
+        }}
       >
         View server info
       </div>

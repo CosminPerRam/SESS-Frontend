@@ -1,5 +1,4 @@
 import { Checkboxes } from "./Checkboxes";
-import { DropDown } from "../../../common/DropDown";
 import { useDispatch, useSelector } from "react-redux";
 import { LabelInput } from "../../../common/LabelInput";
 import {
@@ -15,7 +14,7 @@ import { Select } from "../../../common/Select";
 
 export const Middle = () => {
   const game = ["Team Fortress 2"];
-  const latency = [
+  const latencyList = [
     "<All>",
     "< 50",
     "< 100",
@@ -24,7 +23,7 @@ export const Middle = () => {
     "< 350",
     "< 600",
   ];
-  const location = [
+  const locationList = [
     "<All>",
     "US - East",
     "US - West",
@@ -45,29 +44,23 @@ export const Middle = () => {
   };
 
   const maxPlayerCount = useSelector(
-    (state) => state.localFilters.maxPlayerCount
+    (state) => state.localFilters.maxPlayerCount,
   );
+
   const handleMaxPlayerCount = (event) => {
     dispatch(setMaxPlayerCount(event.target.value));
-    console.log(event.target.value);
   };
-  const handleLocation = (e) => {
-    if (e.target.value === "<All>") dispatch(setLocation(null));
-    else dispatch(setLocation(e.target.value));
-  };
-  const handleIsSecured = (e) => {
-    if (e.target.value === "<All>") dispatch(setIsSecured(null));
-    else if (e.target.value === "Secure") dispatch(setIsSecured(true));
-    else dispatch(setIsSecured(false));
-  };
-  const handleLatency = (e) => {
-    if (e.target.value === "<All>") dispatch(setLatency(null));
-    else dispatch(setLatency(e.target.value));
-  };
-  //handles
+  const latency = useSelector((state) => state.localFilters.latency);
+  const location = useSelector((state) => state.filters.location);
+  const isSecured = useSelector((state) => state.filters.isSecured);
   return (
-    <div className='middle'>
-      <Select label={"Game"} options={game} style={{ width: "162px" }} />
+    <div className="middle">
+      <Select
+        label={"Game"}
+        options={game}
+        style={{ width: "162px" }}
+        selectedOption={"Team Fortress 2"}
+      />
       <LabelInput
         title={"Map"}
         style={{ width: "162px" }}
@@ -84,19 +77,22 @@ export const Middle = () => {
       />
       <Select
         label={"Latency"}
-        options={latency}
-        handleChange={handleLatency}
+        options={latencyList}
+        setOption={setLatency}
         style={{ width: "110px" }}
+        selectedOption={latency === null ? "<All>" : latency}
       />
       <Select
         label={"Location"}
-        options={location}
-        handleChange={handleLocation}
+        options={locationList}
+        setOption={setLocation}
+        selectedOption={location === null ? "<All>" : location}
       />
       <Select
         label={"Anti-cheat"}
         options={antiCheat}
-        handleChange={handleIsSecured}
+        setOption={setIsSecured}
+        selectedOption={isSecured === null ? "<All>" : isSecured}
       />
       <Checkboxes />
     </div>

@@ -1,15 +1,26 @@
-﻿export const SelectOptions = ({ nodeRef }) => {
+﻿import { useDispatch } from "react-redux";
+
+export const SelectOptions = ({ options, setOption }) => {
+  const dispatch = useDispatch();
+  const handleClick = (event, option) => {
+    event.stopPropagation();
+    if (option === "<All>") dispatch(setOption(null));
+    else if (option === "Secure") dispatch(setOption(true));
+    else if (option === "Not Secure") dispatch(setOption(false));
+    else dispatch(setOption(option));
+  };
+
   return (
-    <div className='select-options' ref={nodeRef}>
-      <div className='select-option'>ass2</div>
-      <div className='select-option'>ass3</div>
-      <div className='select-option'>ass4</div>
-      <div className='select-option'>ass5</div>
-      <div className='select-option'>ass6</div>
-      <div className='select-option'>ass6</div>
-      <div className='select-option'>ass6</div>
-      <div className='select-option'>ass6</div>
-      <div className='select-option'>ass6</div>
+    <div className="select-options">
+      {options.map((option) => (
+        <div
+          className="select-option"
+          key={option}
+          onMouseDown={(e) => handleClick(e, option)}
+        >
+          {option}
+        </div>
+      ))}
     </div>
   );
 };

@@ -57,11 +57,15 @@
   padding-left: 2px;
   border: 1px solid $borderDark;
 }
+.select:hover {
+  cursor: default;
+}
 .select-options {
   max-height: 124px;
   display: flex;
   flex-direction: column-reverse;
-  overflow-y: scroll;
+  overflow-y: auto;
+  white-space: nowrap;
   left: -1px;
   position: absolute;
   bottom: 25px;

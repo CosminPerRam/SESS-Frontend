@@ -1,15 +1,18 @@
 ﻿import { SelectOptions } from "./SelectOptions";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-export const Select = ({ label, style, value, handleInput, menu }) => {
+export const Select = ({
+  label,
+  style,
+  options,
+  setOption,
+  selectedOption,
+}) => {
   const [optionsOpen, setOptionsOpen] = useState(false);
-  const nodeRef = useRef(null);
-  console.log(optionsOpen);
+
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (nodeRef.current && !nodeRef.current.contains(event.target)) {
-        setOptionsOpen(false);
-      }
+    const handleClickOutside = () => {
+      setOptionsOpen(false);
     };
 
     document.addEventListener("click", handleClickOutside);
@@ -20,18 +23,23 @@ export const Select = ({ label, style, value, handleInput, menu }) => {
   }, []);
 
   const handleClick = (event) => {
-    setOptionsOpen(!optionsOpen);
     event.stopPropagation();
+    setOptionsOpen(!optionsOpen);
   };
-
   return (
-    <div className='form-element'>
+    <div className="form-element">
       {label}
-      <div className='select' style={style} onClick={(e) => handleClick(e)}>
-        {optionsOpen && <SelectOptions nodeRef={nodeRef} />}
-        ass
+      <div className="select" style={style} onClick={(e) => handleClick(e)}>
+        {optionsOpen && (
+          <SelectOptions options={options} setOption={setOption} />
+        )}
+        {selectedOption === true
+          ? "Secure"
+          : selectedOption === false
+          ? "Not Secure"
+          : selectedOption}
       </div>
-      <div className='arrow-down'></div>
+      <div className="arrow-down"></div>
     </div>
   );
 };

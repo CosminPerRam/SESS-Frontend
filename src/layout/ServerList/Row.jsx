@@ -40,7 +40,7 @@ export const Row = ({ item }) => {
           e,
           setActiveMenu("server"),
           setPopupCoords({ x: e.pageX, y: e.pageY }),
-          setServerDetails(item)
+          setServerDetails(item),
         )
       }
     >
@@ -48,10 +48,10 @@ export const Row = ({ item }) => {
         {hasPassword ? <PasswordIcon /> : null}
       </Cell>
       <Cell hide={hiddenColumns["Secure"]}>
-        {vacSecured ? <ReplayIcon /> : null}
+        {vacSecured ? <RobotronIcon /> : null}
       </Cell>
       <Cell hide={hiddenColumns["Replay"]}>
-        {supportsReplays ? <RobotronIcon /> : null}
+        {supportsReplays ? <ReplayIcon /> : null}
       </Cell>
       <Cell hide={hiddenColumns["Servers"]}>{name}</Cell>
       <Cell hide={hiddenColumns["IP Address"]}>IP_HERE</Cell>

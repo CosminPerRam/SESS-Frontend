@@ -13,35 +13,35 @@ export const Bottom = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className='bottom'>
+    <div className="bottom">
       <Checkbox
-        title={"Simplified List"}
+        title={`Simplified List`}
         checked={simplifiedList}
         onChanged={() => dispatch(setSimplifiedList(!simplifiedList))}
       />
       {simplifiedList ? (
-        <div className='label'></div>
+        <div className="label"></div>
       ) : (
         <>
           <Button
-            title={"Filters"}
-            id={"filters"}
+            title={`Filters`}
+            id={`filters`}
             style={
               filters
                 ? {
-                    width: "106px",
-                    marginLeft: "32px",
-                    color: "#DEDEDE",
-                    minWidth: "106px",
-                    paddingLeft: "5px",
+                    width: `106px`,
+                    marginLeft: `32px`,
+                    color: `#DEDEDE`,
+                    minWidth: `106px`,
+                    paddingLeft: `5px`,
                   }
                 : {
-                    width: "106px",
-                    marginLeft: "32px",
-                    color: "#393532",
-                    minWidth: "106px",
-                    paddingBottom: "2px",
-                    paddingLeft: "3px",
+                    width: `106px`,
+                    marginLeft: `32px`,
+                    color: `#393532`,
+                    minWidth: `106px`,
+                    paddingBottom: `2px`,
+                    paddingLeft: `3px`,
                   }
             }
             onClick={() => dispatch(setFilters(!filters))}

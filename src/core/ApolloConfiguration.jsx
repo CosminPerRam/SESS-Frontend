@@ -4,7 +4,7 @@ import { WebSocketLink } from "@apollo/client/link/ws";
 
 //https://www.apollographql.com/docs/react/data/subscriptions/#the-older-subscriptions-transport-ws-library
 const wsLink = new WebSocketLink(
-  new SubscriptionClient("wss://cosminperram.com:20240/subscriptions"),
+  new SubscriptionClient(`wss://cosminperram.com:20240/subscriptions`),
 );
 
 const client = new ApolloClient({

@@ -10,7 +10,7 @@ export const ServerMenu = ({ top, left, nodeRef }) => {
   return (
     <div
       className="context-menu"
-      style={{ top: top + "px", left: left + "px" }}
+      style={{ top: top + `px`, left: left + `px` }}
       ref={nodeRef}
     >
       <div className="context-menu-element">Connect to server</div>
@@ -18,7 +18,7 @@ export const ServerMenu = ({ top, left, nodeRef }) => {
         className="context-menu-element"
         onClick={(e) => {
           e.stopPropagation();
-          dispatch(setActiveWindow("serverInfo"));
+          dispatch(setActiveWindow(`serverInfo`));
           dispatch(setActiveMenu(null));
           dispatch(setPopupCoords(null));
         }}

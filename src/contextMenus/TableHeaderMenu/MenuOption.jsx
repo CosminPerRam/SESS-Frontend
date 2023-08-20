@@ -19,7 +19,7 @@ export const MenuOption = ({
         {checked && <CheckMark disabled={disabled} />}
       </div>
 
-      <Label name={title} style={disabled ? { color: "#847A68" } : {}} />
+      <Label name={title} style={disabled ? { color: `#847A68` } : {}} />
     </div>
   );
 };

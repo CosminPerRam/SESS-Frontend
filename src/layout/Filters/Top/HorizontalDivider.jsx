@@ -1,1 +1,1 @@
-export const HorizontalDivider = () => <hr className='horizontal-divider' />;
+export const HorizontalDivider = () => <hr className="horizontal-divider" />;

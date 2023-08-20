@@ -1,1 +1,1 @@
-export const VerticalDivider = () => <div className='vertical-divider' />;
+export const VerticalDivider = () => <div className="vertical-divider" />;

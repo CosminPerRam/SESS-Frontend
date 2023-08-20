@@ -670,10 +670,10 @@
     "@svgr/hast-util-to-babel-ast" "^7.0.0"
     svg-parser "^2.0.4"
 
-"@table-library/react-table-library@^4.1.4":
-  version "4.1.4"
-  resolved "https://registry.npmjs.org/@table-library/react-table-library/-/react-table-library-4.1.4.tgz"
-  integrity sha512-MMNoEY23GTyrIiw2OeVG2IKsYKXXPeIx6eNYFcNCeV+OVd13niUSvlh9t8M0DZhpowSm/ctJwtbmdkBGpUqa4Q==
+"@table-library/react-table-library@4.1.7":
+  version "4.1.7"
+  resolved "https://registry.yarnpkg.com/@table-library/react-table-library/-/react-table-library-4.1.7.tgz#90b71f959228f420d2deffeecc9eace879cb4c2e"
+  integrity sha512-KKFjdACvEUeD9yhgXBjZUJSdE9pxUbJdou4Pp71FW8dxQWc7LcMcSxpveSfGXw8KlcWY0hThJOwyjQb+UKOmnw==
   dependencies:
     clsx "1.1.1"
     react-virtualized-auto-sizer "1.0.7"

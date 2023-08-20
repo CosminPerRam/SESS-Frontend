@@ -6,7 +6,7 @@
     "@apollo/client": "^3.7.17",
     "@emotion/react": "^11.11.1",
     "@reduxjs/toolkit": "^1.9.5",
-    "@table-library/react-table-library": "^4.1.4",
+    "@table-library/react-table-library": "4.1.7",
     "@vercel/analytics": "^1.0.1",
     "graphql": "^16.7.1",
     "graphql-ws": "^5.14.0",

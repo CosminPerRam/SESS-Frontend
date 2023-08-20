@@ -5,13 +5,13 @@ import { setActiveTab } from "../redux/layout/slice";
 export const NavBar = () => {
   const tabs = [
     // TODO! move this to core and make it const and also use Internet in slice
-    "Internet",
-    "Favorites",
-    "History",
-    "Spectate",
-    "Lan",
-    "Friends",
-    "Blacklisted Servers",
+    `Internet`,
+    `Favorites`,
+    `History`,
+    `Spectate`,
+    `Lan`,
+    `Friends`,
+    `Blacklisted Servers`,
   ];
 
   const activeTab = useSelector((state) => state.layout.activeTab);

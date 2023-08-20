@@ -5,13 +5,13 @@ import {
 import { PasswordIcon } from "../../assets/icons/password";
 import { RobotronIcon } from "../../assets/icons/robotron";
 import { ReplayIcon } from "../../assets/icons/replay";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { setActiveMenu, setPopupCoords } from "../../redux/contextMenu/slice";
 import { setServerDetails } from "../../redux/window/slice";
 import { useDispatchHandler } from "../../hooks/useDispatchHandler";
 
 const onDoubleClick = (item, event) => {
-  console.log("double clicked on" + item.name);
+  console.log(`double clicked on` + item.name);
 };
 
 export const Row = ({ item }) => {
@@ -38,31 +38,31 @@ export const Row = ({ item }) => {
       onContextMenu={(e) =>
         handleDispatch(
           e,
-          setActiveMenu("server"),
+          setActiveMenu(`server`),
           setPopupCoords({ x: e.pageX, y: e.pageY }),
           setServerDetails(item),
         )
       }
     >
-      <Cell hide={hiddenColumns["Password"]}>
+      <Cell hide={hiddenColumns[`Password`]}>
         {hasPassword ? <PasswordIcon /> : null}
       </Cell>
-      <Cell hide={hiddenColumns["Secure"]}>
+      <Cell hide={hiddenColumns[`Secure`]}>
         {vacSecured ? <RobotronIcon /> : null}
       </Cell>
-      <Cell hide={hiddenColumns["Replay"]}>
+      <Cell hide={hiddenColumns[`Replay`]}>
         {supportsReplays ? <ReplayIcon /> : null}
       </Cell>
-      <Cell hide={hiddenColumns["Servers"]}>{name}</Cell>
-      <Cell hide={hiddenColumns["IP Address"]}>IP_HERE</Cell>
-      <Cell hide={hiddenColumns["Game"]}>{game}</Cell>
+      <Cell hide={hiddenColumns[`Servers`]}>{name}</Cell>
+      <Cell hide={hiddenColumns[`IP Address`]}>IP_HERE</Cell>
+      <Cell hide={hiddenColumns[`Game`]}>{game}</Cell>
       <Cell
-        hide={hiddenColumns["Players"]}
+        hide={hiddenColumns[`Players`]}
       >{`${playersOnline}/${playersMaximum}`}</Cell>
-      <Cell hide={hiddenColumns["Bots"]}>{playersBots}</Cell>
-      <Cell hide={hiddenColumns["Map"]}>{map}</Cell>
-      <Cell hide={hiddenColumns["Latency"]}>{"Latency"}</Cell>
-      <Cell hide={hiddenColumns["Tags"]}>{"Tags"}</Cell>
+      <Cell hide={hiddenColumns[`Bots`]}>{playersBots}</Cell>
+      <Cell hide={hiddenColumns[`Map`]}>{map}</Cell>
+      <Cell hide={hiddenColumns[`Latency`]}>{`Latency`}</Cell>
+      <Cell hide={hiddenColumns[`Tags`]}>{`Tags`}</Cell>
     </TableRow>
   );
 };

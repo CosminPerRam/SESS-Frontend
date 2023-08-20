@@ -7,8 +7,8 @@ import { setHasTags } from "../../../redux/filters/slice";
 import { Select } from "../../../common/Select";
 
 export const Top = () => {
-  const workshop = ["<All>", "Workshop maps", "Subscribed"];
-  const tags = ["include", "do not include"];
+  const workshop = [`<All>`, `Workshop maps`, `Subscribed`];
+  const tags = [`include`, `do not include`];
   const dispatch = useDispatch();
 
   const hasTags = useSelector((state) => state.filters.hasTags);
@@ -18,17 +18,17 @@ export const Top = () => {
   };
   //handles
   return (
-    <div className='top'>
-      <div className='top-settings'>
-        <Select label={"Workshop"} options={workshop} />
+    <div className="top">
+      <div className="top-settings">
+        <Select label={`Workshop`} options={workshop} />
         <VerticalDivider />
-        <Select label={"Tags"} options={tags} />
+        <Select label={`Tags`} options={tags} />
         <TopInput
           value={hasTags}
           handleInput={handleHasTags}
-          menu={"serverInput"}
+          menu={`serverInput`}
         />
-        <Button title={"Add common tags..."} style={{ minWidth: "144px" }} />
+        <Button title={`Add common tags...`} style={{ minWidth: `144px` }} />
       </div>
       <HorizontalDivider />
     </div>

@@ -13,7 +13,7 @@ export const Input = ({
 
   return (
     <input
-      type='text'
+      type="text"
       className={className}
       style={style}
       value={value}
@@ -22,7 +22,7 @@ export const Input = ({
         handleDispatch(
           e,
           setActiveMenu(menu),
-          setPopupCoords({ x: e.pageX, y: e.pageY })
+          setPopupCoords({ x: e.pageX, y: e.pageY }),
         );
       }}
       onKeyDown={(e) => onKeyDown(e)}

@@ -15,10 +15,10 @@ export const Select = ({
       setOptionsOpen(false);
     };
 
-    document.addEventListener("click", handleClickOutside);
+    document.addEventListener(`click`, handleClickOutside);
 
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener(`click`, handleClickOutside);
     };
   }, []);
 
@@ -34,9 +34,9 @@ export const Select = ({
           <SelectOptions options={options} setOption={setOption} />
         )}
         {selectedOption === true
-          ? "Secure"
+          ? `Secure`
           : selectedOption === false
-          ? "Not Secure"
+          ? `Not Secure`
           : selectedOption}
       </div>
       <div className="arrow-down"></div>

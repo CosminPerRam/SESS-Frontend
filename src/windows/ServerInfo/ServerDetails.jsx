@@ -17,20 +17,20 @@ export const ServerDetails = ({
     dispatch(setPopupCoords(popupCoords));
   };
   return (
-    <div className='server-details'>
-      <ServerDetailsItem name={"Name"} value={name} />
+    <div className="server-details">
+      <ServerDetailsItem name={`Name`} value={name} />
       <ServerDetailsItem
-        name={"IP Address"}
+        name={`IP Address`}
         value={ip}
         onContextMenu={(e) =>
-          handleSetActiveMenu("readOnly", { x: e.pageX, y: e.pageY }, e)
+          handleSetActiveMenu(`readOnly`, { x: e.pageX, y: e.pageY }, e)
         }
       />
-      <ServerDetailsItem name={"Game"} value={game} />
-      <ServerDetailsItem name={"Map"} value={map} />
-      <ServerDetailsItem name={"Players"} value={players} />
-      <ServerDetailsItem name={"Valve Anti-Cheat"} value={vac} />
-      <ServerDetailsItem name={"Latency"} value={latency} />
+      <ServerDetailsItem name={`Game`} value={game} />
+      <ServerDetailsItem name={`Map`} value={map} />
+      <ServerDetailsItem name={`Players`} value={players} />
+      <ServerDetailsItem name={`Valve Anti-Cheat`} value={vac} />
+      <ServerDetailsItem name={`Latency`} value={latency} />
     </div>
   );
 };

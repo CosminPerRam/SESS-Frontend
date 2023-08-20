@@ -9,7 +9,7 @@ export const Checkbox = ({
   className,
 }) => {
   return (
-    <div className='form-element' onMouseDown={onChanged}>
+    <div className="form-element" onMouseDown={onChanged}>
       <div className={`checkbox ${className}`}>
         {checked ? <CheckMark disabled={disabled} /> : null}
       </div>
@@ -17,7 +17,7 @@ export const Checkbox = ({
       <Label
         name={title}
         onMouseDown={onChanged}
-        style={disabled ? { color: "#847A68" } : {}}
+        style={disabled ? { color: `#847A68` } : {}}
       />
     </div>
   );

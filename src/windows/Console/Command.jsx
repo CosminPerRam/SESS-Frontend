@@ -14,31 +14,31 @@ export const Command = () => {
   };
 
   const addLine = () => {
-    if (inputCommand !== "") {
+    if (inputCommand !== ``) {
       dispatch(setConsoleLines(inputCommand));
-      dispatch(setInputCommand(""));
+      dispatch(setInputCommand(``));
     }
   };
   const updateCommand = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === `Enter`) {
       e.preventDefault();
       addLine();
     }
   };
 
   return (
-    <div className='command'>
+    <div className="command">
       <Input
-        type='search'
+        type="search"
         value={inputCommand}
         handleInput={handleInputCommand}
-        menu={"command"}
-        className={"command-input"}
+        menu={`command`}
+        className={`command-input`}
         onKeyDown={updateCommand}
       />
       <Button
-        title={"Submit"}
-        style={{ marginLeft: "12px", marginRight: "7px" }}
+        title={`Submit`}
+        style={{ marginLeft: `12px`, marginRight: `7px` }}
         onClick={() => addLine()}
       />
     </div>

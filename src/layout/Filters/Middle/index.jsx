@@ -13,28 +13,28 @@ import {
 import { Select } from "../../../common/Select";
 
 export const Middle = () => {
-  const game = ["Team Fortress 2"];
+  const game = [`Team Fortress 2`];
   const latencyList = [
-    "<All>",
-    "< 50",
-    "< 100",
-    "< 150",
-    "< 250",
-    "< 350",
-    "< 600",
+    `<All>`,
+    `< 50`,
+    `< 100`,
+    `< 150`,
+    `< 250`,
+    `< 350`,
+    `< 600`,
   ];
   const locationList = [
-    "<All>",
-    "US - East",
-    "US - West",
-    "South America",
-    "Europe",
-    "Asia",
-    "Australia",
-    "Middle East",
-    "Africa",
+    `<All>`,
+    `US - East`,
+    `US - West`,
+    `South America`,
+    `Europe`,
+    `Asia`,
+    `Australia`,
+    `Middle East`,
+    `Africa`,
   ];
-  const antiCheat = ["<All>", "Secure", "Not Secure"];
+  const antiCheat = [`<All>`, `Secure`, `Not Secure`];
 
   const dispatch = useDispatch();
 
@@ -56,43 +56,43 @@ export const Middle = () => {
   return (
     <div className="middle">
       <Select
-        label={"Game"}
+        label={`Game`}
         options={game}
-        style={{ width: "162px" }}
-        selectedOption={"Team Fortress 2"}
+        style={{ width: `162px` }}
+        selectedOption={`Team Fortress 2`}
       />
       <LabelInput
-        title={"Map"}
-        style={{ width: "162px" }}
+        title={`Map`}
+        style={{ width: `162px` }}
         value={runsMap}
         handleInput={handleRunsMap}
-        menu={"map"}
+        menu={`map`}
       />
       <LabelInput
-        title={"Max player count"}
-        style={{ width: "62px" }}
+        title={`Max player count`}
+        style={{ width: `62px` }}
         value={maxPlayerCount}
         handleInput={handleMaxPlayerCount}
-        menu={"maxPlayerCount"}
+        menu={`maxPlayerCount`}
       />
       <Select
-        label={"Latency"}
+        label={`Latency`}
         options={latencyList}
         setOption={setLatency}
-        style={{ width: "110px" }}
-        selectedOption={latency === null ? "<All>" : latency}
+        style={{ width: `110px` }}
+        selectedOption={latency === null ? `<All>` : latency}
       />
       <Select
-        label={"Location"}
+        label={`Location`}
         options={locationList}
         setOption={setLocation}
-        selectedOption={location === null ? "<All>" : location}
+        selectedOption={location === null ? `<All>` : location}
       />
       <Select
-        label={"Anti-cheat"}
+        label={`Anti-cheat`}
         options={antiCheat}
         setOption={setIsSecured}
-        selectedOption={isSecured === null ? "<All>" : isSecured}
+        selectedOption={isSecured === null ? `<All>` : isSecured}
       />
       <Checkboxes />
     </div>

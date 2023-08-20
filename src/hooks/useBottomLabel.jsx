@@ -12,21 +12,21 @@ export const useBottomLabel = () => {
 
   const latency = useSelector((state) => state.localFilters.latency);
   const maxPlayerCount = Number(
-    useSelector((state) => state.localFilters.maxPlayerCount)
+    useSelector((state) => state.localFilters.maxPlayerCount),
   );
 
   return `Team Fortress 2;
-    ${isSecured === null ? "" : isSecured ? " secure;" : " not secure;"}
-    ${location ? location + ";" : ""}
-    ${latency ? " latency " + latency + ";" : ""}
+    ${isSecured === null ? `` : isSecured ? ` secure;` : ` not secure;`}
+    ${location ? location + `;` : ``}
+    ${latency ? ` latency ` + latency + `;` : ``}
     ${
       isNaN(maxPlayerCount) || maxPlayerCount === 0
-        ? ""
-        : " max players <= " + maxPlayerCount + ";"
+        ? ``
+        : ` max players <= ` + maxPlayerCount + `;`
     }
-    ${canBeFull ? "" : " is not full;"}
-    ${canBeEmpty ? "" : " is not empty;"}
-    ${canHavePassword ? "" : " has no password;"}
-    ${spectatorProxy ? " supports replays;" : ""}
+    ${canBeFull ? `` : ` is not full;`}
+    ${canBeEmpty ? `` : ` is not empty;`}
+    ${canHavePassword ? `` : ` has no password;`}
+    ${spectatorProxy ? ` supports replays;` : ``}
     ${runsMap}`;
 };

@@ -18,7 +18,7 @@ export const ServerInfoTable = ({ item }) => {
   return (
     <Table
       data={data}
-      theme={theme("minmax(24px, 1fr) minmax(24px, 1fr) 90px", "4px", "6px")}
+      theme={theme(`minmax(24px, 1fr) minmax(24px, 1fr) 90px`, `4px`, `6px`)}
       select={select}
       layout={{ custom: true, fixedHeader: true }}
     >

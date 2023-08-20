@@ -4,11 +4,11 @@
   };
   return (
     <div
-      className='context-menu'
-      style={{ top: top + "px", left: left + "px" }}
+      className="context-menu"
+      style={{ top: top + `px`, left: left + `px` }}
       ref={nodeRef}
     >
-      <div className='context-menu-element' onMouseDown={Copy}>
+      <div className="context-menu-element" onMouseDown={Copy}>
         Copy
       </div>
     </div>

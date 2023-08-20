@@ -14,20 +14,20 @@ export const RenderActiveWindow = () => {
 
   useEffect(() => {
     const handleKeyDownEvent = (e) => {
-      if (e.key === "`" && e.target.tagName !== "INPUT") {
-        if (activeWindow === "console") dispatch(setActiveWindow(null));
-        else dispatch(setActiveWindow("console"));
+      if (e.key === "`" && e.target.tagName !== `INPUT`) {
+        if (activeWindow === `console`) dispatch(setActiveWindow(null));
+        else dispatch(setActiveWindow(`console`));
       }
     };
 
-    window.addEventListener("keydown", handleKeyDownEvent);
+    window.addEventListener(`keydown`, handleKeyDownEvent);
     return () => {
-      window.removeEventListener("keydown", handleKeyDownEvent);
+      window.removeEventListener(`keydown`, handleKeyDownEvent);
     };
   }, [activeWindow, dispatch]);
 
-  if (activeWindow === "console") return <Console nodeRef={nodeRef} />;
-  if (activeWindow === "serverInfo") return <ServerInfo nodeRef={nodeRef} />;
+  if (activeWindow === `console`) return <Console nodeRef={nodeRef} />;
+  if (activeWindow === `serverInfo`) return <ServerInfo nodeRef={nodeRef} />;
 
   return null;
 };

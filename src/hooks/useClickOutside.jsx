@@ -9,9 +9,9 @@ export const useClickOutside = (ref) => {
       if (ref.current && !ref.current.contains(e.target))
         dispatch(setActiveWindow(null));
     };
-    document.addEventListener("mouseup", handleClickOutside);
+    document.addEventListener(`mouseup`, handleClickOutside);
     return () => {
-      document.removeEventListener("mouseup", handleClickOutside);
+      document.removeEventListener(`mouseup`, handleClickOutside);
     };
   }, [ref, dispatch]);
 };

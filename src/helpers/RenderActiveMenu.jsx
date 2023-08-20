@@ -21,11 +21,11 @@ export const RenderActiveMenu = () => {
   const hasTags = useSelector((state) => state.filters.hasTags);
   const command = useSelector((state) => state.window.inputCommand);
 
-  if (activeMenu === "server")
+  if (activeMenu === `server`)
     return (
       <ServerMenu left={popupCoords.x} top={popupCoords.y} nodeRef={nodeRef} />
     );
-  if (activeMenu === "header")
+  if (activeMenu === `header`)
     return (
       <TableHeaderMenu
         left={popupCoords.x}
@@ -33,7 +33,7 @@ export const RenderActiveMenu = () => {
         nodeRef={nodeRef}
       />
     );
-  if (activeMenu === "map")
+  if (activeMenu === `map`)
     return (
       <InputMenu
         left={popupCoords.x}
@@ -43,7 +43,7 @@ export const RenderActiveMenu = () => {
         nodeRef={nodeRef}
       />
     );
-  if (activeMenu === "maxPlayerCount")
+  if (activeMenu === `maxPlayerCount`)
     return (
       <InputMenu
         left={popupCoords.x}
@@ -53,7 +53,7 @@ export const RenderActiveMenu = () => {
         nodeRef={nodeRef}
       />
     );
-  if (activeMenu === "serverInput")
+  if (activeMenu === `serverInput`)
     return (
       <InputMenu
         left={popupCoords.x}
@@ -63,7 +63,7 @@ export const RenderActiveMenu = () => {
         nodeRef={nodeRef}
       />
     );
-  if (activeMenu === "command")
+  if (activeMenu === `command`)
     return (
       <InputMenu
         left={popupCoords.x}
@@ -73,7 +73,7 @@ export const RenderActiveMenu = () => {
         nodeRef={nodeRef}
       />
     );
-  if (activeMenu === "readOnly")
+  if (activeMenu === `readOnly`)
     return (
       <ReadOnlyMenu
         left={popupCoords.x}

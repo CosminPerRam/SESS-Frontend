@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const App = () => {
   return (
-    <div className={"app"}>
+    <div className={`app`}>
       <Analytics />
       <ApolloConfiguration>
         <Layout />

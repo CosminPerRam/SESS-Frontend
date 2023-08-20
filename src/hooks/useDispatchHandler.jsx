@@ -11,6 +11,6 @@ export const useDispatchHandler = () => {
       }
       setArray.forEach((setItem) => dispatch(setItem));
     },
-    [dispatch]
+    [dispatch],
   );
 };

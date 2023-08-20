@@ -7,27 +7,27 @@ export const TableHeaderMenu = ({ top, left, nodeRef }) => {
   const dispatch = useDispatch();
 
   const labels = [
-    "Password",
-    "Secure",
-    "Replay",
-    "Servers",
-    "IP Address",
-    "Game",
-    "Players",
-    "Bots",
-    "Map",
-    "Latency",
-    "Tags",
+    `Password`,
+    `Secure`,
+    `Replay`,
+    `Servers`,
+    `IP Address`,
+    `Game`,
+    `Players`,
+    `Bots`,
+    `Map`,
+    `Latency`,
+    `Tags`,
   ];
 
   return (
     <div
-      style={{ top: top + "px", left: left + "px" }}
+      style={{ top: top + `px`, left: left + `px` }}
       className="context-menu"
       ref={nodeRef}
     >
       {labels.map((label) =>
-        label === "Servers" ? (
+        label === `Servers` ? (
           <MenuOption
             title={label}
             disabled={true}

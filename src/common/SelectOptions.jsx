@@ -4,9 +4,9 @@ export const SelectOptions = ({ options, setOption }) => {
   const dispatch = useDispatch();
   const handleClick = (event, option) => {
     event.stopPropagation();
-    if (option === "<All>") dispatch(setOption(null));
-    else if (option === "Secure") dispatch(setOption(true));
-    else if (option === "Not Secure") dispatch(setOption(false));
+    if (option === `<All>`) dispatch(setOption(null));
+    else if (option === `Secure`) dispatch(setOption(true));
+    else if (option === `Not Secure`) dispatch(setOption(false));
     else dispatch(setOption(option));
   };
 

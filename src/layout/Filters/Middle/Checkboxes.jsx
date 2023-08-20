@@ -17,22 +17,22 @@ export const Checkboxes = () => {
   return (
     <form className="checkboxes">
       <Checkbox
-        title={"Server not full"}
+        title={`Server not full`}
         checked={!canBeFull}
         onChanged={() => dispatch(setCanBeFull(!canBeFull))}
       />
       <Checkbox
-        title={"Has users playing"}
+        title={`Has users playing`}
         checked={!canBeEmpty}
         onChanged={() => dispatch(setCanBeEmpty(!canBeEmpty))}
       />
       <Checkbox
-        title={"Is not password protected"}
+        title={`Is not password protected`}
         checked={!canHavePassword}
         onChanged={() => dispatch(setCanHavePassword(!canHavePassword))}
       />
       <Checkbox
-        title={"Supports replays"}
+        title={`Supports replays`}
         checked={spectatorProxy}
         onChanged={() => dispatch(setSpectatorProxy(!spectatorProxy))}
       />

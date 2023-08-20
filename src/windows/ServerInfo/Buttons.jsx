@@ -4,13 +4,13 @@ import { useDispatch } from "react-redux";
 export const Buttons = () => {
   const dispatch = useDispatch();
   return (
-    <div className='server-info-buttons'>
-      <Button title={"Join game"} style={{ width: "80px" }} />
-      <Button title={"Refresh"} style={{ width: "80px" }} />
+    <div className="server-info-buttons">
+      <Button title={`Join game`} style={{ width: `80px` }} />
+      <Button title={`Refresh`} style={{ width: `80px` }} />
       <Button
-        title={"Close"}
+        title={`Close`}
         onClick={() => dispatch(setActiveWindow(null))}
-        style={{ width: "80px" }}
+        style={{ width: `80px` }}
       />
     </div>
   );

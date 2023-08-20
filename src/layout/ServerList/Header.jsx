@@ -19,41 +19,41 @@ export const Header = ({ amount, blacklistedAmount }) => {
       onContextMenu={(e) =>
         handleDispatch(
           e,
-          setActiveMenu("header"),
-          setPopupCoords({ x: e.pageX, y: e.pageY })
+          setActiveMenu(`header`),
+          setPopupCoords({ x: e.pageX, y: e.pageY }),
         )
       }
     >
       <HeaderRow>
-        <HeaderCell hide={hiddenColumns["Password"]}>
+        <HeaderCell hide={hiddenColumns[`Password`]}>
           <PasswordIcon />
         </HeaderCell>
-        <HeaderCell hide={hiddenColumns["Secure"]}>
+        <HeaderCell hide={hiddenColumns[`Secure`]}>
           <RobotronIcon />
         </HeaderCell>
-        <HeaderCell hide={hiddenColumns["Replay"]}>
+        <HeaderCell hide={hiddenColumns[`Replay`]}>
           <ReplayIcon />
         </HeaderCell>
         <HeaderCell
-          hide={hiddenColumns["Servers"]}
+          hide={hiddenColumns[`Servers`]}
           resize={{ minWidth: 24 }}
         >{`Servers (${amount}) (${blacklistedAmount} blacklisted)`}</HeaderCell>
         <HeaderCell
-          hide={hiddenColumns["IP Address"]}
+          hide={hiddenColumns[`IP Address`]}
           resize={{ minWidth: 100 }}
         >
           IP Address
         </HeaderCell>
-        <HeaderCell hide={hiddenColumns["Game"]} resize={{ minWidth: 100 }}>
+        <HeaderCell hide={hiddenColumns[`Game`]} resize={{ minWidth: 100 }}>
           Game
         </HeaderCell>
-        <HeaderCell hide={hiddenColumns["Players"]}>Players</HeaderCell>
-        <HeaderCell hide={hiddenColumns["Bots"]}>Bots</HeaderCell>
-        <HeaderCell hide={hiddenColumns["Map"]} resize={{ minWidth: 100 }}>
+        <HeaderCell hide={hiddenColumns[`Players`]}>Players</HeaderCell>
+        <HeaderCell hide={hiddenColumns[`Bots`]}>Bots</HeaderCell>
+        <HeaderCell hide={hiddenColumns[`Map`]} resize={{ minWidth: 100 }}>
           Map
         </HeaderCell>
-        <HeaderCell hide={hiddenColumns["Latency"]}>Latency</HeaderCell>
-        <HeaderCell hide={hiddenColumns["Tags"]}>Tags</HeaderCell>
+        <HeaderCell hide={hiddenColumns[`Latency`]}>Latency</HeaderCell>
+        <HeaderCell hide={hiddenColumns[`Tags`]}>Tags</HeaderCell>
       </HeaderRow>
     </TableHeader>
   );

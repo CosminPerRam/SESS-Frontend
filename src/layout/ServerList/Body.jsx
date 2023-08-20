@@ -1,11 +1,11 @@
 import { Body as TableBody } from "@table-library/react-table-library/table";
 import { Row } from "./Row";
 
-export const Body = ({ tableList }) => {
+export const Body = ({ tableList, select }) => {
   return (
     <TableBody>
       {tableList.map((item) => (
-        <Row item={item} key={item.id} />
+        <Row item={item} key={item.id} select={select} />
       ))}
     </TableBody>
   );

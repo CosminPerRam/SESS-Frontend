@@ -14,7 +14,7 @@ const onDoubleClick = (item, event) => {
   console.log(`double clicked on` + item.name);
 };
 
-export const Row = ({ item }) => {
+export const Row = ({ item, select }) => {
   const {
     id,
     name,
@@ -34,6 +34,7 @@ export const Row = ({ item }) => {
     <TableRow
       key={id}
       item={item}
+      disabled={id === select.state.id}
       onDoubleClick={onDoubleClick}
       onContextMenu={(e) =>
         handleDispatch(

@@ -73,7 +73,7 @@ export const ServerList = () => {
         {(tableList) => (
           <>
             <Header amount={1457} blacklistedAmount={0} />
-            <Body tableList={tableList} />
+            <Body tableList={tableList} select={select} />
           </>
         )}
       </Table>

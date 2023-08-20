@@ -27,7 +27,7 @@ export const ServerInfoTable = ({ item }) => {
           <ServerInfoTableHeader />
           <TableBody>
             {tableList.map((item) => (
-              <ServerInfoRow item={item} key={item.id} />
+              <ServerInfoRow item={item} key={item.name} />
             ))}
           </TableBody>
         </>

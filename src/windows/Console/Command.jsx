@@ -1,26 +1,31 @@
 import { Button } from "../../common/Button";
 import { Input } from "../../common/Input";
-import { useDispatch, useSelector } from "react-redux";
-import { setInputCommand } from "../../redux/window/slice";
-import { setConsoleLines } from "../../redux/window/slice";
+import { useConsole } from "./useConsole";
+import { setActiveWindow } from "../../redux/window/slice";
+import { useDispatch } from "react-redux";
 
 export const Command = () => {
   const dispatch = useDispatch();
 
-  const inputCommand = useSelector((state) => state.window.inputCommand);
-  const handleInputCommand = (event) => {
-    dispatch(setInputCommand(event.target.value));
-    console.log(event.target.value);
-  };
+  const {
+    currentCommand,
+    updateCurrentCommand,
+    addConsoleLine,
+    executeCommand,
+  } = useConsole();
 
   const addLine = () => {
-    if (inputCommand !== ``) {
-      dispatch(setConsoleLines(inputCommand));
-      dispatch(setInputCommand(``));
+    if (currentCommand !== ``) {
+      addConsoleLine(`] ${currentCommand}`);
+      executeCommand(currentCommand);
+      updateCurrentCommand(``);
     }
   };
+
   const updateCommand = (e) => {
-    if (e.key === `Enter`) {
+    if (e.key === `\``) {
+      dispatch(setActiveWindow(null));
+    } else if (e.key === `Enter`) {
       e.preventDefault();
       addLine();
     }
@@ -30,8 +35,8 @@ export const Command = () => {
     <div className="command">
       <Input
         type="search"
-        value={inputCommand}
-        handleInput={handleInputCommand}
+        value={currentCommand}
+        handleInput={(e) => updateCurrentCommand(e.target.value)}
         menu={`command`}
         className={`command-input`}
         onKeyDown={updateCommand}

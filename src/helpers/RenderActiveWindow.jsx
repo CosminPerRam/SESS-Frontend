@@ -28,7 +28,7 @@ export const RenderActiveWindow = () => {
     return () => {
       window.removeEventListener(`keydown`, handleKeyDownEvent);
     };
-  }, [activeWindow, dispatch]);
+  }, [dispatch]);
 
   if (activeWindow === windows.console) {
     return <Console nodeRef={nodeRef} />;

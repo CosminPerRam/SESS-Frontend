@@ -1,9 +1,11 @@
 import "../contextMenu.scss";
 import { useDispatch } from "react-redux";
-import { setActiveWindow } from "../../redux/window/slice";
 import { setActiveMenu, setPopupCoords } from "../../redux/contextMenu/slice";
+import { useActiveWindow } from "../../hooks/useActiveWindow";
+import { windows } from "../../core/windows";
 
 export const ServerMenu = ({ top, left, nodeRef }) => {
+  const { openWindow } = useActiveWindow();
   const dispatch = useDispatch();
   //poti verifica daca ai dat left click sau right click cu event.button 0 pentru left 2 pentru right
 
@@ -18,7 +20,7 @@ export const ServerMenu = ({ top, left, nodeRef }) => {
         className="context-menu-element"
         onClick={(e) => {
           e.stopPropagation();
-          dispatch(setActiveWindow(`serverInfo`));
+          openWindow(windows.serverInfo);
           dispatch(setActiveMenu(null));
           dispatch(setPopupCoords(null));
         }}

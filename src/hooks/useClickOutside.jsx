@@ -1,17 +1,18 @@
 ﻿import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setActiveWindow } from "../redux/window/slice";
+import { useActiveWindow } from "./useActiveWindow";
 
 export const useClickOutside = (ref) => {
-  const dispatch = useDispatch();
+  const { closeWindow } = useActiveWindow();
+
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (ref.current && !ref.current.contains(e.target))
-        dispatch(setActiveWindow(null));
+      if (ref.current && !ref.current.contains(e.target)) {
+        closeWindow();
+      }
     };
     document.addEventListener(`mouseup`, handleClickOutside);
     return () => {
       document.removeEventListener(`mouseup`, handleClickOutside);
     };
-  }, [ref, dispatch]);
+  }, [ref]);
 };

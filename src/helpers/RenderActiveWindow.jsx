@@ -1,13 +1,14 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect, useRef } from "react";
-import { setActiveWindow } from "../redux/window/slice";
 import { Console } from "../windows/Console";
 import { useClickOutside } from "../hooks/useClickOutside";
 import { ServerInfo } from "../windows/ServerInfo";
+import { useActiveWindow } from "../hooks/useActiveWindow";
+import { windows } from "../core/windows";
 
 export const RenderActiveWindow = () => {
   const dispatch = useDispatch();
-  const activeWindow = useSelector((state) => state.window.activeWindow);
+  const { activeWindow, openWindow, closeWindow } = useActiveWindow();
   const nodeRef = useRef(null);
 
   useClickOutside(nodeRef);
@@ -15,8 +16,11 @@ export const RenderActiveWindow = () => {
   useEffect(() => {
     const handleKeyDownEvent = (e) => {
       if (e.key === "`" && e.target.tagName !== `INPUT`) {
-        if (activeWindow === `console`) dispatch(setActiveWindow(null));
-        else dispatch(setActiveWindow(`console`));
+        if (activeWindow === windows.console) {
+          closeWindow();
+        } else {
+          openWindow(windows.console);
+        }
       }
     };
 
@@ -26,8 +30,11 @@ export const RenderActiveWindow = () => {
     };
   }, [activeWindow, dispatch]);
 
-  if (activeWindow === `console`) return <Console nodeRef={nodeRef} />;
-  if (activeWindow === `serverInfo`) return <ServerInfo nodeRef={nodeRef} />;
+  if (activeWindow === windows.console) {
+    return <Console nodeRef={nodeRef} />;
+  } else if (activeWindow === windows.serverInfo) {
+    return <ServerInfo nodeRef={nodeRef} />;
+  }
 
   return null;
 };

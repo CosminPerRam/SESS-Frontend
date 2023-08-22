@@ -1,18 +1,15 @@
 ﻿import Draggable from "react-draggable";
 import { Header } from "./Header";
-import { setActiveWindow } from "../../redux/window/slice";
 import "../windows.scss";
-import { useDispatch } from "react-redux";
+import { useActiveWindow } from "../../hooks/useActiveWindow";
+
 export const Window = ({ children, title, nodeRef, className }) => {
-  const dispatch = useDispatch();
+  const { closeWindow } = useActiveWindow();
 
   return (
     <Draggable nodeRef={nodeRef} defaultPosition={{ x: 320, y: 110 }}>
       <div className={`window-container ${className}`} ref={nodeRef}>
-        <Header
-          onCloseClick={() => dispatch(setActiveWindow(null))}
-          title={title}
-        />
+        <Header onCloseClick={closeWindow} title={title} />
         {children}
       </div>
     </Draggable>

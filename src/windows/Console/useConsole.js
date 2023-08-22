@@ -16,7 +16,7 @@ export const useConsole = () => {
   }, []);
 
   const executeCommand = useCallback((value) => {
-    console.log(`Executing "${value}"...`);
+    addCLine(`Unknown command "${value}"`);
   }, []);
 
   return {

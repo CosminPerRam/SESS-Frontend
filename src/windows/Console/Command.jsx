@@ -1,8 +1,12 @@
 import { Button } from "../../common/Button";
 import { Input } from "../../common/Input";
 import { useConsole } from "./useConsole";
+import { setActiveWindow } from "../../redux/window/slice";
+import { useDispatch } from "react-redux";
 
 export const Command = () => {
+  const dispatch = useDispatch();
+
   const {
     currentCommand,
     updateCurrentCommand,
@@ -19,7 +23,9 @@ export const Command = () => {
   };
 
   const updateCommand = (e) => {
-    if (e.key === `Enter`) {
+    if (e.key === `\``) {
+      dispatch(setActiveWindow(null));
+    } else if (e.key === `Enter`) {
       e.preventDefault();
       addLine();
     }

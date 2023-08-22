@@ -7,7 +7,7 @@ export const Input = ({
   handleInput,
   menu,
   className,
-  onKeyDown,
+  onKeyDown = () => {},
 }) => {
   const handleDispatch = useDispatchHandler();
 
@@ -17,7 +17,7 @@ export const Input = ({
       className={className}
       style={style}
       value={value}
-      onChange={(e) => handleInput(e)}
+      onChange={handleInput}
       onContextMenu={(e) => {
         handleDispatch(
           e,
@@ -25,7 +25,7 @@ export const Input = ({
           setPopupCoords({ x: e.pageX, y: e.pageY }),
         );
       }}
-      onKeyDown={(e) => onKeyDown(e)}
+      onKeyDown={onKeyDown}
     />
   );
 };

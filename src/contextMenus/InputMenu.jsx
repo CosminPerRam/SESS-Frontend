@@ -1,6 +1,9 @@
 import { useDispatch } from "react-redux";
+import { isFirefox } from "../core/is-firefox";
 
 export const InputMenu = ({ top, left, setInput, input, nodeRef }) => {
+  const pasteDisabled = isFirefox();
+
   const dispatch = useDispatch();
   const Cut = () => {
     navigator.clipboard.writeText(input).then(() => dispatch(setInput(``)));
@@ -10,10 +13,14 @@ export const InputMenu = ({ top, left, setInput, input, nodeRef }) => {
     navigator.clipboard.writeText(input).then(() => {});
   };
 
-  const Paste = () => {
-    navigator.clipboard
-      .readText()
-      .then((text) => dispatch(setInput(input + text)));
+  const Paste = (e) => {
+    if (!pasteDisabled) {
+      navigator.clipboard
+        .readText()
+        .then((text) => dispatch(setInput(input + text)));
+    } else {
+      e.stopPropagation();
+    }
   };
 
   return (
@@ -29,7 +36,7 @@ export const InputMenu = ({ top, left, setInput, input, nodeRef }) => {
         Copy
       </div>
       <div className="context-menu-element" onMouseDown={Paste}>
-        Paste
+        <label style={pasteDisabled ? { color: `#847A68` } : {}}>Paste</label>
       </div>
     </div>
   );

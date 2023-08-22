@@ -1,6 +1,6 @@
 import { Button } from "../../common/Button";
 import { Input } from "../../common/Input";
-import { useConsole } from "./useConsole";
+import { useConsole } from "../../hooks/useConsole";
 import { useActiveWindow } from "../../hooks/useActiveWindow";
 
 export const Command = () => {

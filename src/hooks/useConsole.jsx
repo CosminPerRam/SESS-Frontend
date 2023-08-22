@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useCallback } from "react";
-import { addConsoleLine, setInputCommand } from "../../redux/window/slice";
+import { addConsoleLine, setInputCommand } from "../redux/window/slice";
 
 export const useConsole = () => {
   const dispatch = useDispatch();

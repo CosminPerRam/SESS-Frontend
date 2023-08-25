@@ -2,8 +2,9 @@ import { Button } from "../../common/Button";
 import { Input } from "../../common/Input";
 import { useConsole } from "../../hooks/useConsole";
 import { useActiveWindow } from "../../hooks/useActiveWindow";
+import { useRef } from "react";
 
-export const Command = () => {
+export const Command = ({ inputRef }) => {
   const { closeWindow } = useActiveWindow();
 
   const {
@@ -39,6 +40,7 @@ export const Command = () => {
         menu={`command`}
         className={`command-input`}
         onKeyDown={updateCommand}
+        nodeRef={inputRef}
       />
       <Button
         title={`Submit`}

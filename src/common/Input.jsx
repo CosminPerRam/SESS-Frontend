@@ -8,6 +8,7 @@ export const Input = ({
   menu,
   className,
   onKeyDown = () => {},
+  nodeRef,
 }) => {
   const handleDispatch = useDispatchHandler();
 
@@ -26,6 +27,7 @@ export const Input = ({
         );
       }}
       onKeyDown={onKeyDown}
+      ref={nodeRef}
     />
   );
 };

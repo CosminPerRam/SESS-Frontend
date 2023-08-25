@@ -12,9 +12,10 @@ export const RenderActiveWindow = () => {
   const nodeRef = useRef(null);
 
   useClickOutside(nodeRef);
+  const inputRef = useRef(null);
 
   useEffect(() => {
-    const handleKeyDownEvent = (e) => {
+    const handleKeyUpEvent = (e) => {
       if (e.key === "`" && e.target.tagName !== `INPUT`) {
         if (activeWindow === windows.console) {
           closeWindow();
@@ -24,14 +25,14 @@ export const RenderActiveWindow = () => {
       }
     };
 
-    window.addEventListener(`keydown`, handleKeyDownEvent);
+    window.addEventListener(`keypress`, handleKeyUpEvent);
     return () => {
-      window.removeEventListener(`keydown`, handleKeyDownEvent);
+      window.removeEventListener(`keypress`, handleKeyUpEvent);
     };
   }, [dispatch]);
 
   if (activeWindow === windows.console) {
-    return <Console nodeRef={nodeRef} />;
+    return <Console nodeRef={nodeRef} inputRef={inputRef} />;
   } else if (activeWindow === windows.serverInfo) {
     return <ServerInfo nodeRef={nodeRef} />;
   }

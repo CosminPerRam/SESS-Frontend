@@ -1,6 +1,5 @@
-import { useDispatch } from "react-redux";
-import { setActiveMenu, setPopupCoords } from "../../redux/contextMenu/slice";
 import { ServerDetailsItem } from "./ServerDetailsItem";
+import { useActiveMenu } from "../../hooks/useActiveMenu";
 export const ServerDetails = ({
   name,
   ip,
@@ -10,21 +9,14 @@ export const ServerDetails = ({
   vac,
   latency,
 }) => {
-  const dispatch = useDispatch();
-  const handleSetActiveMenu = (menu, popupCoords, e) => {
-    e.preventDefault();
-    dispatch(setActiveMenu(menu));
-    dispatch(setPopupCoords(popupCoords));
-  };
+  const { openMenu } = useActiveMenu();
   return (
     <div className="server-details">
       <ServerDetailsItem name={`Name`} value={name} />
       <ServerDetailsItem
         name={`IP Address`}
         value={ip}
-        onContextMenu={(e) =>
-          handleSetActiveMenu(`readOnly`, { x: e.pageX, y: e.pageY }, e)
-        }
+        onContextMenu={(e) => openMenu(e, `readOnly`)}
       />
       <ServerDetailsItem name={`Game`} value={game} />
       <ServerDetailsItem name={`Map`} value={map} />

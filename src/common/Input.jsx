@@ -1,5 +1,4 @@
-import { setActiveMenu, setPopupCoords } from "../redux/contextMenu/slice";
-import { useDispatchHandler } from "../hooks/useDispatchHandler";
+import { useActiveMenu } from "../hooks/useActiveMenu";
 
 export const Input = ({
   style,
@@ -10,8 +9,7 @@ export const Input = ({
   onKeyDown = () => {},
   nodeRef,
 }) => {
-  const handleDispatch = useDispatchHandler();
-
+  const { openMenu } = useActiveMenu();
   return (
     <input
       type="text"
@@ -20,11 +18,7 @@ export const Input = ({
       value={value}
       onChange={handleInput}
       onContextMenu={(e) => {
-        handleDispatch(
-          e,
-          setActiveMenu(menu),
-          setPopupCoords({ x: e.pageX, y: e.pageY }),
-        );
+        openMenu(e, menu);
       }}
       onKeyDown={onKeyDown}
       ref={nodeRef}

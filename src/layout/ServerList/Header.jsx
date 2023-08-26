@@ -7,23 +7,14 @@ import { PasswordIcon } from "../../assets/icons/password";
 import { RobotronIcon } from "../../assets/icons/robotron";
 import { ReplayIcon } from "../../assets/icons/replay";
 import { useSelector } from "react-redux";
-import { setActiveMenu, setPopupCoords } from "../../redux/contextMenu/slice";
-import { useDispatchHandler } from "../../hooks/useDispatchHandler";
+import { useActiveMenu } from "../../hooks/useActiveMenu";
 
 export const Header = ({ amount, blacklistedAmount }) => {
-  const handleDispatch = useDispatchHandler();
+  const { openMenu } = useActiveMenu();
   const hiddenColumns = useSelector((state) => state.contextMenu.hiddenColumns);
 
   return (
-    <TableHeader
-      onContextMenu={(e) =>
-        handleDispatch(
-          e,
-          setActiveMenu(`header`),
-          setPopupCoords({ x: e.pageX, y: e.pageY }),
-        )
-      }
-    >
+    <TableHeader onContextMenu={(e) => openMenu(e, `header`)}>
       <HeaderRow>
         <HeaderCell hide={hiddenColumns[`Password`]}>
           <PasswordIcon />

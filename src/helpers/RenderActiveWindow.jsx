@@ -15,7 +15,7 @@ export const RenderActiveWindow = () => {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    const handleKeyUpEvent = (e) => {
+    const handleKeyPressEvent = (e) => {
       if (e.key === "`" && e.target.tagName !== `INPUT`) {
         if (activeWindow === windows.console) {
           closeWindow();
@@ -25,9 +25,9 @@ export const RenderActiveWindow = () => {
       }
     };
 
-    window.addEventListener(`keypress`, handleKeyUpEvent);
+    window.addEventListener(`keypress`, handleKeyPressEvent);
     return () => {
-      window.removeEventListener(`keypress`, handleKeyUpEvent);
+      window.removeEventListener(`keypress`, handleKeyPressEvent);
     };
   }, [dispatch]);
 

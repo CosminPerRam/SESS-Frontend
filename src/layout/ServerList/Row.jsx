@@ -5,10 +5,9 @@ import {
 import { PasswordIcon } from "../../assets/icons/password";
 import { RobotronIcon } from "../../assets/icons/robotron";
 import { ReplayIcon } from "../../assets/icons/replay";
-import { useSelector } from "react-redux";
-import { setActiveMenu, setPopupCoords } from "../../redux/contextMenu/slice";
+import { useDispatch, useSelector } from "react-redux";
 import { setServerDetails } from "../../redux/window/slice";
-import { useDispatchHandler } from "../../hooks/useDispatchHandler";
+import { useActiveMenu } from "../../hooks/useActiveMenu";
 
 const onDoubleClick = (item, event) => {
   console.log(`double clicked on` + item.name);
@@ -27,7 +26,8 @@ export const Row = ({ item }) => {
     hasPassword,
     supportsReplays,
   } = item;
-  const handleDispatch = useDispatchHandler();
+  const { openMenu } = useActiveMenu();
+  const dispatch = useDispatch();
   const hiddenColumns = useSelector((state) => state.contextMenu.hiddenColumns);
 
   return (
@@ -35,14 +35,10 @@ export const Row = ({ item }) => {
       key={id}
       item={item}
       onDoubleClick={onDoubleClick}
-      onContextMenu={(e) =>
-        handleDispatch(
-          e,
-          setActiveMenu(`server`),
-          setPopupCoords({ x: e.pageX, y: e.pageY }),
-          setServerDetails(item),
-        )
-      }
+      onContextMenu={(e) => {
+        openMenu(e, `server`);
+        dispatch(setServerDetails(item));
+      }}
     >
       <Cell hide={hiddenColumns[`Password`]}>
         {hasPassword ? <PasswordIcon /> : null}

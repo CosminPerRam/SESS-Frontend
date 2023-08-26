@@ -8,13 +8,12 @@ import { useClick } from "../hooks/useClick";
 import { ReadOnlyMenu } from "../contextMenus/ReadOnlyMenu";
 import { setHasTags, setRunsMap } from "../redux/filters/slice";
 import { setMaxPlayerCount } from "../redux/localFilters/slice";
+import { useActiveMenu } from "../hooks/useActiveMenu";
 
 export const RenderActiveMenu = () => {
   useClick();
   const nodeRef = useRef(null);
-
-  const activeMenu = useSelector((state) => state.contextMenu.activeMenu);
-  const popupCoords = useSelector((state) => state.contextMenu.popupCoords);
+  const { activeMenu, popupCoords } = useActiveMenu();
 
   const runsMap = useSelector((state) => state.filters.runsMap);
   const maxPlayerCount = useSelector((state) => state.filters.maxPlayerCount);

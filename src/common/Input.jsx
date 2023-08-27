@@ -3,9 +3,9 @@ import { useActiveMenu } from "../hooks/useActiveMenu";
 export const Input = ({
   style,
   value,
-  handleInput,
   menu,
   className,
+  onChange = () => {},
   onKeyDown = () => {},
   nodeRef,
 }) => {
@@ -16,7 +16,7 @@ export const Input = ({
       className={className}
       style={style}
       value={value}
-      onChange={handleInput}
+      onChange={onChange}
       onContextMenu={openMenu(menu)}
       onKeyDown={onKeyDown}
       ref={nodeRef}

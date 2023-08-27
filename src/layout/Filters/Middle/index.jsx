@@ -65,14 +65,14 @@ export const Middle = () => {
         title={`Map`}
         style={{ width: `162px` }}
         value={runsMap}
-        handleInput={handleRunsMap}
+        onChange={handleRunsMap}
         menu={`map`}
       />
       <LabelInput
         title={`Max player count`}
         style={{ width: `62px` }}
         value={maxPlayerCount}
-        handleInput={handleMaxPlayerCount}
+        onChange={handleMaxPlayerCount}
         menu={`maxPlayerCount`}
       />
       <Select

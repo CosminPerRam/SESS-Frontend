@@ -17,9 +17,7 @@ export const Input = ({
       style={style}
       value={value}
       onChange={handleInput}
-      onContextMenu={(e) => {
-        openMenu(e, menu);
-      }}
+      onContextMenu={openMenu(menu)}
       onKeyDown={onKeyDown}
       ref={nodeRef}
     />

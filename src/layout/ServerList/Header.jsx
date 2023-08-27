@@ -14,7 +14,7 @@ export const Header = ({ amount, blacklistedAmount }) => {
   const hiddenColumns = useSelector((state) => state.contextMenu.hiddenColumns);
 
   return (
-    <TableHeader onContextMenu={(e) => openMenu(e, `header`)}>
+    <TableHeader onContextMenu={openMenu(`header`)}>
       <HeaderRow>
         <HeaderCell hide={hiddenColumns[`Password`]}>
           <PasswordIcon />

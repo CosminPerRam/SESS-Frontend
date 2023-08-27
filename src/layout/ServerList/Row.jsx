@@ -36,7 +36,7 @@ export const Row = ({ item }) => {
       item={item}
       onDoubleClick={onDoubleClick}
       onContextMenu={(e) => {
-        openMenu(e, `server`);
+        openMenu(`server`)(e);
         dispatch(setServerDetails(item));
       }}
     >

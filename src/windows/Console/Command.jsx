@@ -2,7 +2,7 @@ import { Button } from "../../common/Button";
 import { Input } from "../../common/Input";
 import { useConsole } from "../../hooks/useConsole";
 import { useActiveWindow } from "../../hooks/useActiveWindow";
-import { useRef } from "react";
+import { useCallback } from "react";
 
 export const Command = ({ inputRef }) => {
   const { closeWindow } = useActiveWindow();
@@ -14,18 +14,25 @@ export const Command = ({ inputRef }) => {
     executeCommand,
   } = useConsole();
 
-  const addLine = () => {
+  const addLine = useCallback(() => {
     if (currentCommand !== ``) {
       addConsoleLine(`] ${currentCommand}`);
       executeCommand(currentCommand);
       updateCurrentCommand(``);
     }
-  };
+  }, [currentCommand]);
 
   const updateCommand = (e) => {
-    if (e.key === `\``) {
+    const key = e.target.value[e.target.value.length - 1];
+    if (key === `\``) {
       closeWindow();
-    } else if (e.key === `Enter`) {
+    } else {
+      updateCurrentCommand(e.target.value);
+    }
+  };
+
+  const applyCommand = (e) => {
+    if (e.key === `Enter`) {
       e.preventDefault();
       addLine();
     }
@@ -36,10 +43,10 @@ export const Command = ({ inputRef }) => {
       <Input
         type="search"
         value={currentCommand}
-        handleInput={(e) => updateCurrentCommand(e.target.value)}
         menu={`command`}
         className={`command-input`}
-        onKeyDown={updateCommand}
+        onChange={updateCommand}
+        onKeyDown={applyCommand}
         nodeRef={inputRef}
       />
       <Button

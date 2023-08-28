@@ -16,7 +16,7 @@ export const ServerDetails = ({
       <ServerDetailsItem
         name={`IP Address`}
         value={ip}
-        onContextMenu={(e) => openMenu(e, `readOnly`)}
+        onContextMenu={openMenu(`readOnly`)}
       />
       <ServerDetailsItem name={`Game`} value={game} />
       <ServerDetailsItem name={`Map`} value={map} />

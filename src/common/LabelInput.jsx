@@ -1,6 +1,6 @@
 ﻿import { Input } from "./Input";
 
-export const LabelInput = ({ title, style, value, handleInput, menu }) => {
+export const LabelInput = ({ title, style, value, onChange, menu }) => {
   return (
     <div className="form-element">
       {title}
@@ -9,7 +9,7 @@ export const LabelInput = ({ title, style, value, handleInput, menu }) => {
         className={`input`}
         style={style}
         value={value}
-        handleInput={handleInput}
+        onChange={onChange}
         menu={menu}
       />
     </div>

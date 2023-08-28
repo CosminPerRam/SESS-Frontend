@@ -25,7 +25,7 @@ export const Top = () => {
         <Select label={`Tags`} options={tags} />
         <TopInput
           value={hasTags}
-          handleInput={handleHasTags}
+          onChange={handleHasTags}
           menu={`serverInput`}
         />
         <Button title={`Add common tags...`} style={{ minWidth: `144px` }} />

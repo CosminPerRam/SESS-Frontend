@@ -29,7 +29,7 @@ export const RenderActiveWindow = () => {
     return () => {
       window.removeEventListener(`keypress`, handleKeyPressEvent);
     };
-  }, [dispatch]);
+  }, [dispatch, activeWindow]);
 
   if (activeWindow === windows.console) {
     return <Console nodeRef={nodeRef} inputRef={inputRef} />;

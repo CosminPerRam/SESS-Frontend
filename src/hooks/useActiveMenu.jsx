@@ -6,7 +6,7 @@ export const useActiveMenu = () => {
 
   const activeMenu = useSelector((state) => state.contextMenu.activeMenu);
   const popupCoords = useSelector((state) => state.contextMenu.popupCoords);
-  const openMenu = (e, menu) => {
+  const openMenu = (menu) => (e) => {
     e.stopPropagation();
     e.preventDefault();
     dispatch(setPopupCoords({ x: e.pageX, y: e.pageY }));

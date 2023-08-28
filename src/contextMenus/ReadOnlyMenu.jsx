@@ -1,7 +1,7 @@
-﻿export const ReadOnlyMenu = ({ top, left, input, nodeRef }) => {
-  const Copy = () => {
-    navigator.clipboard.writeText(input).then(() => {});
-  };
+﻿import { useClipboard } from "../hooks/useClipboard";
+
+export const ReadOnlyMenu = ({ top, left, input, nodeRef }) => {
+  const { Copy } = useClipboard(input);
   return (
     <div
       className="context-menu"

@@ -5,6 +5,7 @@ import { useClickOutside } from "../hooks/useClickOutside";
 import { ServerInfo } from "../windows/ServerInfo";
 import { useActiveWindow } from "../hooks/useActiveWindow";
 import { windows } from "../core/windows";
+import { AddServer } from "../windows/AddServer";
 
 export const RenderActiveWindow = () => {
   const dispatch = useDispatch();
@@ -31,10 +32,15 @@ export const RenderActiveWindow = () => {
     };
   }, [dispatch, activeWindow]);
 
-  if (activeWindow === windows.console) {
-    return <Console nodeRef={nodeRef} inputRef={inputRef} />;
-  } else if (activeWindow === windows.serverInfo) {
-    return <ServerInfo nodeRef={nodeRef} />;
+  switch (activeWindow) {
+    case windows.console:
+      return <Console nodeRef={nodeRef} inputRef={inputRef} />;
+
+    case windows.serverInfo:
+      return <ServerInfo nodeRef={nodeRef} />;
+
+    case windows.addServer:
+      return <AddServer nodeRef={nodeRef} />;
   }
 
   return null;

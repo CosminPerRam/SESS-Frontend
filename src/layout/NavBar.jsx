@@ -1,6 +1,7 @@
 import { TabButton } from "./TabButton";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveTab } from "../redux/layout/slice";
+import { useActiveMenu } from "../hooks/useActiveMenu";
 
 export const NavBar = () => {
   const tabs = [
@@ -16,17 +17,28 @@ export const NavBar = () => {
 
   const activeTab = useSelector((state) => state.layout.activeTab);
   const dispatch = useDispatch();
+  const { openMenu } = useActiveMenu();
   return (
     <div className="nav-bar">
       <div className="nav-buttons">
-        {tabs.map((tab) => (
-          <TabButton
-            title={tab}
-            activeTab={tab === activeTab}
-            onClick={() => dispatch(setActiveTab(tab))}
-            key={tab}
-          />
-        ))}
+        {tabs.map((tab) =>
+          tab === `Favorites` || tab === `Blacklisted Servers` ? (
+            <TabButton
+              title={tab}
+              activeTab={tab === activeTab}
+              onClick={() => dispatch(setActiveTab(tab))}
+              onContextMenu={(e) => openMenu(`addServer`)(e)}
+              key={tab}
+            />
+          ) : (
+            <TabButton
+              title={tab}
+              activeTab={tab === activeTab}
+              onClick={() => dispatch(setActiveTab(tab))}
+              key={tab}
+            />
+          ),
+        )}
       </div>
     </div>
   );

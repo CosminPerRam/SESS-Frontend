@@ -9,9 +9,10 @@ import { ReadOnlyMenu } from "../contextMenus/ReadOnlyMenu";
 import { setHasTags, setRunsMap } from "../redux/filters/slice";
 import { setMaxPlayerCount } from "../redux/localFilters/slice";
 import { useActiveMenu } from "../hooks/useActiveMenu";
+import { AddServerMenu } from "../contextMenus/AddServerMenu";
 
 export const RenderActiveMenu = () => {
-  useClick();
+  //useClick();
   const nodeRef = useRef(null);
   const { activeMenu, popupCoords } = useActiveMenu();
 
@@ -78,6 +79,14 @@ export const RenderActiveMenu = () => {
         left={popupCoords.x}
         top={popupCoords.y}
         input={command}
+        nodeRef={nodeRef}
+      />
+    );
+  if (activeMenu === `addServer`)
+    return (
+      <AddServerMenu
+        left={popupCoords.x}
+        top={popupCoords.y}
         nodeRef={nodeRef}
       />
     );

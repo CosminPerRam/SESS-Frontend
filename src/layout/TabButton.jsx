@@ -1,4 +1,4 @@
-export const TabButton = ({ title, onClick, activeTab }) => {
+export const TabButton = ({ title, onClick, activeTab, onContextMenu }) => {
   return (
     <button
       className="tab-button"
@@ -13,6 +13,7 @@ export const TabButton = ({ title, onClick, activeTab }) => {
             }
           : null
       }
+      onContextMenu={onContextMenu}
     >
       {title}
     </button>

@@ -12,7 +12,7 @@ import { useActiveMenu } from "../hooks/useActiveMenu";
 import { AddServerMenu } from "../contextMenus/AddServerMenu";
 
 export const RenderActiveMenu = () => {
-  //useClick();
+  useClick();
   const nodeRef = useRef(null);
   const { activeMenu, popupCoords } = useActiveMenu();
 

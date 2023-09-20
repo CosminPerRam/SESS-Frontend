@@ -23,6 +23,7 @@
 .context-menu-element:hover {
   background-color: $hover;
   color: $textSelected;
+  cursor: pointer;
   .checkmark{
     border: solid $textSelected;
     border-width: 0 3px 2px 0;

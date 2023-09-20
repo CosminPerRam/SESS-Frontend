@@ -3,7 +3,7 @@
 export const LabelInput = ({ title, style, value, onChange, menu }) => {
   return (
     <div className="form-element">
-      {title}
+      <div style={{ marginRight: `5px` }}>{title}</div>
       <Input
         type="search"
         className={`input`}

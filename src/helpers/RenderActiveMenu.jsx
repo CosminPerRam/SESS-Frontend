@@ -2,7 +2,7 @@
 import { ServerMenu } from "../contextMenus/ServerMenu";
 import { TableHeaderMenu } from "../contextMenus/TableHeaderMenu";
 import { InputMenu } from "../contextMenus/InputMenu";
-import { setInputCommand } from "../redux/window/slice";
+import { setAddServerIp, setInputCommand } from "../redux/window/slice";
 import { useRef } from "react";
 import { useClick } from "../hooks/useClick";
 import { ReadOnlyMenu } from "../contextMenus/ReadOnlyMenu";
@@ -19,6 +19,7 @@ export const RenderActiveMenu = () => {
   const runsMap = useSelector((state) => state.filters.runsMap);
   const maxPlayerCount = useSelector((state) => state.filters.maxPlayerCount);
   const hasTags = useSelector((state) => state.filters.hasTags);
+  const addServerIp = useSelector((state) => state.window.addServerIp);
   const command = useSelector((state) => state.window.inputCommand);
 
   if (activeMenu === `server`)
@@ -60,6 +61,16 @@ export const RenderActiveMenu = () => {
         top={popupCoords.y}
         setInput={setHasTags}
         input={hasTags}
+        nodeRef={nodeRef}
+      />
+    );
+  if (activeMenu === `addServerIp`)
+    return (
+      <InputMenu
+        left={popupCoords.x}
+        top={popupCoords.y}
+        setInput={setAddServerIp}
+        input={addServerIp}
         nodeRef={nodeRef}
       />
     );

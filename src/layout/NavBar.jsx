@@ -2,6 +2,7 @@ import { TabButton } from "./TabButton";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveTab } from "../redux/layout/slice";
 import { useActiveMenu } from "../hooks/useActiveMenu";
+import { setAddServerTo } from "../redux/window/slice";
 
 export const NavBar = () => {
   const tabs = [
@@ -22,12 +23,26 @@ export const NavBar = () => {
     <div className="nav-bar">
       <div className="nav-buttons">
         {tabs.map((tab) =>
-          tab === `Favorites` || tab === `Blacklisted Servers` ? (
+          tab === `Favorites` ? (
             <TabButton
               title={tab}
               activeTab={tab === activeTab}
               onClick={() => dispatch(setActiveTab(tab))}
-              onContextMenu={(e) => openMenu(`addServer`)(e)}
+              onContextMenu={(e) => {
+                openMenu(`addServer`)(e);
+                dispatch(setAddServerTo(`favorites`));
+              }}
+              key={tab}
+            />
+          ) : tab === `Blacklisted Servers` ? (
+            <TabButton
+              title={tab}
+              activeTab={tab === activeTab}
+              onClick={() => dispatch(setActiveTab(tab))}
+              onContextMenu={(e) => {
+                openMenu(`addServer`)(e);
+                dispatch(setAddServerTo(`blacklist`));
+              }}
               key={tab}
             />
           ) : (

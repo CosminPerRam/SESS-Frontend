@@ -5,6 +5,8 @@ const initialState = {
   serverDetails: null,
   consoleLines: [],
   inputCommand: ``,
+  addServerTo: ``,
+  addServerIp: ``,
 };
 
 const windowSlice = createSlice({
@@ -23,6 +25,12 @@ const windowSlice = createSlice({
     setInputCommand: (state, action) => {
       state.inputCommand = action.payload;
     },
+    setAddServerTo: (state, action) => {
+      state.addServerTo = action.payload;
+    },
+    setAddServerIp: (state, action) => {
+      state.addServerIp = action.payload;
+    },
   },
 });
 
@@ -31,5 +39,7 @@ export const {
   addConsoleLine,
   setServerDetails,
   setInputCommand,
+  setAddServerTo,
+  setAddServerIp,
 } = windowSlice.actions;
 export default windowSlice.reducer;

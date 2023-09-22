@@ -15,12 +15,12 @@ export const ServerInfo = ({ nodeRef }) => {
     >
       <ServerDetails
         name={item.name}
-        ip={`pula si caciula`}
+        ip={`-`}
         game={item.game}
         map={item.map}
         players={`${item.playersOnline} / ${item.playersMaximum}`}
         vac={item.vacSecured ? `Secure` : `Not Secure`}
-        latency={`Pula si cacliula :o`}
+        latency={`-`}
       />
       <div className={`server-info-table`}>
         <ServerInfoTable item={item} />

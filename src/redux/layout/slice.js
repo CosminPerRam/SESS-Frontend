@@ -1,13 +1,14 @@
 ﻿import { createSlice } from "@reduxjs/toolkit";
-
+//move filters to it's component
 const initialState = {
   simplifiedList: false,
   filters: true,
-  activeTab: "Internet",
+  //make constants
+  activeTab: `Internet`,
 };
 
 const layoutSlice = createSlice({
-  name: "layout",
+  name: `layout`,
   initialState,
   reducers: {
     setSimplifiedList: (state, action) => {

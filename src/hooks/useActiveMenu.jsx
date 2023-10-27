@@ -4,8 +4,11 @@ import { setActiveMenu, setPopupCoords } from "../redux/contextMenu/slice";
 export const useActiveMenu = () => {
   const dispatch = useDispatch();
 
+  //set these states in a single object
   const activeMenu = useSelector((state) => state.contextMenu.activeMenu);
   const popupCoords = useSelector((state) => state.contextMenu.popupCoords);
+
+  //dc
   const openMenu = (menu) => (e) => {
     e.stopPropagation();
     e.preventDefault();

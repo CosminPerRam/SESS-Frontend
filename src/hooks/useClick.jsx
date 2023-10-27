@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useActiveMenu } from "./useActiveMenu";
 
 export const useClick = () => {
@@ -6,11 +6,12 @@ export const useClick = () => {
 
   useEffect(() => {
     document.addEventListener(`mousedown`, () => closeMenu());
-
     window.addEventListener(`resize`, () => closeMenu());
+    console.log(`ceau`);
     return () => {
       document.removeEventListener(`mousedown`, () => closeMenu());
       window.removeEventListener(`resize`, () => closeMenu());
     };
-  }, [closeMenu]);
+    //needed dependency?
+  }, []);
 };

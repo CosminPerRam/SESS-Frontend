@@ -1,5 +1,5 @@
 ﻿import { SelectOptions } from "./SelectOptions";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const Select = ({
   label,
@@ -10,34 +10,30 @@ export const Select = ({
 }) => {
   const [optionsOpen, setOptionsOpen] = useState(false);
 
-  useEffect(() => {
-    const handleClickOutside = () => {
-      setOptionsOpen(false);
-    };
-
-    document.addEventListener(`click`, handleClickOutside);
-
-    return () => {
-      document.removeEventListener(`click`, handleClickOutside);
-    };
-  }, []);
-
   const handleClick = (event) => {
     event.stopPropagation();
     setOptionsOpen(!optionsOpen);
   };
+  //WHY can't it behave like a context menu???????/
   return (
     <div className="form-element">
       {label}
       <div className="select" style={style} onClick={(e) => handleClick(e)}>
         {optionsOpen && (
-          <SelectOptions options={options} setOption={setOption} />
+          <SelectOptions
+            options={options}
+            setOption={setOption}
+            setOptionsOpen={setOptionsOpen}
+          />
         )}
-        {selectedOption === true
-          ? `Secure`
-          : selectedOption === false
-          ? `Not Secure`
-          : selectedOption}
+        {
+          //this is kinda scuffed
+          selectedOption === true
+            ? `Secure`
+            : selectedOption === false
+            ? `Not Secure`
+            : selectedOption
+        }
       </div>
       <div className="arrow-down"></div>
     </div>

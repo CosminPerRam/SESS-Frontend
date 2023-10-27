@@ -15,6 +15,7 @@ export const RenderActiveWindow = () => {
   useClickOutside(nodeRef);
   const inputRef = useRef(null);
 
+  //move this to a hook
   useEffect(() => {
     const handleKeyPressEvent = (e) => {
       if (e.key === "`" && e.target.tagName !== `INPUT`) {

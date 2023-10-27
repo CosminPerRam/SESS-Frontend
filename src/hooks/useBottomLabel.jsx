@@ -14,7 +14,7 @@ export const useBottomLabel = () => {
   const maxPlayerCount = Number(
     useSelector((state) => state.localFilters.maxPlayerCount),
   );
-
+  //change syntax to variable && return
   return `Team Fortress 2;
     ${isSecured === null ? `` : isSecured ? ` secure;` : ` not secure;`}
     ${location ? location + `;` : ``}

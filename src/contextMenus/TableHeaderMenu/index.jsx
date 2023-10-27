@@ -6,6 +6,7 @@ export const TableHeaderMenu = ({ top, left, nodeRef }) => {
   const hiddenColumns = useSelector((state) => state.contextMenu.hiddenColumns);
   const dispatch = useDispatch();
 
+  //make them const
   const labels = [
     `Password`,
     `Secure`,

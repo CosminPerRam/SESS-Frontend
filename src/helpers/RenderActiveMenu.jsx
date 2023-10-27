@@ -21,7 +21,7 @@ export const RenderActiveMenu = () => {
   const hasTags = useSelector((state) => state.filters.hasTags);
   const addServerIp = useSelector((state) => state.window.addServerIp);
   const command = useSelector((state) => state.window.inputCommand);
-
+  //check if you can make a hook for the menus
   if (activeMenu === `server`)
     return (
       <ServerMenu left={popupCoords.x} top={popupCoords.y} nodeRef={nodeRef} />
